@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Quicksand", serif;
+}
+
+@media screen and (max-width: 565px) {
+  html {
+    font-size: 14px;
+  }
+}

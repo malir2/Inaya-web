@@ -1,0 +1,124 @@
+.sec-dashboard-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: center;
+}
+
+.sec-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  width: 21rem;
+  padding: 15px;
+  color: white;
+}
+
+.sec-card-header {
+  margin-bottom: 20px;
+}
+
+.sec-card-header .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sec-card-header .status {
+  display: flex;
+  align-items: center;
+}
+
+.sec-card-header h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sec-card-header .status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.sec-card-content .table-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.sec-card-content .table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sec-item {
+  display: flex;
+  align-items: center;
+}
+
+.sec-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.sec-item-info {
+  flex-direction: column;
+  display: flex;
+}
+
+.sec-item-info span:first-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sec-item-info span:last-child {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.sec-score {
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-score span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sec-score-bar {
+  width: 97px;
+  height: 5px;
+  background-color: #444;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.sec-score-bar-fill {
+  height: 100%;
+  background-color: orange;
+  border-radius: 5px;
+}
+
+.sec-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apexcharts-legend {
+  display: none !important;
+}
+
+.sec-table-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
