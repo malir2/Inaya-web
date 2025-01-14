@@ -1,6 +1,7 @@
 import "./secondrow.css";
 import { RxDotsVertical } from "react-icons/rx";
 import { FaCircleCheck } from "react-icons/fa6";
+import { Grid } from "@mui/material";
 
 const SecondRow = () => {
     const cards = [
@@ -54,43 +55,47 @@ const SecondRow = () => {
 
     return (
         <div className="sec-dashboard-row">
-            {cards.map((card, index) => (
-                <div className="sec-card" key={index}>
-                    <div className="sec-card-header">
-                        <div className="title">
-                            <h2>{card.title}</h2>
-                            <div><RxDotsVertical /> </div>
-                        </div>
-                        <span className="status"> <p className="me-1">Analysis Status</p> <FaCircleCheck color="#05b305" size={10} /></span>
-                    </div>
-                    <div className="sec-card-content">
-                        <div className="sec-table-header">
-                            <span>Commodities</span>
-                            <span>Risk Score</span>
-                        </div>
-                        {card.items.map((item, idx) => (
-                            <div className="sec-table-row mb-2" key={idx}>
-                                <div className="sec-item">
-                                    <img src={item.image} alt={item.name} />
-                                    <div className="sec-item-info">
-                                        <span>{item.name}</span>
-                                        <span>{item.date}</span>
-                                    </div>
+            <Grid container spacing={2}>
+                {cards.map((card, index) => (
+                    <Grid item xs={12} sm={6} md={6} lg={3} xl={2.4} key={index}>
+                        <div className="sec-card" style={{ width: "100%" }}>
+                            <div className="sec-card-header">
+                                <div className="title">
+                                    <h2>{card.title}</h2>
+                                    <div><RxDotsVertical /> </div>
                                 </div>
-                                <div className="sec-score">
-                                    <span>{item.score}%</span>
-                                    <div className="sec-score-bar">
-                                        <div
-                                            className="sec-score-bar-fill"
-                                            style={{ width: `${item.score}%` }}
-                                        ></div>
-                                    </div>
-                                </div>
+                                <span className="status"> <p className="me-1">Analysis Status</p> <FaCircleCheck color="#05b305" size={10} /></span>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            ))}
+                            <div className="sec-card-content">
+                                <div className="sec-table-header">
+                                    <span>Commodities</span>
+                                    <span>Risk Score</span>
+                                </div>
+                                {card.items.map((item, idx) => (
+                                    <div className="sec-table-row mb-2" key={idx}>
+                                        <div className="sec-item">
+                                            <img src={item.image} alt={item.name} />
+                                            <div className="sec-item-info">
+                                                <span>{item.name}</span>
+                                                <span>{item.date}</span>
+                                            </div>
+                                        </div>
+                                        <div className="sec-score">
+                                            <span>{item.score}%</span>
+                                            <div className="sec-score-bar">
+                                                <div
+                                                    className="sec-score-bar-fill"
+                                                    style={{ width: `${item.score}%` }}
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </Grid>
+                ))}
+            </Grid>
         </div>
     );
 };
