@@ -32,12 +32,20 @@ const priceDrivers = [
 
 const FirstRow = () => {
     const [selectedCommodity, setSelectedCommodity] = useState<Commodity>(commoditiesData[0]);
-    const [chartData, setChartData] = useState<number[]>([30, 40, 35, 50, 49]);
+    const [chartData, setChartData] = useState<number[][]>([
+        [30, 40, 35, 50, 49],
+        [31, 40, 28, 51, 42],
+        [11, 32, 45, 32, 34]
+    ]);
 
     const handleCommodityClick = (commodity: Commodity) => {
         setSelectedCommodity(commodity);
         // Set random data for each commodity for the last 5 months
-        const randomData = Array.from({ length: 5 }, () => Math.floor(Math.random() * 100));
+        const randomData = [
+            Array.from({ length: 5 }, () => Math.floor(Math.random() * 100)),
+            Array.from({ length: 5 }, () => Math.floor(Math.random() * 100)),
+            Array.from({ length: 5 }, () => Math.floor(Math.random() * 100))
+        ];
         setChartData(randomData);
     };
 

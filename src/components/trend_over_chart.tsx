@@ -9,7 +9,7 @@ interface Commodity {
 
 interface TrendOverLastYearProps {
     commodity: Commodity;
-    chartData: number[];
+    chartData: number[][];
 }
 
 const TrendOverLastYear = ({ commodity, chartData }: TrendOverLastYearProps) => {
@@ -62,7 +62,15 @@ const TrendOverLastYear = ({ commodity, chartData }: TrendOverLastYearProps) => 
     const chartSeries = [
         {
             name: "Value",
-            data: chartData,
+            data: chartData[0],
+        },
+        {
+            name: "Series1",
+            data: chartData[1],
+        },
+        {
+            name: "Series2",
+            data: chartData[2],
         }
     ];
 
