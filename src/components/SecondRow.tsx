@@ -69,7 +69,7 @@ const SecondRow = () => {
                             <span>Risk Score</span>
                         </div>
                         {card.items.map((item, idx) => (
-                            <div className="sec-table-row" key={idx}>
+                            <div className="sec-table-row mb-2" key={idx}>
                                 <div className="sec-item">
                                     <img src={item.image} alt={item.name} />
                                     <div className="sec-item-info">

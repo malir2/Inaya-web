@@ -8,7 +8,7 @@
 .sec-card {
   background-color: #2a2a2a;
   border-radius: 10px;
-  width: 17rem;
+  width: 15rem;
   padding: 15px;
   color: white;
 }
@@ -79,7 +79,7 @@
 }
 
 .sec-item-info span:last-child {
-  font-size: 12px;
+  font-size: 0.6rem;
   opacity: 0.7;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .sec-score-bar {
-  width: 97px;
+  width: 80px;
   height: 5px;
   background-color: #444;
   border-radius: 5px;
@@ -121,4 +121,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .sec-dashboard-row {
+    justify-content: center;
+  }
+  .sec-card {
+    width: 20rem;
+  }
 }
