@@ -28,11 +28,9 @@ export default function Overview() {
                 <div className="absolute bottom-[-1rem] left-[-10px] right-[-10px] w-[100%] md:w-[40%] rounded-xl h-[0.3rem] bg-yellow"></div>
             </div>
             <div className="mt-10">
-
                 <FirstRow />
             </div>
             <div className="mt-10">
-
                 <SecondRow />
             </div>
         </div>

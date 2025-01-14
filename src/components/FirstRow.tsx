@@ -66,7 +66,7 @@ const FirstRow = () => {
                 </Grid>
 
                 {/* Last Price Drivers Section */}
-                <Grid item xs={12} sm={4} style={{ width: "100%" }}>
+                <Grid item sm={12} lg={4} style={{ width: "100%" }}>
                     <Card className="card card-styling last-price-drivers">
                         <CardContent>
                             <Typography className="section-title">Last Price Drivers</Typography>
