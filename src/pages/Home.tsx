@@ -4,7 +4,7 @@ import Overview from "../components/Overview";
 
 function Home() {
     const [hoverTab, setHoverTab] = useState<number | null>(null);
-    const [activeTab, setactiveTab] = useState<number | null>(null);
+    const [activeTab, setactiveTab] = useState<number | null>(0);
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
     return (
