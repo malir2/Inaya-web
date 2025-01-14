@@ -11,10 +11,10 @@ function Home() {
         <>
             <div className="flex justify-center lg:justify-between lg:gap-4 w-full bg-light h-auto py-3 px-5">
                 <div className="lg:relative">
-                    <div className="lg:sticky top-0">
+                    <div className="lg:sticky top-2">
                         {/* Sidebar for big screens */}
                         <div className="sticky top-0">
-                            <div className="w-[17rem] h-[98vh] hidden sidebar bg-dark rounded-xl lg:flex flex-col justify-between sticky top-0">
+                            <div className="w-[17rem] h-[99vh] hidden sidebar bg-dark rounded-xl lg:flex flex-col justify-between sticky top-0">
                                 <div>
                                     <img src={logo} alt="" className="mx-auto mt-3" />
                                     <p className="text-center text-white uppercase">We hate to be late</p>
