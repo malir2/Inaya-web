@@ -1,18 +1,10 @@
 import Chart from "react-apexcharts";
 
-interface Commodity {
-    name: string;
-    riskScore: number;
-    time: string;
-    image: string;
-}
-
 interface TrendOverLastYearProps {
-    commodity: Commodity;
     chartData: number[][];
 }
 
-const TrendOverLastYear = ({ commodity, chartData }: TrendOverLastYearProps) => {
+const TrendOverLastYear = ({ chartData }: TrendOverLastYearProps) => {
     const chartOptions: any = {
         chart: {
             type: "area" as "area",
@@ -32,7 +24,7 @@ const TrendOverLastYear = ({ commodity, chartData }: TrendOverLastYearProps) => 
         },
         colors: ["#FFA726", "#FFD54F"],
         xaxis: {
-            categories: ["Aug", "Sep", "Oct", "Nov", "Dec"],
+            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             axisBorder: {
                 show: false,
             },
@@ -44,6 +36,9 @@ const TrendOverLastYear = ({ commodity, chartData }: TrendOverLastYearProps) => 
             },
         },
         yaxis: {
+            min: 0,
+            max: 100,
+            tickAmount: 5,
             labels: {
                 style: {
                     colors: "#FFFFFF",
@@ -76,8 +71,8 @@ const TrendOverLastYear = ({ commodity, chartData }: TrendOverLastYearProps) => 
 
     return (
         <div className="trend-chart">
-            <h2 style={{ color: "white" }}>{commodity.name} Trend Over Last Year</h2>
-            <Chart options={chartOptions} series={chartSeries} type="area" height={250} />
+            <p className="text-gray-400"><span className="text-green-500">(+5) more</span> in 2023</p>
+            <Chart options={chartOptions} series={chartSeries} type="area" height={350} />
         </div>
     );
 };

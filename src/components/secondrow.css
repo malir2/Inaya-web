@@ -6,7 +6,7 @@
 }
 
 .sec-card {
-  background-color: #2a2a2a;
+  background-color: #1e1e1e;
   border-radius: 10px;
   width: 15rem;
   padding: 15px;
@@ -29,7 +29,7 @@
 }
 
 .sec-card-header h2 {
-  font-size: 18px;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
