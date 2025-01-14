@@ -25,9 +25,9 @@ const priceDrivers = [
 const FirstRow = () => {
     return (
         <div className="first-row">
-            <Grid container spacing={3} direction={{ xs: "column", sm: "row" }} alignItems="center">
+            <Grid container spacing={3}>
                 {/* Saved Commodities Section */}
-                <Grid item xs={12} sm={4} style={{ width: "100%" }}>
+                <Grid item xs={12} sm={6} md={4}>
                     <Card className="card card-styling saved-commodities">
                         <CardContent>
                             <Typography className="section-title">Saved Commodities</Typography>
@@ -56,7 +56,7 @@ const FirstRow = () => {
                 </Grid>
 
                 {/* Trend Over Last Year Section */}
-                <Grid item xs={12} sm={4} style={{ width: "100%" }}>
+                <Grid item xs={12} sm={6} md={4}>
                     <Card className="card card-styling trend-chart">
                         <CardContent>
                             <Typography className="section-title">Trend Over Last Year</Typography>
@@ -66,7 +66,7 @@ const FirstRow = () => {
                 </Grid>
 
                 {/* Last Price Drivers Section */}
-                <Grid item sm={12} lg={4} style={{ width: "100%" }}>
+                <Grid item xs={12} sm={6} md={4}>
                     <Card className="card card-styling last-price-drivers">
                         <CardContent>
                             <Typography className="section-title">Last Price Drivers</Typography>
