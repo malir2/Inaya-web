@@ -1,8 +1,16 @@
+import { useState } from "react";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
 import TrendOverLastYear from "./trend_over_chart";
 import "./firstrow.css";
 
-const commoditiesData = [
+interface Commodity {
+    name: string;
+    riskScore: number;
+    time: string;
+    image: string;
+}
+
+const commoditiesData: Commodity[] = [
     { name: "Gold", riskScore: 67, time: "22 Dec 7:20 PM", image: "https://img.freepik.com/free-photo/high-angle-aesthetic-wallpaper-with-gold-bars_23-2149872246.jpg" },
     { name: "Silver", riskScore: 48, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCNVWYDQmu3mH5zco0PjSYfjLlQ8QP1nj69A&s" },
     { name: "Wheat", riskScore: 61, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa0mbwIMEhfljBeVjGfBeQeKRyPjpXYToR7g&s" },
@@ -23,16 +31,26 @@ const priceDrivers = [
 ];
 
 const FirstRow = () => {
+    const [selectedCommodity, setSelectedCommodity] = useState<Commodity>(commoditiesData[0]);
+    const [chartData, setChartData] = useState<number[]>([30, 40, 35, 50, 49]);
+
+    const handleCommodityClick = (commodity: Commodity) => {
+        setSelectedCommodity(commodity);
+        // Set random data for each commodity for the last 5 months
+        const randomData = Array.from({ length: 5 }, () => Math.floor(Math.random() * 100));
+        setChartData(randomData);
+    };
+
     return (
         <div className="first-row">
             <Grid container spacing={3}>
                 {/* Saved Commodities Section */}
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} lg={4}>
                     <Card className="card card-styling saved-commodities">
                         <CardContent>
                             <Typography className="section-title">Saved Commodities</Typography>
                             {commoditiesData.map((commodity) => (
-                                <div key={commodity.name} className="commodity-item">
+                                <div key={commodity.name} className="commodity-item" onClick={() => handleCommodityClick(commodity)}>
                                     <img
                                         src={commodity.image}
                                         alt={commodity.name}
@@ -56,17 +74,17 @@ const FirstRow = () => {
                 </Grid>
 
                 {/* Trend Over Last Year Section */}
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} lg={4}>
                     <Card className="card card-styling trend-chart">
                         <CardContent>
-                            <Typography className="section-title">Trend Over Last Year</Typography>
-                            <TrendOverLastYear />
+                            <Typography className="section-title">Trend Over Last 5 Months</Typography>
+                            <TrendOverLastYear commodity={selectedCommodity} chartData={chartData} />
                         </CardContent>
                     </Card>
                 </Grid>
 
                 {/* Last Price Drivers Section */}
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={12} lg={4}>
                     <Card className="card card-styling last-price-drivers">
                         <CardContent>
                             <Typography className="section-title">Last Price Drivers</Typography>
