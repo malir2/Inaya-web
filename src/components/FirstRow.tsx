@@ -1,4 +1,3 @@
-import "./firstRow.css";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
 import TrendOverLastYear from "./trend_over_chart";
 import "./firstrow.css";
