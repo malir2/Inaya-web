@@ -37,16 +37,15 @@ const priceDrivers = [
 
 const FirstRow = () => {
     const [selectedCommodity, setSelectedCommodity] = useState<Commodity>(commoditiesData[0]);
-    const [chartData, setChartData] = useState<number[][]>([
-        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
-        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
-        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
-        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
-    ]);
+    const chartData = [
+        [67, 40, 65, 88, 72, 35, 70, 73, 16, 78, 50, 82], // GOLD
+        [48, 30, 45, 87, 19, 52, 40, 53, 55, 67, 60, 72], // SILVER
+        [31, 63, 60, 82, 24, 66, 65, 57, 69, 71, 33, 75], // WHEAT
+        [60, 62, 28, 61, 53, 65, 34, 66, 68, 20, 72, 74], // PALLADIUM
+    ];
 
     const handleCommodityClick = (commodity: Commodity) => {
         setSelectedCommodity(commodity);
-
     };
 
     return (

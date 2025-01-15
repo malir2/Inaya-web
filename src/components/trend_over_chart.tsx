@@ -78,7 +78,7 @@ const TrendOverLastYear = ({ chartData, selectedCommodity }: TrendOverLastYearPr
     }));
 
     // Ensure the selected commodity is shown above all others
-    const sortedChartSeries = chartSeries.sort((a, b) => (a.name === selectedCommodity ? 1 : -1));
+    const sortedChartSeries = chartSeries.sort((a) => (a.name === selectedCommodity ? 1 : -1));
 
     return (
         <div className="trend-chart">
