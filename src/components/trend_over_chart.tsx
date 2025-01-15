@@ -77,10 +77,13 @@ const TrendOverLastYear = ({ chartData, selectedCommodity }: TrendOverLastYearPr
         },
     }));
 
+    // Ensure the selected commodity is shown above all others
+    const sortedChartSeries = chartSeries.sort((a, b) => (a.name === selectedCommodity ? 1 : -1));
+
     return (
         <div className="trend-chart">
             <p className="text-gray-400"><span className="text-green-500">(+5) more</span> in 2023</p>
-            <Chart options={chartOptions} series={chartSeries} type="area" height={350} />
+            <Chart options={chartOptions} series={sortedChartSeries} type="area" height={350} />
         </div>
     );
 };

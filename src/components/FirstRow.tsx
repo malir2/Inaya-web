@@ -46,6 +46,7 @@ const FirstRow = () => {
 
     const handleCommodityClick = (commodity: Commodity) => {
         setSelectedCommodity(commodity);
+
     };
 
     return (
