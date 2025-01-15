@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
-import TrendOverLastYear, { CommodityName } from "./trend_over_chart";
+import TrendOverLastYear from "./trend_over_chart";
 import "./firstrow.css";
 
 interface Commodity {
@@ -107,7 +107,7 @@ const FirstRow = () => {
                     <Card className="card card-styling trend-chart no-shadow no-padding no-margin">
                         <CardContent className="no-padding no-margin">
                             <Typography className="section-title no-margin">Trend Over Last Year</Typography>
-                            <TrendOverLastYear chartData={chartData} selectedCommodity={selectedCommodity.name as CommodityName} />
+                            <TrendOverLastYear chartData={chartData} selectedCommodity={selectedCommodity.name} />
                         </CardContent>
                     </Card>
                 </Grid>
