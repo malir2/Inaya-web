@@ -2,12 +2,22 @@ import Chart from "react-apexcharts";
 
 interface TrendOverLastYearProps {
     chartData: number[][];
+    selectedCommodity: CommodityName;
 }
 
-const TrendOverLastYear = ({ chartData }: TrendOverLastYearProps) => {
+type CommodityName = "GOLD" | "SILVER" | "WHEAT" | "PALLADIUM";
+
+const TrendOverLastYear = ({ chartData, selectedCommodity }: TrendOverLastYearProps) => {
+    const colors: Record<CommodityName, string> = {
+        GOLD: "#FFD700",
+        SILVER: "#C0C0C0",
+        WHEAT: "#F5DEB3",
+        PALLADIUM: "#E6E6FA",
+    };
+
     const chartOptions: any = {
         chart: {
-            type: "area" as "area",
+            type: "line" as "line",
             toolbar: {
                 show: false,
             },
@@ -22,7 +32,9 @@ const TrendOverLastYear = ({ chartData }: TrendOverLastYearProps) => {
             curve: "smooth",
             width: 2,
         },
-        colors: ["#FFA726", "#FFD54F"],
+        markers: {
+            size: 0, // Disable the dots
+        },
         xaxis: {
             categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             axisBorder: {
@@ -52,29 +64,45 @@ const TrendOverLastYear = ({ chartData }: TrendOverLastYearProps) => {
         tooltip: {
             theme: "dark",
         },
+        colors: Object.values(colors), // Set colors for all lines
     };
 
-    const chartSeries = [
-        {
-            name: "Value",
-            data: chartData[0],
+    const chartSeries = Object.keys(colors).map((commodity, index) => ({
+        name: commodity,
+        data: chartData[index],
+        color: colors[commodity as CommodityName],
+        fill: {
+            type: "gradient",
+            gradient: selectedCommodity === commodity ? {
+                shade: 'light',
+                type: "vertical",
+                shadeIntensity: 0.5,
+                gradientToColors: [colors[commodity as CommodityName]],
+                inverseColors: false,
+                opacityFrom: 0.7,
+                opacityTo: 0.1,
+                stops: [0, 100]
+            } : {
+                shade: 'light',
+                type: "vertical",
+                shadeIntensity: 0,
+                gradientToColors: [colors[commodity as CommodityName]],
+                inverseColors: false,
+                opacityFrom: 0,
+                opacityTo: 0,
+                stops: [0, 100]
+            },
         },
-        {
-            name: "Series1",
-            data: chartData[1],
-        },
-        {
-            name: "Series2",
-            data: chartData[2],
-        }
-    ];
+    }));
 
     return (
         <div className="trend-chart">
             <p className="text-gray-400"><span className="text-green-500">(+5) more</span> in 2023</p>
-            <Chart options={chartOptions} series={chartSeries} type="area" height={350} />
+            <Chart options={chartOptions} series={chartSeries} type="line" height={350} />
         </div>
     );
 };
+
+export type { CommodityName };
 
 export default TrendOverLastYear;

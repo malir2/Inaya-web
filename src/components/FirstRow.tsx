@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
-import TrendOverLastYear from "./trend_over_chart";
+import TrendOverLastYear, { CommodityName } from "./trend_over_chart";
 import "./firstrow.css";
 
 interface Commodity {
@@ -38,20 +38,14 @@ const priceDrivers = [
 const FirstRow = () => {
     const [selectedCommodity, setSelectedCommodity] = useState<Commodity>(commoditiesData[0]);
     const [chartData, setChartData] = useState<number[][]>([
-        [30, 40, 35, 50, 49, 60, 70, 80, 90, 100, 110, 120],
-        [31, 40, 28, 51, 42, 53, 64, 75, 86, 97, 108, 119],
-        [11, 32, 45, 32, 34, 52, 41, 60, 79, 98, 117, 136]
+        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
+        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
+        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
+        Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
     ]);
 
     const handleCommodityClick = (commodity: Commodity) => {
         setSelectedCommodity(commodity);
-        // Set random data for each commodity for the last 12 months
-        const randomData = [
-            Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
-            Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
-            Array.from({ length: 12 }, () => Math.floor(Math.random() * 100))
-        ];
-        setChartData(randomData);
     };
 
     return (
@@ -113,7 +107,7 @@ const FirstRow = () => {
                     <Card className="card card-styling trend-chart no-shadow no-padding no-margin">
                         <CardContent className="no-padding no-margin">
                             <Typography className="section-title no-margin">Trend Over Last Year</Typography>
-                            <TrendOverLastYear chartData={chartData} />
+                            <TrendOverLastYear chartData={chartData} selectedCommodity={selectedCommodity.name as CommodityName} />
                         </CardContent>
                     </Card>
                 </Grid>
