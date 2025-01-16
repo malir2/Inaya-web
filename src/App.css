@@ -7,6 +7,12 @@
 .sidebar-item {
   margin-bottom: 0.1rem;
 }
+.sidebaar-end-section-blue {
+  background-image: url("./assets/Background-blue.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .blue-background-image {
   background-image: url(./assets/blue-bg.png);

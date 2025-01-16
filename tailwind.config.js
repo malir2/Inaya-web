@@ -16,7 +16,17 @@ export default {
         dark: "#232323",
         light: "#404040",
         yellow: "#efa32c",
-        blue: "014AAC",
+        blue: "#014AAC",
+        blueLighter: "#DCDCDE",
+        blueLight: "#014AAC",
+      },
+      backgroundImage: {
+        "custom-gradient": "linear-gradient(85deg, #014AAC 31%, #0A0E23 116%)",
+        "custom-gradient-two":
+          "linear-gradient(160deg, #040E40 60%, #0A0E23 100%)",
+
+        "custom-gradient-yellow":
+          "linear-gradient(67deg, #efa32c 0%, #8F5F1B 100%)",
       },
     },
   },

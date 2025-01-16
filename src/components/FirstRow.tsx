@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
 import TrendOverLastYear from "./trend_over_chart";
 import "../css/firstrow.css";
+import { useTheme } from "../context/ThemeChanger";
 
 interface Commodity {
     name: string;
@@ -48,8 +49,10 @@ const FirstRow = () => {
         setSelectedCommodity(commodity);
     };
 
+    const { theme } = useTheme();
+
     return (
-        <div className="first-row">
+        <div className={`${theme === "dark" ? "first-row" : "first-row-blue"}`}>
             <Grid container spacing={1}>
                 {/* Saved Commodities Section */}
                 <Grid item xs={12} sm={6} lg={4} xl={3}>
@@ -68,7 +71,7 @@ const FirstRow = () => {
                             </div>
                             <div className="commodities-section">
                                 {commoditiesData.map((commodity) => (
-                                    <div key={commodity.name} className={`commodities-item py-3 mb-0 grid grid-cols-2 ${selectedCommodity.name === commodity.name ? 'selected' : ''}`} onClick={() => handleCommodityClick(commodity)}>
+                                    <div key={commodity.name} className={`${theme === "dark" ? "commodities-item" : "commodities-item-blue"} py-3 grid grid-cols-2 ${selectedCommodity.name === commodity.name ? 'selected' : ''}`} onClick={() => handleCommodityClick(commodity)}>
                                         <div className="flex">
                                             <img
                                                 src={commodity.image}
@@ -120,7 +123,7 @@ const FirstRow = () => {
                                 {priceDrivers.map((driver, index) => (
                                     <div key={index} className="price-driver-item no-margin">
                                         <div className="flex gap-2">
-                                            <div><span className="fa-solid fa-file text-[#F9A71A]"></span></div>
+                                            <div><span className={`fa-solid fa-file ${theme === "dark" ? "text-[#F9A71A]" : "text-blue"}`}></span></div>
                                             <div>
                                                 <Typography className="driver-title no-margin">{driver.title}</Typography>
                                                 <Typography className="driver-description no-margin">

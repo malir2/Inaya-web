@@ -5,6 +5,12 @@
   color: #ffffff;
   border-radius: 20px;
 }
+.first-row-blue {
+  padding: 20px;
+  background-color: #1e1e1e9d;
+  color: #ffffff;
+  border-radius: 20px;
+}
 
 /* Card Styling */
 .card {
@@ -48,6 +54,19 @@
   background-color: #f9a71a47;
 }
 .commodities-section .commodities-item:last-child {
+  border-bottom: none;
+}
+.commodities-section .commodities-item-blue {
+  font-family: "Quicksand", serif !important;
+  border-bottom: 1px solid #56577a;
+}
+.commodities-section .commodities-item-blue:hover {
+  background-color: #014baca6;
+}
+.commodities-section .commodities-item-blue.selected {
+  background-color: #014baca6;
+}
+.commodities-section .commodities-item-blue:last-child {
   border-bottom: none;
 }
 
@@ -139,7 +158,6 @@
   color: #a0aec0;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #56577a;
-  margin-bottom: 0.5rem;
 }
 
 .css-1sfzz2f {
