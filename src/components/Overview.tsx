@@ -1,7 +1,9 @@
+import { useTheme } from "../context/ThemeChanger";
 import FirstRow from "./FirstRow";
 import SecondRow from "./SecondRow";
 
 export default function Overview() {
+    const { toggleTheme } = useTheme();
     return (
         <div>
             {/* Header Section */}
@@ -20,7 +22,7 @@ export default function Overview() {
                     </div>
                     {/* Settings Icon */}
                     <div>
-                        <span className="fa-solid fa-gear text-yellow"></span>
+                        <span onClick={toggleTheme} className="fa-solid fa-gear text-yellow cursor-pointer"></span>
                     </div>
                     {/* Notifications Icon */}
                     <div>

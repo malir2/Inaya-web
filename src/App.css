@@ -7,3 +7,10 @@
 .sidebar-item {
   margin-bottom: 0.1rem;
 }
+
+.blue-background-image {
+  background-image: url(./assets/blue-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}

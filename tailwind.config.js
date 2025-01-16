@@ -16,6 +16,7 @@ export default {
         dark: "#232323",
         light: "#404040",
         yellow: "#efa32c",
+        blue: "014AAC",
       },
     },
   },

@@ -88,8 +88,8 @@ const SecondRow = () => {
                                     <div><p>INDEX</p></div>
                                 </div>
                                 <div className="commodities-section">
-                                    {card.items.map((item) => (
-                                        <div key={item.name} className={`commodities-item py-1 grid grid-cols-3 `}>
+                                    {card.items.map((item, index) => (
+                                        <div key={index} className={`commodities-item py-1 grid grid-cols-3 `}>
                                             <div className="col-span-2 flex">
                                                 <img
                                                     src={item.image}
