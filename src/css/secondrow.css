@@ -1,4 +1,5 @@
 .sec-dashboard-row {
+  min-width: 98rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
@@ -8,7 +9,7 @@
 .sec-card {
   background-color: #1e1e1e;
   border-radius: 10px;
-  width: 15rem;
+  /* width: 15rem; */
   padding: 15px;
   color: white;
 }
@@ -127,7 +128,7 @@
   .sec-dashboard-row {
     justify-content: center;
   }
-  .sec-card {
+  /* .sec-card {
     width: 20rem;
-  }
+  } */
 }

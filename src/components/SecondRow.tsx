@@ -1,9 +1,10 @@
-import "./secondrow.css";
+import "../css/secondrow.css";
 import { RxDotsVertical } from "react-icons/rx";
 import { FaCircleCheck } from "react-icons/fa6";
 import { Grid, LinearProgress, Typography } from "@mui/material";
 
 const SecondRow = () => {
+    // Define card data
     const cards = [
         {
             title: "Precious Metals",
@@ -69,10 +70,10 @@ const SecondRow = () => {
     ];
 
     return (
-        <div className="sec-dashboard-row">
+        <div className="sec-dashboard-row pb-3">
             <Grid container spacing={1}>
                 {cards.map((card, index) => (
-                    <Grid item xs={12} sm={12} md={6} lg={3} xl={2.4} key={index}>
+                    <Grid item xs={2.4} key={index}>
                         <div className="bg-dark sec-card" style={{ width: "100%" }}>
                             <div className="sec-card-header">
                                 <div className="title">
@@ -88,7 +89,7 @@ const SecondRow = () => {
                                 </div>
                                 <div className="commodities-section">
                                     {card.items.map((item) => (
-                                        <div key={item.name} className={`commodities-item py-2 mb-2 grid grid-cols-3 `}>
+                                        <div key={item.name} className={`commodities-item py-1 grid grid-cols-3 `}>
                                             <div className="col-span-2 flex">
                                                 <img
                                                     src={item.image}
@@ -100,11 +101,8 @@ const SecondRow = () => {
                                                     <p className="text-[0.7rem] text-gray-500">22 DEC 7:20 PM</p>
                                                 </div>
                                             </div>
-
                                             <div>
-
                                                 <div className="d-flex flex-col justify-center">
-
                                                     <Typography className="commodity-score no-margin">
                                                         {item.score}%
                                                     </Typography>

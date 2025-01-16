@@ -108,8 +108,8 @@
 }
 
 .price-driver-item {
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.2rem;
 }
 
 .driver-title {

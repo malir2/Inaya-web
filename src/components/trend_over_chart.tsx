@@ -8,6 +8,7 @@ interface TrendOverLastYearProps {
 type CommodityName = "GOLD" | "SILVER" | "WHEAT" | "PALLADIUM";
 
 const TrendOverLastYear = ({ chartData, selectedCommodity }: TrendOverLastYearProps) => {
+    // Define colors for each commodity
     const colors: Record<CommodityName, string> = {
         GOLD: "#FFD700",
         SILVER: "#C0C0C0",
@@ -15,66 +16,39 @@ const TrendOverLastYear = ({ chartData, selectedCommodity }: TrendOverLastYearPr
         PALLADIUM: "#E6E6FA",
     };
 
+    // Chart options configuration
     const chartOptions: any = {
         chart: {
-            type: "area" as "area",
-            toolbar: {
-                show: false,
-            },
-            zoom: {
-                enabled: false,
-            },
+            type: "area",
+            toolbar: { show: false },
+            zoom: { enabled: false },
         },
-        dataLabels: {
-            enabled: false,
-        },
-        stroke: {
-            curve: "smooth",
-            width: 2,
-        },
-        markers: {
-            size: 0, // Disable the dots
-        },
+        dataLabels: { enabled: false },
+        stroke: { curve: "smooth", width: 2 },
+        markers: { size: 0 },
         xaxis: {
             categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            axisBorder: {
-                show: false,
-            },
-            labels: {
-                style: {
-                    colors: "#FFFFFF",
-                    fontSize: "12px",
-                },
-            },
+            axisBorder: { show: false },
+            labels: { style: { colors: "#FFFFFF", fontSize: "12px" } },
         },
         yaxis: {
             min: 0,
             max: 100,
             tickAmount: 5,
-            labels: {
-                style: {
-                    colors: "#FFFFFF",
-                    fontSize: "12px",
-                },
-            },
+            labels: { style: { colors: "#FFFFFF", fontSize: "12px" } },
         },
-        grid: {
-            borderColor: "#444",
-        },
-        tooltip: {
-            theme: "dark",
-        },
+        grid: { borderColor: "#444" },
+        tooltip: { theme: "dark" },
         colors: Object.values(colors),
     };
 
+    // Prepare chart series data
     const chartSeries = Object.keys(colors).map((commodity, index) => ({
         name: commodity,
         data: chartData[index],
         color: selectedCommodity === commodity ? colors[commodity as CommodityName] : "#444",
         opacity: selectedCommodity === commodity ? 1 : 0.5,
-        stroke: {
-            width: selectedCommodity === commodity ? 3 : 1,
-        },
+        stroke: { width: selectedCommodity === commodity ? 3 : 1 },
     }));
 
     // Ensure the selected commodity is shown above all others

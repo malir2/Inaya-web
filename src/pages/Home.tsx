@@ -181,7 +181,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="w-[100%]">
+                <div className="overflow-x-auto">
                     <Overview />
                 </div>
             </div>

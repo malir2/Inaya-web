@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
 import TrendOverLastYear from "./trend_over_chart";
-import "./firstrow.css";
+import "../css/firstrow.css";
 
 interface Commodity {
     name: string;
@@ -10,6 +10,7 @@ interface Commodity {
     image: string;
 }
 
+// Define commodities data
 const commoditiesData: Commodity[] = [
     { name: "GOLD", riskScore: 67, time: "22 Dec 7:20 PM", image: "https://img.freepik.com/free-photo/high-angle-aesthetic-wallpaper-with-gold-bars_23-2149872246.jpg" },
     { name: "SILVER", riskScore: 48, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCNVWYDQmu3mH5zco0PjSYfjLlQ8QP1nj69A&s" },
@@ -17,21 +18,19 @@ const commoditiesData: Commodity[] = [
     { name: "PALLADIUM", riskScore: 60, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68LEv30kC3Yvo37cduwJeTTc7oRUN2YZZIA&s" },
 ];
 
+// Define price drivers data
 const priceDrivers = [
     {
         title: "Gold Prices Set to Surge Amid Geopolitical Tensions",
-        description:
-            "Gold prices are expected to rise in December 2024 due to geopolitical tensions, economic uncertainty, and demand for safe-haven assets.",
+        description: "Gold prices are expected to rise in December 2024 due to geopolitical tensions, economic uncertainty, and demand for safe-haven assets.",
     },
     {
         title: "Silver Gains Traction as Industrial Demand Grows",
-        description:
-            "Silver demand is increasing due to its usage in green technology and electronics, driving prices higher.",
+        description: "Silver demand is increasing due to its usage in green technology and electronics, driving prices higher.",
     },
     {
         title: "Silver Gains Traction as Industrial Demand Grows",
-        description:
-            "Silver demand is increasing due to its usage in green technology and electronics, driving prices higher.",
+        description: "Silver demand is increasing due to its usage in green technology and electronics, driving prices higher.",
     },
 ];
 
@@ -44,6 +43,7 @@ const FirstRow = () => {
         [60, 62, 28, 61, 53, 65, 34, 66, 68, 20, 72, 74], // PALLADIUM
     ];
 
+    // Handle commodity click event
     const handleCommodityClick = (commodity: Commodity) => {
         setSelectedCommodity(commodity);
     };
@@ -68,7 +68,7 @@ const FirstRow = () => {
                             </div>
                             <div className="commodities-section">
                                 {commoditiesData.map((commodity) => (
-                                    <div key={commodity.name} className={`commodities-item py-3 mb-3 grid grid-cols-2 ${selectedCommodity.name === commodity.name ? 'selected' : ''}`} onClick={() => handleCommodityClick(commodity)}>
+                                    <div key={commodity.name} className={`commodities-item py-3 mb-0 grid grid-cols-2 ${selectedCommodity.name === commodity.name ? 'selected' : ''}`} onClick={() => handleCommodityClick(commodity)}>
                                         <div className="flex">
                                             <img
                                                 src={commodity.image}
@@ -80,11 +80,8 @@ const FirstRow = () => {
                                                 <p className="text-[0.7rem] text-gray-500">22 DEC 7:20 PM</p>
                                             </div>
                                         </div>
-
                                         <div>
-
                                             <div className="d-flex flex-col justify-center">
-
                                                 <Typography className="commodity-score no-margin">
                                                     {commodity.riskScore}%
                                                 </Typography>
@@ -116,13 +113,13 @@ const FirstRow = () => {
                 <Grid item xs={12} sm={12} lg={4} xl={3}>
                     <Card className="card card-styling last-price-drivers no-shadow no-padding no-margin">
                         <CardContent className="no-padding no-margin">
-                            <div className="mb-3">
+                            <div className="mb-1">
                                 <Typography className="section-title no-margin">Last Price Drivers</Typography>
                             </div>
                             <div className="price-drivers-list no-margin">
                                 {priceDrivers.map((driver, index) => (
                                     <div key={index} className="price-driver-item no-margin">
-                                        <div className="flex gap-3">
+                                        <div className="flex gap-2">
                                             <div><span className="fa-solid fa-file text-[#F9A71A]"></span></div>
                                             <div>
                                                 <Typography className="driver-title no-margin">{driver.title}</Typography>
