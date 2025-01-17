@@ -18,11 +18,11 @@ function SignIn() {
                 <p className="text-white text-[0.9rem]">Sign in to continue</p>
                 <div className="mt-10">
                     <div className="relative">
-                        <span className={`${theme === "dark" ? "bg-white " : "bg-[#AFAFAF]"} px-2 text-[0.8rem] absolute top-[-20%] left-[5%]`}>E-mail</span>
+                        <span className={`${theme === "dark" ? "bg-white " : "bg-[#DCDCDC]"} leading-tight px-2 text-[0.8rem] absolute top-[-12%] left-[5%]`}>E-mail</span>
                         <input type="text" className={`${theme === "blue" ? "bg-white" : "bg-[#AFAFAF]"} h-[3rem] w-full rounded`} />
                     </div>
                     <div className="relative mt-7">
-                        <span className={`${theme === "dark" ? "bg-white " : "bg-[#AFAFAF]"} px-2 text-[0.8rem] absolute top-[-10%] left-[5%]`}>Password</span>
+                        <span className={`${theme === "dark" ? "bg-white " : "bg-[#DCDCDC]"} leading-tight px-2 text-[0.8rem] absolute top-[-10%] left-[5%]`}>Password</span>
                         <input type="text" className={`${theme === "blue" ? "bg-white" : "bg-[#AFAFAF]"} h-[3rem] w-full rounded`} />
                         <p className="mt-3 text-end font-medium text-white">Forgot Password?</p>
                     </div>
