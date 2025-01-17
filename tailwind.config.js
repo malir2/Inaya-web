@@ -11,6 +11,7 @@ export default {
       md: "767px",
       lg: "991px",
       xl: "1199px",
+      xxl: "1750px",
     },
     extend: {
       boxShadow: {

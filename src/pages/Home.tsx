@@ -3,6 +3,7 @@ import Overview from "../components/Overview";
 import SideBaar from "../components/SideBaar";
 import { useTheme } from "../context/ThemeChanger";
 import Profile from "../components/Profile";
+import Details from "./Details";
 
 function Home() {
 
@@ -18,6 +19,7 @@ function Home() {
                 {activeTab === 0 && <div className="overflow-x-auto">
                     <Overview />
                 </div>}
+                {activeTab === 1 && <Details />}
                 {activeTab === 4 && <Profile />}
             </div>
         </>
