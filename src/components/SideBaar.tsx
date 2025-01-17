@@ -101,7 +101,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                         </div>
                     </div>
                     {/* Sidebar for small screens */}
-                    <div className={`sidebar bg-dark rounded-xl flex flex-col justify-between transition-all duration-300 ease-in-out fixed top-0 left-0 h-screen overflow-y-auto rounded-tl-none rounded-bl-none z-50 lg:hidden ${isSidebarOpen ? "w-[17rem]" : "w-0 overflow-hidden"}`}>
+                    <div className={`sidebar ${theme === "dark" ? "bg-dark" : "bg-custom-gradient-two"} rounded-xl flex flex-col justify-between transition-all duration-300 ease-in-out fixed top-0 left-0 h-screen overflow-y-auto rounded-tl-none rounded-bl-none z-50 lg:hidden ${isSidebarOpen ? "w-[17rem]" : "w-0 overflow-hidden"}`}>
                         <div className={`${isSidebarOpen ? "block" : "hidden"}`}>
                             <img src={logo} alt="" className="mx-auto mt-3" />
                             <p className="text-center text-white uppercase">We hate to be late</p>
@@ -182,7 +182,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                         </div>
                     </div>
                     <div className="lg:hidden">
-                        <span onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="fa-solid fa-bars text-white text-xl cursor-pointer fixed top-3 left-3 z-50 lg:hidden mt-[0.6rem]"></span>
+                        <span onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="fa-solid fa-bars text-white text-xl cursor-pointer fixed top-2 left-3 z-50 lg:hidden mt-[0.6rem]"></span>
                     </div>
                 </div>
             </div>
