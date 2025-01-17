@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       sand: ["Quicksand", "serif"],
+      poppins: ["Poppins", "serif"],
     },
     screens: {
       sm: "575px",
@@ -12,6 +13,10 @@ export default {
       xl: "1199px",
     },
     extend: {
+      boxShadow: {
+        customShadow:
+          "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em",
+      },
       colors: {
         dark: "#232323",
         light: "#404040",
