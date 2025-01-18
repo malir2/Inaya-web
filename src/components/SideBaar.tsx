@@ -26,6 +26,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                             <div>
                                 <img src={logo} alt="" className="mx-auto mt-3" />
                                 <p className="text-center text-white uppercase">We hate to be late</p>
+                                <div className="w-[88%] mt-3 rounded mx-auto h-[0.1rem] bg-white/50"></div>
                                 <div className="px-2">
                                     <div>
                                         <ul className="mt-7">
@@ -111,6 +112,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                         <div className={`${isSidebarOpen ? "block" : "hidden"} h-[90%]`}>
                             <img src={logo} alt="" className="mx-auto mt-3" />
                             <p className="text-center text-white uppercase">We hate to be late</p>
+                            <div className="w-[88%] mt-3 rounded mx-auto h-[0.1rem] bg-white/50"></div>
                             <div className="flex flex-col h-full">
                                 <div className="px-2 mb-auto">
                                     <div>

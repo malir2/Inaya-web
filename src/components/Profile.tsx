@@ -9,7 +9,7 @@ function Profile() {
     return (
         <div className="w-full">
             <Header />
-            <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} flex rounded-lg overflow-hidden mt-10 p-0`}>
+            <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} flex rounded-xl overflow-hidden mt-10 p-0`}>
                 <div className="w-[100%] md:w-[82%] px-6 py-5">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
@@ -84,7 +84,7 @@ function Profile() {
                             </div>
                         </div>
                         <div className="mt-7">
-                            <button className="text-white shadow-customShadow px-6 py-3 rounded-md">+Add Email Address</button>
+                            <button className="text-white bg-[#404040]/10 px-6 py-3 rounded-md">+Add Email Address</button>
                         </div>
                     </div>
                 </div>

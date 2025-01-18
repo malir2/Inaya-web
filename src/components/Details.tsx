@@ -160,14 +160,14 @@ function Details() {
                                 <button
                                     onClick={() => handleUpClick(scrollRef1)}
                                     disabled={isTop1}
-                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-light text-yellow"} px-2 py-1 rounded ${isTop1 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded ${isTop1 ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
                                     <span className="fa-solid fa-angle-up text-xl"></span>
                                 </button>
                                 <button
                                     onClick={() => handleDownClick(scrollRef1)}
                                     disabled={isBottom1}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-light text-yellow"} px-2 py-1 border-white rounded ${isBottom1 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded ${isBottom1 ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>
@@ -179,7 +179,7 @@ function Details() {
                                     <div className="flex justify-between items-center">
                                         <h1 className="text-white text-2xl">{data.title}</h1>
                                         <div className="w-[20%] h-[1.5rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
-                                            <span style={{ left: `${data?.score}%` }} className={`absolute top-[-5%] w-[0.3rem] bg-gray-700 h-[1.3rem]`}></span>
+                                            <span style={{ left: `${data?.score}%` }} className={`absolute top-[-8%] w-[0.4rem] rounded-b-md bg-gray-600 h-[1.5rem]`}></span>
                                         </div>
                                     </div>
                                     <p className="mt-2 text-gray-400">{data.description}</p>
@@ -191,33 +191,33 @@ function Details() {
                 <div className="col-span-12 xxl:col-span-4 mt-4 xxl:mt-0">
                     <TrendChart />
                     {/* Side bar slider */}
-                    <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-5`}>
-                        <div className="mb-5 flex justify-between items-center">
+                    <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-[1.3rem]`}>
+                        <div className="mb-0 flex justify-between items-center">
                             <h1 className="text-white font-bold text-xl sm:text-3xl">Risk Mitigation Actions</h1>
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => handleUpClick(scrollRef2)}
                                     // disabled={isTop2}
-                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-light text-yellow"} px-2 py-1 rounded ${!isTop2 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded ${!isTop2 ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
                                     <span className="fa-solid fa-angle-up text-xl"></span>
                                 </button>
                                 <button
                                     onClick={() => handleDownClick(scrollRef2)}
                                     disabled={isBottom2}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-light text-yellow"} px-2 py-1 border-white rounded ${isBottom2 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded ${isBottom2 ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>
                             </div>
                         </div>
-                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xxl:h-[30rem] flex flex-col gap-5 scrollbar">
+                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xxl:h-[32rem] flex flex-col gap-5 scrollbar">
                             {dummyData2.map((data, index) => (
                                 <div key={index} className="p-3 border-b-2 border-gray-600 sidebar-data-div">
                                     <div className="flex items-center">
                                         <span className="fa-solid fa-rocket text-white"></span>
                                         <div className="flex justify-between items-center">
-                                            <h1 className="text-white text-2xl ml-3">{data.title}</h1>
+                                            <h1 className="text-white text-2xl ml-3 uppercase font-medium">{data.title}</h1>
                                         </div>
                                     </div>
                                     <p className="mt-2 ml-5 text-gray-400">{data.description}</p>
