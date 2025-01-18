@@ -30,9 +30,24 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .scrollbar::-webkit-scrollbar-thumb {
   background: #232323;
-  border-radius: 2px;
+  border-radius: 0px;
 }
 .scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #232323;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  background: #232323;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: #232323;
+  border-radius: 2px;
+}
+.no-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #232323;
 }
 
