@@ -6,7 +6,7 @@ import { Grid, LinearProgress, Typography } from "@mui/material";
 import { useTheme } from "../context/ThemeChanger";
 
 const SecondRow = () => {
-
+    // Theme context
     const { theme } = useTheme();
 
     // Define card data

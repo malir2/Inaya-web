@@ -8,8 +8,8 @@ import Chatbot from './components/Chatbot';
 function App() {
   return (
     <ThemeProvider>
-      <Chatbot />
       <BrowserRouter>
+        <Chatbot />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/sign-in' element={<SignIn />} />

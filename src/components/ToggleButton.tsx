@@ -3,13 +3,18 @@ import { useTheme } from '../context/ThemeChanger';
 import { useEffect, useState } from 'react';
 
 const Switch = () => {
+  // Theme context
   const { theme, toggleTheme } = useTheme();
+
+  // State for checkbox status
   const [isChecked, setIsChecked] = useState(theme === 'blue');
 
+  // Update checkbox status when theme changes
   useEffect(() => {
     setIsChecked(theme === 'blue');
   }, [theme]);
 
+  // Handle checkbox change
   const handleChange = () => {
     toggleTheme();
     setIsChecked(!isChecked);

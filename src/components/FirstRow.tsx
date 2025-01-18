@@ -36,7 +36,10 @@ const priceDrivers = [
 ];
 
 const FirstRow = () => {
+    // State for selected commodity
     const [selectedCommodity, setSelectedCommodity] = useState<Commodity>(commoditiesData[0]);
+
+    // Chart data for commodities
     const chartData = [
         [67, 40, 65, 88, 72, 35, 70, 73, 16, 78, 50, 82], // GOLD
         [48, 30, 45, 87, 19, 52, 40, 53, 55, 67, 60, 72], // SILVER
@@ -49,6 +52,7 @@ const FirstRow = () => {
         setSelectedCommodity(commodity);
     };
 
+    // Theme context
     const { theme } = useTheme();
 
     return (

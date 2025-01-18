@@ -5,14 +5,20 @@ import "../css/detail.css";
 import TrendChart from "./DetailChart";
 
 function Details() {
+    // Theme context
     const { theme } = useTheme();
+
+    // State variables for scroll position
     const [isTop1, setIsTop1] = useState(true);
     const [isBottom1, setIsBottom1] = useState(false);
     const [isTop2, setIsTop2] = useState(true);
     const [isBottom2, setIsBottom2] = useState(false);
+
+    // References for scrollable containers
     const scrollRef1 = useRef<HTMLDivElement>(null);
     const scrollRef2 = useRef<HTMLDivElement>(null);
 
+    // Dummy data for analysis
     const dummyData = [
         {
             title: "ECONOMIC UNCERTAINTY ",
@@ -69,18 +75,21 @@ function Details() {
         }
     ];
 
+    // Handle scroll up
     const handleUpClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ top: -200, behavior: 'smooth' });
         }
     };
 
+    // Handle scroll down
     const handleDownClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ top: 200, behavior: 'smooth' });
         }
     };
 
+    // Handle scroll event
     const handleScroll = (scrollRef: React.RefObject<HTMLDivElement>, setIsTop: React.Dispatch<React.SetStateAction<boolean>>, setIsBottom: React.Dispatch<React.SetStateAction<boolean>>) => {
         if (scrollRef.current) {
             const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
@@ -89,6 +98,7 @@ function Details() {
         }
     };
 
+    // Add scroll event listeners
     useEffect(() => {
         const scrollElement1 = scrollRef1.current;
         const scrollElement2 = scrollRef2.current;
