@@ -148,7 +148,7 @@ function Details() {
                     </div>
 
                 </div>
-                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 mt-4 ml-0 xl:ml-[2rem] xxl:ml-0 xxl:mt-0">
+                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 mt-4 ml-0 xl:ml-[2rem] min-[1505px]:ml-0 xxl:mt-0">
                     <TrendChart />
                 </div>
             </div>
@@ -187,8 +187,8 @@ function Details() {
                                 <div key={index} className={`rounded-lg p-3 ${theme === "dark" ? "bg-light" : "bg-blue/10"}`}>
                                     <div className="flex justify-between items-center">
                                         <h1 className="text-white text-2xl">{data.title}</h1>
-                                        <div className="shadow-black w-[20%] h-[1.5rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
-                                            <span style={{ left: `${data?.score}%` }} className={`absolute top-[-12%] w-[0.4rem] rounded-b-md bg-gray-600 h-[1.5rem]`}></span>
+                                        <div className="shadow-black w-[20%] xxl:w-[18%] h-[1.3rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
+                                            <span style={{ left: `${data?.score}%` }} className={`absolute top-[-12%] w-[0.5rem] rounded-b-md bg-gray-600 h-[1.3rem]`}></span>
                                         </div>
                                     </div>
                                     <p className="mt-2 text-gray-400">{data.description}</p>
