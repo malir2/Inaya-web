@@ -4,6 +4,7 @@ import SideBaar from "../components/SideBaar";
 import { useTheme } from "../context/ThemeChanger";
 import Profile from "../components/Profile";
 import Details from "../components/Details";
+import New from "../components/New";
 
 function Main() {
     // State to manage the active tab
@@ -20,7 +21,8 @@ function Main() {
                     <Overview />
                 </div>}
                 {activeTab === 1 && <Details />}
-                {activeTab === 4 && <Profile />}
+                {activeTab === 4 && <New />}
+                {activeTab === 5 && <Profile />}
             </div>
         </>
     )

@@ -77,7 +77,7 @@ function Chatbot() {
                     </div>
                 </div>
             )}
-            <div onClick={() => setChatShow(!chatShow)} className={`${theme === "dark" ? "bg-yellow" : "bg-blue"} w-[4rem] h-[4rem] shadow-2xl cursor-pointer rounded-full flex justify-center items-center`}>
+            <div onClick={() => setChatShow(!chatShow)} className={`${theme === "dark" ? "bg-yellow" : "bg-blue"} w-[4rem] h-[4rem] shadow-white cursor-pointer rounded-full flex justify-center items-center`}>
                 <span className={`fa-regular fa-comment ${theme === "dark" ? "text-dark" : "text-white"} text-3xl`}></span>
             </div>
         </div>

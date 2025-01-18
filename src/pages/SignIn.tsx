@@ -30,9 +30,19 @@ function SignIn() {
                     <div className="mt-10">
                         <button className={`${theme === "dark" ? "bg-custom-gradient-yellow" : "bg-custom-gradient"} w-100 text-white py-3 rounded w-full font-medium`}>Sign In</button>
                         <div className="my-3 flex items-center gap-3">
-                            <div className="w-[45%] h-[0.01rem] bg-white "></div>
-                            <span className="text-white">or</span>
-                            <div className="w-[45%] h-[0.01rem] bg-white "></div>
+                            <div className="custom-border w-[45%] flex">
+                                <div className="w-1/2 left-border"></div>
+                                <div className="w-1/2 right-border"></div>
+                            </div>
+                            <div className="px-2">
+                                <span className="text-white">or</span>
+                            </div>
+                            <div className="custom-border w-[45%] flex">
+                                <div className="w-1/2 left-border"></div>
+                                <div className="w-1/2 right-border"></div>
+                            </div>
+                        </div>
+                        <div className="px-2">
                         </div>
                         <button className={`bg-[#AFAFAF] w-100 text-white py-3 rounded w-full font-medium`}>Do you need help?</button>
                     </div>

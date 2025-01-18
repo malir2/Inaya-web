@@ -25,6 +25,7 @@ export default {
         blue: "#014AAC",
         blueLighter: "#DCDCDE",
         blueLight: "#014AAC",
+        grayC: "#868686",
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(85deg, #014AAC 31%, #0A0E23 116%)",
