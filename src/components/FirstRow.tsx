@@ -15,23 +15,23 @@ interface Commodity {
 const commoditiesData: Commodity[] = [
     { name: "GOLD", riskScore: 67, time: "22 Dec 7:20 PM", image: "https://img.freepik.com/free-photo/high-angle-aesthetic-wallpaper-with-gold-bars_23-2149872246.jpg" },
     { name: "SILVER", riskScore: 48, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCNVWYDQmu3mH5zco0PjSYfjLlQ8QP1nj69A&s" },
-    { name: "WHEAT", riskScore: 61, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa0mbwIMEhfljBeVjGfBeQeKRyPjpXYToR7g&s" },
+    { name: "WHEAT", riskScore: 80, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa0mbwIMEhfljBeVjGfBeQeKRyPjpXYToR7g&s" },
     { name: "PALLADIUM", riskScore: 60, time: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68LEv30kC3Yvo37cduwJeTTc7oRUN2YZZIA&s" },
 ];
 
 // Define price drivers data
 const priceDrivers = [
     {
-        title: "Gold Prices Set to Surge Amid Geopolitical Tensions",
-        description: "Gold prices are expected to rise in December 2024 due to geopolitical tensions, economic uncertainty, and demand for safe-haven assets.",
+        title: "Gold Prices Set to Surge Amid Geopolitical Tensions and Economic Uncertainty in December 2024",
+        description: "Gold prices are expected to rise in December 2024 due to geopolitical tensions, including the Israel-Palestine conflict escalating into war, global economic uncertainties and strong safe-haven demand despite pressure from a strong US dollar.",
     },
     {
-        title: "Silver Gains Traction as Industrial Demand Grows",
-        description: "Silver demand is increasing due to its usage in green technology and electronics, driving prices higher.",
+        title: "Middle East Tensions Fuel Rising Gold Demand in December 2024",
+        description: "In December 2024, gold prices are influenced by geopolitical tensions and economic factors. Rising tensions in the Middle East increase demand for gold as a hedge against uncertainty, supporting higher prices in the short term. ",
     },
     {
-        title: "Silver Gains Traction as Industrial Demand Grows",
-        description: "Silver demand is increasing due to its usage in green technology and electronics, driving prices higher.",
+        title: "Emerging Markets Lead Gold Price Surge Through Central Bank Purchases",
+        description: "Increased central bank gold reserves are a key driver for gold prices, with significant purchases from emerging markets and BRICS nations, while Western central banks remain inactive. This trend points to a bullish outlook for gold as demand rises. ",
     },
 ];
 
@@ -125,10 +125,10 @@ const FirstRow = () => {
                                         <div className="flex gap-2">
                                             <div><span className={`fa-solid fa-file ${theme === "dark" ? "text-[#F9A71A]" : "text-blue"}`}></span></div>
                                             <div>
-                                                <Typography className="driver-title no-margin">{driver.title}</Typography>
-                                                <Typography className="driver-description no-margin">
+                                                <h1 className="driver-title no-margin text-[0.6rem]">{driver.title}</h1>
+                                                <p className="driver-description no-margin">
                                                     {driver.description}
-                                                </Typography>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

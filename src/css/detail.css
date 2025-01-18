@@ -5,3 +5,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.detail-chart .chart-line-dark:last-child {
+  background-color: #efa32c;
+}
+.detail-chart .chart-line-blue:last-child {
+  background-color: #014aac;
+}
+.sidebar-data-div:last-child {
+  border-bottom: none;
+}

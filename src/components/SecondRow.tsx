@@ -66,7 +66,6 @@ const SecondRow = () => {
                 { name: "Wheat", score: 61, date: "22 Dec 7:20 PM", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa0mbwIMEhfljBeVjGfBeQeKRyPjpXYToR7g&s" },
             ],
         },
-        // Add more categories here...
     ];
 
     return (

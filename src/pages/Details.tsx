@@ -2,15 +2,51 @@ import { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import { useTheme } from "../context/ThemeChanger";
 import "../css/detail.css";
+import TrendChart from "../components/DetailChart";
 
 function Details() {
     const { theme } = useTheme();
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isTop, setIsTop] = useState(true);
-    const [isBottom, setIsBottom] = useState(false);
-    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isTop1, setIsTop1] = useState(true);
+    const [isBottom1, setIsBottom1] = useState(false);
+    const [isTop2, setIsTop2] = useState(true);
+    const [isBottom2, setIsBottom2] = useState(false);
+    const scrollRef1 = useRef<HTMLDivElement>(null);
+    const scrollRef2 = useRef<HTMLDivElement>(null);
 
     const dummyData = [
+        {
+            title: "ECONOMIC UNCERTAINTY ",
+            description: "Gold prices for December 2024 are expected to rise due to economic and geopolitical uncertainties. The escalation of tensions, such as the Israel-Palestine conflict turning into war, increases market volatility and boosts gold’s appeal as a safe haven, potentially causing short-term price spikes. Global economic uncertainty and lower interest rates, which reduce the opportunity cost of holding gold, further drive demand. While a strong US dollar can pressure gold, recent rebounds in both assets reflect safe-haven demand. If tensions persist and interest rates remain low, gold could reach new highs.",
+            score: '40'
+        },
+        {
+            title: "GEOPOLITICAL TENSIONS",
+            description: "In December 2024, gold prices are influenced by geopolitical tensions and economic factors. Rising tensions in the Middle East increase demand for gold as a hedge against uncertainty, supporting higher prices in the short term. Mixed U.S. economic data, including a weaker labor market, could lead to expectations for interest rate cuts, further boosting gold prices by reducing the opportunity cost of holding bullion. Historically, gold prices rise as real yields on U.S. Treasuries fall. Market forecasts suggest gold could reach $3000 per ounce in the next 6 to 12 months, driven by geopolitical and economic factors.",
+            score: '60'
+        },
+        {
+            title: "CENTRAL BANK GOLD RESERVES",
+            description: "In December 2024, gold prices are influenced by geopolitical tensions and economic factors. Rising tensions in the Middle East increase demand for gold as a hedge against uncertainty, supporting higher prices in the short term. Mixed U.S. economic data, including a weaker labor market, could lead to expectations for interest rate cuts, further boosting gold prices by reducing the opportunity cost of holding bullion. Historically, gold prices rise as real yields on U.S. Treasuries fall. Market forecasts suggest gold could reach $3000 per ounce in the next 6 to 12 months, driven by geopolitical and economic factors.",
+            score: '20'
+        },
+        {
+            title: "ECONOMIC UNCERTAINTY ",
+            description: "Gold prices for December 2024 are expected to rise due to economic and geopolitical uncertainties. The escalation of tensions, such as the Israel-Palestine conflict turning into war, increases market volatility and boosts gold’s appeal as a safe haven, potentially causing short-term price spikes. Global economic uncertainty and lower interest rates, which reduce the opportunity cost of holding gold, further drive demand. While a strong US dollar can pressure gold, recent rebounds in both assets reflect safe-haven demand. If tensions persist and interest rates remain low, gold could reach new highs.",
+            score: '70'
+        },
+        {
+            title: "GEOPOLITICAL TENSIONS",
+            description: "In December 2024, gold prices are influenced by geopolitical tensions and economic factors. Rising tensions in the Middle East increase demand for gold as a hedge against uncertainty, supporting higher prices in the short term. Mixed U.S. economic data, including a weaker labor market, could lead to expectations for interest rate cuts, further boosting gold prices by reducing the opportunity cost of holding bullion. Historically, gold prices rise as real yields on U.S. Treasuries fall. Market forecasts suggest gold could reach $3000 per ounce in the next 6 to 12 months, driven by geopolitical and economic factors.",
+            score: "40"
+        },
+        {
+            title: "CENTRAL BANK GOLD RESERVES",
+            description: "In December 2024, gold prices are influenced by geopolitical tensions and economic factors. Rising tensions in the Middle East increase demand for gold as a hedge against uncertainty, supporting higher prices in the short term. Mixed U.S. economic data, including a weaker labor market, could lead to expectations for interest rate cuts, further boosting gold prices by reducing the opportunity cost of holding bullion. Historically, gold prices rise as real yields on U.S. Treasuries fall. Market forecasts suggest gold could reach $3000 per ounce in the next 6 to 12 months, driven by geopolitical and economic factors.",
+            score: "30"
+        },
+    ];
+
+    const dummyData2 = [
         {
             title: "Cost Intelligence",
             description: "By December 2024, gold prices likely range USD 2200-2500/oz, driven by geopolitical tensions, economic uncertainty, and strong central bank demand. Mixed U.S. economic signals and possible interest rate cuts may enhance gold's appeal, despite challenges posed by a strong U.S. dollar."
@@ -33,19 +69,19 @@ function Details() {
         }
     ];
 
-    const handleUpClick = () => {
+    const handleUpClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ top: -200, behavior: 'smooth' });
         }
     };
 
-    const handleDownClick = () => {
+    const handleDownClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ top: 200, behavior: 'smooth' });
         }
     };
 
-    const handleScroll = () => {
+    const handleScroll = (scrollRef: React.RefObject<HTMLDivElement>, setIsTop: React.Dispatch<React.SetStateAction<boolean>>, setIsBottom: React.Dispatch<React.SetStateAction<boolean>>) => {
         if (scrollRef.current) {
             const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
             setIsTop(scrollTop === 0);
@@ -54,11 +90,20 @@ function Details() {
     };
 
     useEffect(() => {
-        const scrollElement = scrollRef.current;
-        if (scrollElement) {
-            scrollElement.addEventListener('scroll', handleScroll);
+        const scrollElement1 = scrollRef1.current;
+        const scrollElement2 = scrollRef2.current;
+        if (scrollElement1) {
+            const handleScroll1 = () => handleScroll(scrollRef1, setIsTop1, setIsBottom1);
+            scrollElement1.addEventListener('scroll', handleScroll1);
             return () => {
-                scrollElement.removeEventListener('scroll', handleScroll);
+                scrollElement1.removeEventListener('scroll', handleScroll1);
+            };
+        }
+        if (scrollElement2) {
+            const handleScroll2 = () => handleScroll(scrollRef2, setIsTop2, setIsBottom2);
+            scrollElement2.addEventListener('scroll', handleScroll2);
+            return () => {
+                scrollElement2.removeEventListener('scroll', handleScroll2);
             };
         }
     }, []);
@@ -103,28 +148,28 @@ function Details() {
                             <h1 className="text-white font-bold text-3xl">Price Driver Risk Analysis</h1>
                             <div className="flex gap-2">
                                 <button
-                                    onClick={handleUpClick}
-                                    disabled={isTop}
-                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-light text-yellow"} px-2 py-1 rounded ${isTop ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    onClick={() => handleUpClick(scrollRef1)}
+                                    disabled={isTop1}
+                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-light text-yellow"} px-2 py-1 rounded ${isTop1 ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
                                     <span className="fa-solid fa-angle-up text-xl"></span>
                                 </button>
                                 <button
-                                    onClick={handleDownClick}
-                                    disabled={isBottom}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-light text-yellow"} px-2 py-1 border-white rounded ${isBottom ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    onClick={() => handleDownClick(scrollRef1)}
+                                    disabled={isBottom1}
+                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-light text-yellow"} px-2 py-1 border-white rounded ${isBottom1 ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>
                             </div>
                         </div>
-                        <div ref={scrollRef} className="overflow-auto h-[20rem] flex flex-col gap-5 scrollbar">
+                        <div ref={scrollRef1} className="overflow-auto h-[20rem] flex flex-col gap-5 scrollbar">
                             {dummyData.map((data, index) => (
                                 <div key={index} className={`rounded-lg p-3 ${theme === "dark" ? "bg-light" : "bg-blue/10"}`}>
                                     <div className="flex justify-between items-center">
                                         <h1 className="text-white text-2xl">{data.title}</h1>
                                         <div className="w-[20%] h-[1.5rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
-                                            <span className="absolute left-[50%] top-[-5%] w-[0.3rem] bg-gray-700 h-[1.3rem]"></span>
+                                            <span style={{ left: `${data?.score}%` }} className={`absolute top-[-5%] w-[0.3rem] bg-gray-700 h-[1.3rem]`}></span>
                                         </div>
                                     </div>
                                     <p className="mt-2 text-gray-400">{data.description}</p>
@@ -133,7 +178,44 @@ function Details() {
                         </div>
                     </div>
                 </div>
-                <div className="border border-green-600 col-span-4"></div>
+                <div className="col-span-12 xxl:col-span-4 mt-4 xxl:mt-0">
+                    <TrendChart />
+                    {/* Side bar slider */}
+                    <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-5`}>
+                        <div className="mb-5 flex justify-between items-center">
+                            <h1 className="text-white font-bold text-xl sm:text-3xl">Risk Mitigation Actions</h1>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => handleUpClick(scrollRef2)}
+                                    // disabled={isTop2}
+                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-light text-yellow"} px-2 py-1 rounded ${!isTop2 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                >
+                                    <span className="fa-solid fa-angle-up text-xl"></span>
+                                </button>
+                                <button
+                                    onClick={() => handleDownClick(scrollRef2)}
+                                    disabled={isBottom2}
+                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-light text-yellow"} px-2 py-1 border-white rounded ${isBottom2 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                >
+                                    <span className="fa-solid fa-angle-down text-xl"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xxl:h-[30rem] flex flex-col gap-5 scrollbar">
+                            {dummyData2.map((data, index) => (
+                                <div key={index} className="p-3 border-b-2 border-gray-600 sidebar-data-div">
+                                    <div className="flex items-center">
+                                        <span className="fa-solid fa-rocket text-white"></span>
+                                        <div className="flex justify-between items-center">
+                                            <h1 className="text-white text-2xl ml-3">{data.title}</h1>
+                                        </div>
+                                    </div>
+                                    <p className="mt-2 ml-5 text-gray-400">{data.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

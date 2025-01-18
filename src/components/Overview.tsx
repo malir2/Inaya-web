@@ -1,21 +1,22 @@
 
-// import { useTheme } from "../context/ThemeChanger";
+import { useTheme } from "../context/ThemeChanger";
 import FirstRow from "./FirstRow";
 import Header from "./Header";
 import SecondRow from "./SecondRow";
 
 
 export default function Overview() {
-    // const { theme } = useTheme();
+    const { theme } = useTheme();
     return (
         <div>
             {/* Header Section */}
             <Header />
             {/* Welcome Section */}
-            <div className="relative flex w-auto mt-10">
+            <div className="relative flexw-auto mt-10">
                 <h1 className="text-white font-bold text-[2rem]">Welcome Jhon 👋</h1>
-                <div className="absolute bottom-[-1rem] left-[-10px] right-[-10px] w-[100%] md:w-[40%] rounded-xl h-[0.3rem] bg-yellow"></div>
+                {/* <div className="absolute bottom-[-1rem] left-[-10px] right-[-10px] w-[100%] md:w-[40%] rounded-xl h-[0.3rem] bg-yellow"></div> */}
             </div>
+            <div className={`w-[70%] xl:w-[40%] h-[0.3rem] my-2 ${theme === "blue" ? "bg-custom-gradient" : "bg-custom-gradient-yellow"}`}></div>
             {/* First Row Component */}
             <div className="mt-10">
                 <FirstRow />
