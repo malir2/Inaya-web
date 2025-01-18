@@ -8,9 +8,12 @@ interface SideBaarProps {
 }
 
 function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
+    // State to manage the sidebar open/close status
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+    // State to manage the hover tab
     const [hoverTab, setHoverTab] = useState<number | null>(null);
 
+    // Get the current theme from the ThemeChanger context
     const { theme } = useTheme();
 
     return (

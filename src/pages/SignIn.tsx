@@ -4,7 +4,9 @@ import logo from "../assets/INAYA-icon.svg";
 import "../css/signIn.css";
 
 function SignIn() {
+    // Get the current theme from the ThemeChanger context
     const { theme } = useTheme();
+
     return (
         <div className={`w-screen h-screen flex gap-6 justify-center items-center ${theme === 'dark' ? "bg-light" : "blue-background-image"}`}>
             <div className="h-[90%] w-[40%] xl:w-[32%] hidden md:block rounded-lg overflow-hidden">
@@ -13,8 +15,7 @@ function SignIn() {
             <div className="w-[90%] md:w-[40%] xl:w-[25%]">
                 <img src={logo} alt="" className="mx-auto object-cover" />
                 <h1 className="text-[1.8rem] mt-5 text-white font-bold">Hello there.</h1>
-                <div className={`w-full h-[0.3rem] my-2 ${theme === "blue" ? "bg-custom-gradient" : "bg-custom-gradient-yellow"}`}>
-                </div>
+                <div className={`w-full h-[0.3rem] my-2 ${theme === "blue" ? "bg-custom-gradient" : "bg-custom-gradient-yellow"}`}></div>
                 <p className="text-white text-[0.9rem]">Sign in to continue</p>
                 <div className="mt-10">
                     <div className="relative">
@@ -41,4 +42,4 @@ function SignIn() {
     )
 }
 
-export default SignIn
+export default SignIn;

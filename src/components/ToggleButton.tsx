@@ -1,14 +1,30 @@
 import styled from 'styled-components';
 import { useTheme } from '../context/ThemeChanger';
+import { useEffect, useState } from 'react';
 
 const Switch = () => {
-    const { toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
+  const [isChecked, setIsChecked] = useState(theme === 'blue');
 
-    return (
-        <StyledWrapper>
-            <input onChange={toggleTheme} type="checkbox" className="theme-checkbox" />
-        </StyledWrapper>
-    );
+  useEffect(() => {
+    setIsChecked(theme === 'blue');
+  }, [theme]);
+
+  const handleChange = () => {
+    toggleTheme();
+    setIsChecked(!isChecked);
+  };
+
+  return (
+    <StyledWrapper>
+      <input
+        onChange={handleChange}
+        type="checkbox"
+        className="theme-checkbox"
+        checked={isChecked}
+      />
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`

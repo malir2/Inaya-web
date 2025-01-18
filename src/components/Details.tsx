@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import Header from "../components/Header";
+import Header from "./Header";
 import { useTheme } from "../context/ThemeChanger";
 import "../css/detail.css";
-import TrendChart from "../components/DetailChart";
+import TrendChart from "./DetailChart";
 
 function Details() {
     const { theme } = useTheme();
