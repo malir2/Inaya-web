@@ -76,7 +76,7 @@ function New() {
         <div className="w-full">
             <Header />
             <div className="grid grid-cols-12 gap-3 mt-8">
-                <div className="col-span-12 md:col-span-9 order-2 md:order-1 h-[90vh] overflow-auto scrollbar">
+                <div className="col-span-12 md:col-span-9 order-2 md:order-1 h-[90vh] pb-5 overflow-auto scrollbar">
                     <div className="flex flex-wrap gap-5">
                         {cardData.map((card, index) => (
                             <div key={index} className="w-[100%] lg:w-[48%]">

@@ -122,7 +122,7 @@ function Details() {
         <div className="w-full">
             <Header />
             <div className="mt-5 grid grid-cols-12 sm:gap-5">
-                <div className="col-span-12 xxl:col-span-8">
+                <div className="col-span-12 xl:col-span-8">
                     <div className="mt-10 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
                         <div className="rounded-2xl md:w-1/2 p-3 xxl:p-5 h-[100%] flex flex-col detail-picture-section">
                             <div className="mb-auto">
@@ -136,11 +136,11 @@ function Details() {
                         </div>
                         <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} w-[90%] md:w-[40%] rounded-2xl p-3 xxl:p-5 relative flex flex-col`}>
                             <div className="w-1/2 sm:w-full md:w-1/2 mb-auto">
-                                <h1 className="mt-0 text-white text-[1.8rem] xl:text-[2.4rem] font-medium font-poppins">Perception
+                                <h1 className="mt-0 text-white text-[1.8rem] lg:text-[2rem] xxl:text-[2.4rem] font-medium font-poppins">Perception
                                     Index</h1>
                             </div>
                             <p className="text-white mt-[3rem] md:mt-0">From all price drivers</p>
-                            <div className="absolute top-[50%] translate-y-[-50%] left-[65%] sm:left-[86%] md:left-[70%] xxl:left-[60%]">
+                            <div className="absolute top-[50%] translate-y-[-50%] left-[65%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[60%]">
                                 <CircularProgress percentage={67} riskLabel="Medium High Risk" />
                             </div>
                         </div>
@@ -148,12 +148,12 @@ function Details() {
                     </div>
 
                 </div>
-                <div className="col-span-12 xxl:col-span-4 mt-4 xxl:mt-0">
+                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 mt-4 ml-0 xl:ml-[2rem] xxl:ml-0 xxl:mt-0">
                     <TrendChart />
                 </div>
             </div>
             <div className="mt-5 grid grid-cols-12 sm:gap-5">
-                <div className="col-span-12 xxl:col-span-8">
+                <div className="col-span-12 xl:col-span-8">
                     <div className={`rounded-lg p-5 ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
                         <h1 className="text-white font-bold text-3xl">Cost Intelligence</h1>
                         <p className="mt-2 text-gray-400">By December 2024, gold prices likely range USD 2200-2500/oz, driven by geopolitical tensions, economic uncertainty, and strong central bank demand.
@@ -197,12 +197,12 @@ function Details() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-12 xxl:col-span-4 mt-4 xxl:mt-0">
+                <div className="col-span-12 xl:col-span-4 mt-4 xl:mt-0">
 
                     {/* Side bar slider */}
                     <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
                         <div className="mb-0 flex justify-between items-center">
-                            <h1 className="text-white font-bold text-xl sm:text-3xl">Risk Mitigation Actions</h1>
+                            <h1 className="text-white font-bold text-xl sm:text-2xl xxl:text-3xl">Risk Mitigation Actions</h1>
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => handleUpClick(scrollRef2)}
@@ -220,7 +220,7 @@ function Details() {
                                 </button>
                             </div>
                         </div>
-                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xxl:h-[32rem] flex flex-col scrollbar">
+                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xl:h-[32rem] flex flex-col scrollbar">
                             {dummyData2.map((data, index) => (
                                 <div key={index} className="py-3 border-b-2 border-gray-600 sidebar-data-div">
                                     <div className="flex items-center">
