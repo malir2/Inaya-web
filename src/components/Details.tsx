@@ -152,7 +152,7 @@ function Details() {
                     <TrendChart />
                 </div>
             </div>
-            <div className="mt-5 xl:mt-7 grid grid-cols-12 sm:gap-5">
+            <div className="mt-3 xl:mt-7 grid grid-cols-12 sm:gap-5">
                 <div className="col-span-12 xl:col-span-8">
                     <div className={`rounded-lg p-5 ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
                         <h1 className="text-white font-bold text-3xl">Cost Intelligence</h1>
@@ -162,7 +162,7 @@ function Details() {
 
 
                     {/* Analysis Section */}
-                    <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-5`}>
+                    <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
                         <div className="mb-5 flex justify-between items-center">
                             <h1 className="text-white font-bold text-3xl">Price Driver Risk Analysis</h1>
                             <div className="flex gap-2">
@@ -185,9 +185,9 @@ function Details() {
                         <div ref={scrollRef1} className="overflow-auto h-[20rem] flex flex-col gap-5 scrollbar">
                             {dummyData.map((data, index) => (
                                 <div key={index} className={`rounded-lg p-3 ${theme === "dark" ? "bg-light" : "bg-blue/10"}`}>
-                                    <div className="flex justify-between items-center">
-                                        <h1 className="text-white text-2xl">{data.title}</h1>
-                                        <div className="shadow-black w-[20%] xxl:w-[18%] h-[1.3rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
+                                    <div className="flex justify-between flex-wrap items-center">
+                                        <h1 className="text-white text-xl sm:text-2xl">{data.title}</h1>
+                                        <div className="ml-auto shadow-black w-[50%] sm:w-[20%] xxl:w-[18%] h-[1.3rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
                                             <span style={{ left: `${data?.score}%` }} className={`absolute top-[-12%] w-[0.5rem] rounded-b-md bg-gray-600 h-[1.3rem]`}></span>
                                         </div>
                                     </div>
@@ -197,7 +197,7 @@ function Details() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-12 xl:col-span-4 mt-4 md:mt-0">
+                <div className="col-span-12 xl:col-span-4 mt-3 md:mt-0">
 
                     {/* Side bar slider */}
                     <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
