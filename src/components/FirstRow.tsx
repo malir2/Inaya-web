@@ -123,7 +123,7 @@ const FirstRow = () => {
                             <div className="mb-1">
                                 <Typography className="section-title no-margin">Last Price Drivers</Typography>
                             </div>
-                            <div className="price-drivers-list no-margin max-h-[350px] overflow-y-auto">
+                            <div className="price-drivers-list no-margin max-h-[350px] overflow-y-auto no-scrollbar">
                                 {priceDrivers.map((driver, index) => (
                                     <div key={index} className="price-driver-item no-margin">
                                         <div className="flex gap-2">
