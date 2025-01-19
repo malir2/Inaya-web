@@ -148,11 +148,11 @@ function Details() {
                     </div>
 
                 </div>
-                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 mt-4 ml-0 xl:ml-[2rem] min-[1505px]:ml-0 xxl:mt-0">
+                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 xl:mt-4 ml-0 xl:ml-[2rem] min-[1505px]:ml-0 xxl:mt-0">
                     <TrendChart />
                 </div>
             </div>
-            <div className="mt-5 grid grid-cols-12 sm:gap-5">
+            <div className="mt-5 xl:mt-7 grid grid-cols-12 sm:gap-5">
                 <div className="col-span-12 xl:col-span-8">
                     <div className={`rounded-lg p-5 ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
                         <h1 className="text-white font-bold text-3xl">Cost Intelligence</h1>
@@ -197,7 +197,7 @@ function Details() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-12 xl:col-span-4 mt-4 xl:mt-0">
+                <div className="col-span-12 xl:col-span-4 mt-4 md:mt-0">
 
                     {/* Side bar slider */}
                     <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
