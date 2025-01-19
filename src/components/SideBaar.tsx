@@ -22,7 +22,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                 <div className="lg:sticky top-2">
                     {/* Sidebar for big screens */}
                     <div className="sticky top-0">
-                        <div className={`w-[17rem] h-[100vh] xl:h-[100vh] overflow-auto scrollbar hidden sidebar ${theme === "dark" ? "bg-dark" : "bg-custom-gradient-two"} rounded-xl lg:flex flex-col justify-between sticky top-0`}>
+                        <div className={`w-[17rem] h-[100vh] xl:h-[100vh] overflow-auto no-scrollbar hidden sidebar ${theme === "dark" ? "bg-dark" : "bg-custom-gradient-two"} rounded-xl lg:flex flex-col justify-between sticky top-0`}>
                             <div>
                                 <img src={logo} alt="" className="mx-auto mt-3" />
                                 <p className="text-center text-white uppercase">We hate to be late</p>
