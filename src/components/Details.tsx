@@ -153,7 +153,7 @@ function Details() {
                                 </button>
                             </div>
                         </div>
-                        <div ref={scrollRef1} className="overflow-auto h-[20rem] xl:min-h-[35rem] flex flex-col gap-5 scrollbar">
+                        <div ref={scrollRef1} className="overflow-auto h-[20rem] xl:min-h-[35.7rem] flex flex-col gap-5 scrollbar">
                             {dummyData.map((data, index) => (
                                 <div key={index} className={`rounded-2xl p-3 ${theme === "dark" ? "bg-light" : "bg-blue/10"}`}>
                                     <div className="flex justify-between flex-wrap items-center">
@@ -188,7 +188,7 @@ function Details() {
                                 </button>
                             </div>
                         </div>
-                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xl:min-h-[44.7rem] flex flex-col scrollbar">
+                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xl:min-h-[45.3rem] flex flex-col scrollbar">
                             {dummyData2.map((data, index) => (
                                 <div key={index} className="py-3 border-b-2 border-gray-600 sidebar-data-div">
                                     <div className="flex items-center">
