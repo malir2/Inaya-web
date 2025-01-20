@@ -121,7 +121,7 @@ function Details() {
                     </div>
 
                 </div>
-                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 xl:mt-0 ml-0 xl:ml-[2rem] min-[1505px]:ml-0 xxl:mt-0">
+                <div className="col-span-12 xl:col-span-4 xl:mt-0 ml-0 xl:ml-[2rem] min-[1437px]:ml-[1rem] min-[1505px]:ml-0 xxl:mt-0">
                     <TrendChart />
                 </div>
             </div>
