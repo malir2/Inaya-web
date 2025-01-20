@@ -20,6 +20,54 @@ body::-webkit-scrollbar-thumb:hover {
   background: #404040;
 }
 
+select {
+  appearance: none; /* Remove the default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px; /* Adjust padding for comfort */
+  padding-right: 40px; /* Space for the custom arrow */
+  border-radius: 4px; /* Smooth corners */
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='gray' d='M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z'/%3E%3C/svg%3E")
+    no-repeat right 10px center;
+  background-size: 20px 20px; /* Resize arrow to 20x20 */
+  color: #333; /* Text color */
+  font-size: 14px; /* Adjust font size */
+  cursor: pointer;
+  box-shadow: none; /* Remove any extra shadow for a clean look */
+}
+.custom-select {
+  appearance: none; /* Remove the default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px; /* Adjust padding for comfort */
+  padding-right: 40px; /* Space for the custom arrow */
+  border-radius: 4px; /* Smooth corners */
+  background: #868686 url("./assets/arrow-down.png") no-repeat right 10px center;
+  background-size: 20px 20px; /* Resize arrow to 20x20 */
+  font-size: 14px; /* Adjust font size */
+  cursor: pointer;
+  color: white;
+  box-shadow: none; /* Remove any extra shadow for a clean look */
+}
+.custom-select-2 {
+  appearance: none; /* Remove the default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px; /* Adjust padding for comfort */
+  padding-right: 40px; /* Space for the custom arrow */
+  border-radius: 4px; /* Smooth corners */
+  background: #dcdcdc url("./assets/arrow-down.png") no-repeat right 10px center;
+  background-size: 20px 20px; /* Resize arrow to 20x20 */
+  font-size: 14px; /* Adjust font size */
+  cursor: pointer;
+  color: black;
+  box-shadow: none; /* Remove any extra shadow for a clean look */
+}
+
 /* Stylish transparent scrollbar */
 .scrollbar::-webkit-scrollbar {
   width: 4px;

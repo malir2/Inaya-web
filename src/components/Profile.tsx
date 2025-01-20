@@ -25,7 +25,7 @@ function Profile() {
 
     return (
         <div className="w-full">
-            <Header />
+            <Header page={"Profile"} />
             <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} flex rounded-xl overflow-hidden mt-10 p-0`}>
                 <div className="w-[100%] md:w-[82%] px-6 py-5">
                     <div className="flex items-center justify-between">
@@ -46,8 +46,8 @@ function Profile() {
                             <input id="fullName" type="text" placeholder="Full Name" className="bg-white rounded-md py-3 px-3" />
                         </div>
                         <div className="flex flex-col gap-3">
-                            <label htmlFor="nickName" className="text-gray-300">Nick Name</label>
-                            <input id="nickName" type="text" placeholder="Nick Name" className="bg-white rounded-md py-3 px-3" />
+                            <label htmlFor="nickName" className="text-gray-300">Nickname</label>
+                            <input id="nickName" type="text" placeholder="Nickname" className="bg-white rounded-md py-3 px-3" />
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="gender" className="text-gray-300">Gender</label>
@@ -84,7 +84,7 @@ function Profile() {
                         </div>
                     </div>
                     <div className="mt-10">
-                        <h3 className="text-white font-medium text-xl font-poppins">My email Address</h3>
+                        <h3 className="text-white font-medium text-xl font-poppins">My Email Address</h3>
                         <div className="mt-5">
                             <div className="flex gap-4 items-center">
                                 <div className="w-[3rem] h-[3rem] bg-[#4182F9]/20 flex items-center justify-center rounded-full">

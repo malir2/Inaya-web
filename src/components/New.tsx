@@ -74,7 +74,7 @@ function New() {
     const { theme } = useTheme();
     return (
         <div className="w-full">
-            <Header />
+            <Header page={"Global News"} />
             <div className="grid grid-cols-12 gap-3 mt-8">
                 <div className="col-span-12 md:col-span-9 order-2 md:order-1 h-[90vh] pb-5 overflow-auto no-scrollbar">
                     <div className="flex flex-wrap gap-5">
@@ -121,36 +121,32 @@ function New() {
                     <div className="mt-5 gap-2 grid grid-cols-12">
                         <div className="col-span-6 md:col-span-12 flex flex-col gap-1 relative">
                             <label htmlFor="group" className="text-gray-300 text-sm">Commodity Group</label>
-                            <select id="group" className={`${theme === "dark" ? "bg-grayC" : "bg-blueLighter"} rounded-md py-2 px-3 w-full appearance-none text-white`}>
+                            <select id="group" className={`${theme === "dark" ? "custom-select" : "custom-select-2"} rounded-md py-2 px-3 w-full text-white`}>
                                 <option value="" className="text-white"></option>
                                 <option value="" className="text-white">Commodity Group</option>
                             </select>
-                            <span className="absolute right-3 top-[50%] translate-y-[35%] fa-solid fa-chevron-down text-gray-600"></span>
                         </div>
                         <div className="col-span-6 md:col-span-12 flex flex-col gap-1 relative">
                             <label htmlFor="group2" className="text-gray-300 text-sm">Commodity</label>
-                            <select id="group2" className={`${theme === "dark" ? "bg-grayC" : "bg-blueLighter"} rounded-md py-2 px-3 w-full appearance-none text-white`}>
+                            <select id="group2" className={`${theme === "dark" ? "custom-select" : "custom-select-2"} rounded-md py-2 px-3 w-full text-white`}>
                                 <option value="" className="text-white"></option>
                                 <option value="" className="text-white">Commodity</option>
                             </select>
-                            <span className="absolute right-3 top-[50%] translate-y-[35%] fa-solid fa-chevron-down text-gray-600"></span>
                         </div>
                         <div className="col-span-12 grid grid-cols-12 gap-2 mt-0 lg:mt-20">
                             <div className="col-span-6 md:col-span-12 flex flex-col gap-1 relative">
                                 <label htmlFor="sources1" className="text-gray-300 text-sm">Sources</label>
-                                <select id="sources1" className={`${theme === "dark" ? "bg-grayC" : "bg-blueLighter"} rounded-md py-2 px-3 w-full appearance-none text-white`}>
+                                <select id="sources1" className={`${theme === "dark" ? "custom-select" : "custom-select-2"} rounded-md py-2 px-3 w-full text-white`}>
                                     <option value="" className="text-white"></option>
                                     <option value="" className="text-white">Sources</option>
                                 </select>
-                                <span className="absolute right-3 top-[50%] translate-y-[35%] fa-solid fa-chevron-down text-gray-600"></span>
                             </div>
                             <div className="col-span-6 md:col-span-12 flex flex-col gap-1 relative">
                                 <label htmlFor="sources2" className="text-gray-300 text-sm">Sources</label>
-                                <select id="sources2" className={`${theme === "dark" ? "bg-grayC" : "bg-blueLighter"} rounded-md py-2 px-3 w-full appearance-none text-white`}>
+                                <select id="sources2" className={`${theme === "dark" ? "custom-select" : "custom-select-2"} rounded-md py-2 px-3 w-full text-white`}>
                                     <option value="" className="text-white"></option>
                                     <option value="" className="text-white">Sources</option>
                                 </select>
-                                <span className="absolute right-3 top-[50%] translate-y-[35%] fa-solid fa-chevron-down text-gray-600"></span>
                             </div>
                         </div>
                     </div>

@@ -10,7 +10,7 @@ export default function Overview() {
     return (
         <div>
             {/* Header Section */}
-            <Header />
+            <Header page={"Commodities Overview"} />
             {/* Welcome Section */}
             <div className="relative flex w-auto mt-3">
                 <h1 className="text-white font-bold text-[2rem]">Welcome Jhon 👋</h1>

@@ -120,7 +120,7 @@ function Details() {
 
     return (
         <div className="w-full">
-            <Header />
+            <Header page={"Commodities Overview  /  Commodity Details"} />
             <div className="mt-5 grid grid-cols-12 sm:gap-5">
                 <div className="col-span-12 xl:col-span-8">
                     <div className="mt-10 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">

@@ -2,11 +2,31 @@ import Switch from "./ToggleButton";
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeChanger";
 
-function Header() {
-    const { toggleTheme, theme } = useTheme()
+interface CircularProgressProps {
+    page: String;
+}
+
+const Header: React.FC<CircularProgressProps> = ({
+    page
+}) => {
+    const { toggleTheme, theme } = useTheme();
+
+    // Function to format the page title
+    const formatPageTitle = (page: String) => {
+        if (page.includes("/")) {
+            const parts = page.split("/");
+            return (
+                <>
+                    <span className="text-gray-400 font-normal">{parts[0].trim()}</span> / {parts[1].trim()}
+                </>
+            );
+        }
+        return page;
+    };
+
     return (
         <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row sm:items-center justify-between">
-            <h4 className="text-white font-semibold ms-6 lg:ms-0 text-xl">Commodities Overview</h4>
+            <h4 className="text-white font-semibold ms-6 lg:ms-0 text-xl">{formatPageTitle(page)}</h4>
             <div className="flex items-center justify-end gap-2 md:gap-5">
                 {/* Search Input */}
                 <div className={`${theme === "dark" ? "bg-[#868686]" : "bg-white"} px-2 py-1 rounded-2xl`}>
