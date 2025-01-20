@@ -40,7 +40,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                     <div className={`icon-bg flex justify-center ${hoverTab === 0 || activeTab === 0 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
                                                         <span className={`fa-solid fa-chart-simple text-[0.8rem] xxl:text-[1rem] ${hoverTab === 0 || activeTab === 0 ? "text-white" : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
                                                     </div>
-                                                    <p className={`${hoverTab === 0 || activeTab === 0 ? "text-white" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem]`}>Commoditive Overview</p>
+                                                    <p className={`${hoverTab === 0 || activeTab === 0 ? "text-white" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem]`}>Commodities Overview</p>
                                                 </div>
                                             </li>
                                             <li onMouseEnter={() => setHoverTab(1)}
@@ -138,7 +138,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                     <div className={`icon-bg flex justify-center ${hoverTab === 0 || activeTab === 0 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
                                                         <span className={`fa-solid fa-chart-simple ${hoverTab === 0 || activeTab === 0 ? "text-white" : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
                                                     </div>
-                                                    <p className={`${hoverTab === 0 || activeTab === 0 ? "text-white" : "text-[rgb(190,190,190)]"}`}>Commoditive Overview</p>
+                                                    <p className={`${hoverTab === 0 || activeTab === 0 ? "text-white" : "text-[rgb(190,190,190)]"}`}>Commodities Overview</p>
                                                 </div>
                                             </li>
                                             <li onMouseEnter={() => setHoverTab(1)}
