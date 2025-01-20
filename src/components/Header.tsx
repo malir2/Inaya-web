@@ -31,7 +31,7 @@ const Header: React.FC<CircularProgressProps> = ({
                 {/* Search Input */}
                 <div className={`${theme === "dark" ? "bg-[#868686]" : "bg-white"} px-2 py-1 rounded-xl`}>
                     <span className={`fa-solid fa-magnifying-glass ${theme === "dark" ? "text-yellow" : "text-blue"} mr-3`}></span>
-                    <input type="text" placeholder="Type here..." className={`${theme === "dark" ? "bg-[#868686] caret-yellow" : "bg-white caret-blue"} placeholder:font-light ${theme === "dark" ? "placeholder:text-white" : "placeholder:text-dark"} font-poppins w-[6rem] md:w-[12rem] focus-visible:outline-0 text-white focus-visible::border-none text-sm`} />
+                    <input type="text" placeholder="Type here..." className={`${theme === "dark" ? "bg-[#868686] caret-yellow" : "bg-white caret-blue"} placeholder:font-light ${theme === "dark" ? "placeholder:text-white" : "placeholder:text-grayC"} font-poppins w-[6rem] md:w-[12rem] focus-visible:outline-0 text-white focus-visible::border-none text-sm`} />
                 </div>
                 {/* User Icon */}
                 <Link to="/sign-in">
