@@ -21,7 +21,7 @@ export default function Overview() {
                 <FirstRow />
             </div>
             {/* Second Row Component */}
-            <div className="mt-10 w-[100%] overflow-auto scrollbar">
+            <div className="mt-5 md:mt-10 w-[100%] overflow-auto scrollbar">
                 <SecondRow />
             </div>
         </div>

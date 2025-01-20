@@ -33,9 +33,9 @@ function Chatbot() {
 
     return (
         !pathName?.pathname?.includes("sign") &&
-        <div className="fixed bottom-[1rem] right-0 sm:right-[1rem] flex flex-col items-end z-50">
+        <div className="fixed bottom-[1rem] right-0 sm:right-[0.7rem] flex flex-col items-end z-50">
             {chatShow && (
-                <div ref={chatRef} className={`rounded-xl shadow-2xl overflow-hidden mb-[0rem] sm:mb-[-1rem] mr-[2rem] sm:mr-[3rem] sm:w-[20rem] lg:w-[40rem] ${theme === "dark" ? "bg-dark" : "bg-white"} chat-screen`}>
+                <div ref={chatRef} className={`rounded-xl shadow-2xl overflow-hidden mb-[0rem] sm:mb-[-1rem] mr-[2rem] sm:mr-[3rem] sm:w-[30rem] lg:w-[40rem] ${theme === "dark" ? "bg-dark" : "bg-white"} chat-screen`}>
                     <div className={`${theme === "dark" ? "bg-light" : "bg-blue"} px-5 py-3 flex justify-between`}>
                         <div className="flex items-center gap-3">
                             <div className="w-[2.5rem] h-[2.5rem]">
@@ -50,7 +50,7 @@ function Chatbot() {
                             <span className="fa-solid fa-xmark text-dark text-xl"></span>
                         </div>
                     </div>
-                    <div className="px-5 h-[15rem] sm:h-[10rem] lg:h-[20rem] overflow-auto scrollbar">
+                    <div className="px-5 h-[15rem] sm:h-[10rem] xl:h-[20rem] overflow-auto scrollbar">
                         {/* Chat messages */}
                         {[...Array(4)].map((_, index) => (
                             <div key={index} className="mt-5">
