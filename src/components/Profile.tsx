@@ -38,7 +38,7 @@ function Profile() {
                             <div>
                                 <h4 className="text-white font-medium sm:text-xl">Gianluca</h4>
                                 <p className="text-gray-400 mt-0 sm:mt-2 text-[0.7rem] sm:text-base">gianluca@inaya.ai</p>
-                            </div>g
+                            </div>
                         </div>
                         <button className={`text-white ${theme === "blue" ? "bg-blue" : "bg-yellow"} py-2 px-7 rounded-lg`}>Edit</button>
                     </div>
@@ -53,7 +53,7 @@ function Profile() {
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="gender" className="text-gray-300">Gender</label>
-                            <select id="gender" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                            <select id="gender" className="bg-white rounded-md py-3 text-[1rem] px-3 w-full" onChange={checkSelects}>
                                 <option value="" disabled selected hidden>Select Gender</option>
                                 <option value="male" className="text-black">Male</option>
                                 <option value="female" className="text-black">Female</option>
@@ -61,7 +61,7 @@ function Profile() {
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="country" className="text-gray-300">Country</label>
-                            <select id="country" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                            <select id="country" className="bg-white rounded-md py-3 text-[1rem] px-3 w-full" onChange={checkSelects}>
                                 <option value="" disabled selected hidden>Country</option>
                                 <option value="usa" className="text-black">USA</option>
                                 <option value="canada" className="text-black">Canada</option>
@@ -69,7 +69,7 @@ function Profile() {
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="language" className="text-gray-300">Language</label>
-                            <select id="language" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                            <select id="language" className="bg-white rounded-md py-3 text-[1rem] px-3 w-full" onChange={checkSelects}>
                                 <option value="" disabled selected hidden>Language</option>
                                 <option value="english" className="text-black">English</option>
                                 <option value="arabic" className="text-black">Arabic</option>
@@ -79,7 +79,7 @@ function Profile() {
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="timeZone" className="text-gray-300">Time Zone</label>
-                            <select id="timeZone" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                            <select id="timeZone" className="bg-white rounded-md py-3 px-3 text-[1rem] w-full" onChange={checkSelects}>
                                 <option value="" disabled selected hidden>Time Zone</option>
                                 <option value="gmt+1" className="text-black">+1:00 GMT</option>
                             </select>

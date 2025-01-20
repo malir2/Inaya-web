@@ -33,9 +33,9 @@ function Chatbot() {
 
     return (
         !pathName?.pathname?.includes("sign") &&
-        <div className="fixed bottom-[2rem] right-[2rem] flex flex-col items-end z-50">
+        <div className="fixed bottom-[1rem] right-0 sm:right-[1rem] flex flex-col items-end z-50">
             {chatShow && (
-                <div ref={chatRef} className={`rounded-xl shadow-2xl overflow-hidden mb-[-1.5rem] mr-[1.5rem] sm:w-[30rem] lg:w-[50rem] ${theme === "dark" ? "bg-dark" : "bg-white"} chat-screen`}>
+                <div ref={chatRef} className={`rounded-xl shadow-2xl overflow-hidden mb-[0rem] sm:mb-[-1rem] mr-[2rem] sm:mr-[3rem] sm:w-[20rem] lg:w-[40rem] ${theme === "dark" ? "bg-dark" : "bg-white"} chat-screen`}>
                     <div className={`${theme === "dark" ? "bg-light" : "bg-blue"} px-5 py-3 flex justify-between`}>
                         <div className="flex items-center gap-3">
                             <div className="w-[2.5rem] h-[2.5rem]">
@@ -80,8 +80,8 @@ function Chatbot() {
                     </div>
                 </div>
             )}
-            <div onClick={() => setChatShow(!chatShow)} className={`${theme === "dark" ? "bg-yellow" : "bg-blue"} w-[4rem] h-[4rem] shadow-white cursor-pointer rounded-full flex justify-center items-center`}>
-                <span className={`fa-regular fa-comment ${theme === "dark" ? "text-dark" : "text-white"} text-3xl`}></span>
+            <div onClick={() => setChatShow(!chatShow)} className={`${theme === "dark" ? "bg-yellow" : "bg-blue"} w-[3rem] h-[3rem] shadow-white cursor-pointer rounded-full flex justify-center items-center`}>
+                <span className={`fa-regular fa-comment ${theme === "dark" ? "text-dark" : "text-white"} text-xl`}></span>
             </div>
         </div>
     );

@@ -220,7 +220,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                         </div>
                     </div>
                     <div className="lg:hidden">
-                        <span onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="fa-solid fa-bars text-white text-xl cursor-pointer fixed top-2 left-3 z-50 lg:hidden mt-[0.6rem]"></span>
+                        <span onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="fa-solid fa-bars text-white text-xl cursor-pointer absolute top-2 left-3 z-50 lg:hidden mt-[0.6rem]"></span>
                     </div>
                 </div>
             </div>

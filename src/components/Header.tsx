@@ -26,18 +26,18 @@ const Header: React.FC<CircularProgressProps> = ({
 
     return (
         <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row sm:items-center justify-between">
-            <h4 className="text-white font-semibold ms-6 lg:ms-0 text-xl">{formatPageTitle(page)}</h4>
+            <h4 className="text-white font-semibold ms-6 lg:ms-0 text-xl break-words">{formatPageTitle(page)}</h4>
             <div className="flex items-center justify-end gap-2 md:gap-5">
                 {/* Search Input */}
-                <div className={`${theme === "dark" ? "bg-[#868686]" : "bg-white"} px-2 py-1 rounded-xl`}>
+                <div className={`${theme === "dark" ? "bg-[#868686]" : "bg-white"} px-2 py-1 rounded-xl flex`}>
                     <span className={`fa-solid fa-magnifying-glass ${theme === "dark" ? "text-yellow" : "text-blue"} mr-3`}></span>
                     <input type="text" placeholder="Type here..." className={`${theme === "dark" ? "bg-[#868686] text-white caret-yellow" : "bg-white text-black caret-blue"} placeholder:font-light ${theme === "dark" ? "placeholder:text-white" : "placeholder:text-grayC"} font-poppins w-[6rem] md:w-[12rem] focus-visible:outline-0 focus-visible::border-none text-sm`} />
                 </div>
                 {/* User Icon */}
                 <Link to="/sign-in">
-                    <div>
+                    <div className="flex items-center">
                         <span className={`fa-solid fa-user ${theme === "dark" ? "text-yellow" : "text-white"}`}></span>
-                        <span className="text-white ml-3">Sign In</span>
+                        <span className="text-white ml-3 text-nowrap">Sign In</span>
                     </div>
                 </Link>
                 {/* Settings Icon */}

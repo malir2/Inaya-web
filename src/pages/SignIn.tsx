@@ -9,7 +9,7 @@ function SignIn() {
 
     return (
         <div className={`w-screen h-screen flex gap-6 justify-center items-center ${theme === 'dark' ? "bg-light" : "blue-background-image"}`}>
-            <div className="h-[90%] w-[40%] xl:w-[32%] hidden md:block rounded-lg overflow-hidden">
+            <div className="h-[90%] w-[40%] xl:w-[32%] hidden md:block rounded-xl overflow-hidden">
                 <img src={signIn} alt="sign-in" className={`object-cover w-full h-full ${theme === "blue" ? "opacity-100" : "opacity-60"}`} />
             </div>
             <div className="w-[90%] md:w-[40%] xl:w-[25%]">
@@ -20,11 +20,11 @@ function SignIn() {
                 <div className="mt-10">
                     <div className="relative">
                         <span className={`${theme === "dark" ? "bg-white " : "bg-[#DCDCDC]"} font-light leading-tight px-2 text-[0.7rem] absolute top-[-12%] left-[5%]`}>E-mail</span>
-                        <input type="text" className={`${theme === "blue" ? "bg-white" : "bg-[#AFAFAF]"} h-[3rem] w-full rounded`} />
+                        <input type="text" className={`${theme === "blue" ? "bg-white" : "bg-[#AFAFAF]"} h-[3rem] w-full rounded px-3`} />
                     </div>
                     <div className="relative mt-7">
                         <span className={`${theme === "dark" ? "bg-white " : "bg-[#DCDCDC]"} font-light leading-tight px-2 text-[0.7rem] absolute top-[-10%] left-[5%]`}>Password</span>
-                        <input type="text" className={`${theme === "blue" ? "bg-white" : "bg-[#AFAFAF]"} h-[3rem] w-full rounded`} />
+                        <input type="text" className={`${theme === "blue" ? "bg-white" : "bg-[#AFAFAF]"} h-[3rem] w-full rounded px-3`} />
                         <p className="mt-3 text-end font-medium text-white">Forgot Password?</p>
                     </div>
                     <div className="mt-10">

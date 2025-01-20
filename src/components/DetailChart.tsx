@@ -8,8 +8,8 @@ const TrendChart = () => {
     const data = [10, 20, 50, 40, 70, 90, 100, 80, 60]; // Sample data for bars
 
     return (
-        <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} text-white rounded-2xl pt-2 pb-3 px-4 mt-3 md:mt-0 xl:mt-7 xxl:mt-1`}>
-            <h3 className="font-semibold text-[1.3rem] xl:text-[1rem] xxl:text-[2.3rem] mb-2">Trend over last year</h3>
+        <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} text-white rounded-2xl pt-2 pb-3 px-4 mt-3 md:mt-0 xl:mt-4 xxl:mt-1`}>
+            <h3 className="font-semibold text-[1.3rem] xl:text-[1.5rem] xxl:text-[2.3rem] mb-2">Trend over last year</h3>
             <div className={`flex items-end gap-4 px-5 py-4 rounded-xl ${theme === "dark" ? "bg-light" : "bg-blue/20"}`}>
                 {/* Y-axis labels */}
                 <div className="flex flex-col text-white h-20 translate-y-[-0.7rem] text-sm leading-[1.1rem]">

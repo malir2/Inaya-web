@@ -94,9 +94,9 @@ function Details() {
     return (
         <div className="w-full">
             <Header page={"Commodities Overview  /  Commodity Details"} />
-            <div className="mt-5 grid grid-cols-12 sm:gap-5">
+            <div className="mt-1 xxl:mt-5 grid grid-cols-12 sm:gap-5">
                 <div className="col-span-12 xl:col-span-8">
-                    <div className="mt-10 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
+                    <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
                         <div className="rounded-2xl md:w-1/2 p-3 xxl:p-5 h-[100%] flex flex-col detail-picture-section">
                             <div className="mb-auto">
                                 <div className="inline-flex items-center gap-2 bg-white rounded-xl px-3">
@@ -107,13 +107,13 @@ function Details() {
                             </div>
                             <p className="mt-5 text-white">Last refreshed: 5 minutes ago</p>
                         </div>
-                        <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} w-[90%] md:w-[40%] rounded-2xl p-3 xxl:p-5 relative flex flex-col`}>
+                        <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} w-[100%] sm:w-[90%] md:w-[40%] rounded-2xl p-3 xxl:p-5 relative flex flex-col`}>
                             <div className="w-1/2 sm:w-full md:w-1/2 mb-auto">
                                 <h1 className="mt-0 text-white text-[1.8rem] lg:text-[2rem] xxl:text-[2.4rem] font-medium font-poppins">Perception
                                     Index</h1>
                             </div>
                             <p className="text-white mt-[3rem] md:mt-0">From all price drivers</p>
-                            <div className="absolute top-[50%] translate-y-[-50%] left-[65%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[63%]">
+                            <div className="absolute top-[50%] translate-y-[-50%] left-[60%] min-[407px]:left-[70%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[63%]">
                                 <CircularProgress percentage={67} riskLabel="Medium High Risk" theme={theme} />
                             </div>
                         </div>
@@ -121,7 +121,7 @@ function Details() {
                     </div>
 
                 </div>
-                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 xl:mt-4 ml-0 xl:ml-[2rem] min-[1505px]:ml-0 xxl:mt-0">
+                <div className="col-span-12 xl:col-span-4 xxl:col-span-4 xl:mt-0 ml-0 xl:ml-[2rem] min-[1505px]:ml-0 xxl:mt-0">
                     <TrendChart />
                 </div>
             </div>
@@ -158,7 +158,7 @@ function Details() {
                                 <div key={index} className={`rounded-2xl p-3 ${theme === "dark" ? "bg-light" : "bg-blue/10"}`}>
                                     <div className="flex justify-between flex-wrap items-center">
                                         <h1 className="text-white text-xl sm:text-2xl">{data.title}</h1>
-                                        <div className="ml-auto shadow-black w-[50%] sm:w-[20%] xxl:w-[18%] h-[1.3rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
+                                        <div className="ml-auto shadow-black w-[50%] sm:w-[20%] xxl:w-[18%] h-[1.3rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-0 xxl:mr-5 relative">
                                             <span style={{ left: `${data?.score}%` }} className={`absolute top-[-12%] w-[0.5rem] rounded-b-md bg-gray-600 h-[1.3rem]`}></span>
                                         </div>
                                     </div>
@@ -192,7 +192,7 @@ function Details() {
                             {dummyData2.map((data, index) => (
                                 <div key={index} className="py-3 border-b-2 border-gray-600 sidebar-data-div">
                                     <div className="flex items-center">
-                                        <span className="fa-solid fa-rocket text-white"></span>
+                                        <span className="fa-solid fa-rocket text-white text-sm"></span>
                                         <div className="flex justify-between items-center">
                                             <h1 className="text-white
                                             text-lg xxl:text-2xl ml-3 uppercase font-medium">{data.title}</h1>
