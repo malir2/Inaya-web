@@ -2,3 +2,15 @@
   background-color: #1e1e1e9d;
   color: #ffffff;
 }
+
+select:invalid {
+  color: gray;
+}
+
+select option {
+  color: black;
+}
+
+select:invalid option {
+  color: gray;
+}

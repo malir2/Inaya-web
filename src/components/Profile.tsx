@@ -1,11 +1,28 @@
-// import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeChanger";
 import profileImage from "../assets/profile.png";
 import "../css/profile.css";
 import Header from "./Header";
+import { useEffect } from "react";
 
 function Profile() {
     const { theme } = useTheme();
+
+    // Function to check if any select is empty and apply placeholder color
+    const checkSelects = () => {
+        const selects = document.querySelectorAll("select");
+        selects.forEach(select => {
+            if (!select.value) {
+                select.classList.add("text-gray-500");
+            } else {
+                select.classList.remove("text-gray-500");
+            }
+        });
+    };
+
+    useEffect(() => {
+        checkSelects();
+    }, []);
+
     return (
         <div className="w-full">
             <Header />
@@ -34,40 +51,36 @@ function Profile() {
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="gender" className="text-gray-300">Gender</label>
-                            <select id="gender" className="bg-white rounded-md py-3 px-3 w-full appearance-none text-black">
-                                <option value="" disabled selected>Select Gender</option>
+                            <select id="gender" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                                <option value="" disabled selected hidden>Select Gender</option>
                                 <option value="male" className="text-black">Male</option>
                                 <option value="female" className="text-black">Female</option>
                             </select>
-                            <span className="absolute right-3 top-[50%] translate-y-[50%] fa-solid fa-chevron-down text-gray-500"></span>
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="country" className="text-gray-300">Country</label>
-                            <select id="country" className="bg-white rounded-md py-3 px-3 w-full appearance-none text-black">
-                                <option value="" disabled selected>Country</option>
-                                <option value="male" className="text-black">USA</option>
-                                <option value="female" className="text-black">Canada</option>
+                            <select id="country" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                                <option value="" disabled selected hidden>Country</option>
+                                <option value="usa" className="text-black">USA</option>
+                                <option value="canada" className="text-black">Canada</option>
                             </select>
-                            <span className="absolute right-3 top-[50%] translate-y-[50%] fa-solid fa-chevron-down text-gray-500"></span>
                         </div>
                         <div className="flex flex-col gap-3 relative">
-                            <label htmlFor="country" className="text-gray-300">Language</label>
-                            <select id="country" className="bg-white rounded-md py-3 px-3 w-full appearance-none text-black">
-                                <option value="" disabled selected>Language</option>
-                                <option value="male" className="text-black">English</option>
-                                <option value="female" className="text-black">Arabic</option>
-                                <option value="female" className="text-black">Urdu</option>
-                                <option value="female" className="text-black">Italian</option>
+                            <label htmlFor="language" className="text-gray-300">Language</label>
+                            <select id="language" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                                <option value="" disabled selected hidden>Language</option>
+                                <option value="english" className="text-black">English</option>
+                                <option value="arabic" className="text-black">Arabic</option>
+                                <option value="urdu" className="text-black">Urdu</option>
+                                <option value="italian" className="text-black">Italian</option>
                             </select>
-                            <span className="absolute right-3 top-[50%] translate-y-[50%] fa-solid fa-chevron-down text-gray-500"></span>
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="timeZone" className="text-gray-300">Time Zone</label>
-                            <select id="timeZone" className="bg-white rounded-md py-3 px-3 w-full appearance-none text-black">
-                                <option value="" disabled selected>Time Zone</option>
-                                <option value="male" className="text-black">+1:00 GMT</option>
+                            <select id="timeZone" className="bg-white rounded-md py-3 px-3 w-full" onChange={checkSelects}>
+                                <option value="" disabled selected hidden>Time Zone</option>
+                                <option value="gmt+1" className="text-black">+1:00 GMT</option>
                             </select>
-                            <span className="absolute right-3 top-[50%] translate-y-[50%] fa-solid fa-chevron-down text-gray-500"></span>
                         </div>
                     </div>
                     <div className="mt-10">
