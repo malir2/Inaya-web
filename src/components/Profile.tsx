@@ -13,8 +13,10 @@ function Profile() {
         selects.forEach(select => {
             if (!select.value) {
                 select.classList.add("text-gray-500");
+                select.classList.remove("text-black");
             } else {
                 select.classList.remove("text-gray-500");
+                select.classList.add("text-black");
             }
         });
     };
@@ -24,7 +26,7 @@ function Profile() {
     }, []);
 
     return (
-        <div className="w-full">
+        <div className="w-full h-full">
             <Header page={"Profile"} />
             <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} flex rounded-xl overflow-hidden mt-10 p-0`}>
                 <div className="w-[100%] md:w-[82%] px-6 py-5">
@@ -36,18 +38,18 @@ function Profile() {
                             <div>
                                 <h4 className="text-white font-medium sm:text-xl">Gianluca</h4>
                                 <p className="text-gray-400 mt-0 sm:mt-2 text-[0.7rem] sm:text-base">gianluca@inaya.ai</p>
-                            </div>
+                            </div>g
                         </div>
                         <button className={`text-white ${theme === "blue" ? "bg-blue" : "bg-yellow"} py-2 px-7 rounded-lg`}>Edit</button>
                     </div>
                     <div className="mt-7 gap-4 md:gap-7 grid grid-cols-1 md:grid-cols-2">
                         <div className="flex flex-col gap-3">
                             <label htmlFor="fullName" className="text-gray-300">Full Name</label>
-                            <input id="fullName" type="text" placeholder="Full Name" className="bg-white rounded-md py-3 px-3" />
+                            <input id="fullName" type="text" placeholder="Full Name" className="bg-white rounded-md py-3 px-3 text-black" />
                         </div>
                         <div className="flex flex-col gap-3">
                             <label htmlFor="nickName" className="text-gray-300">Nickname</label>
-                            <input id="nickName" type="text" placeholder="Nickname" className="bg-white rounded-md py-3 px-3" />
+                            <input id="nickName" type="text" placeholder="Nickname" className="bg-white rounded-md py-3 px-3 text-black" />
                         </div>
                         <div className="flex flex-col gap-3 relative">
                             <label htmlFor="gender" className="text-gray-300">Gender</label>
