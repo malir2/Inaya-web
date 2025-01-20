@@ -6,12 +6,12 @@ function Header() {
     const { toggleTheme, theme } = useTheme()
     return (
         <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row sm:items-center justify-between">
-            <h4 className="text-white font-semibold ms-6 lg:ms-0">Commodities Overview</h4>
+            <h4 className="text-white font-semibold ms-6 lg:ms-0 text-xl">Commodities Overview</h4>
             <div className="flex items-center justify-end gap-2 md:gap-5">
                 {/* Search Input */}
-                <div className={`${theme === "dark" ? "bg-[#868686]" : "bg-white"} px-2 py-1 rounded-xl`}>
+                <div className={`${theme === "dark" ? "bg-[#868686]" : "bg-white"} px-2 py-1 rounded-2xl`}>
                     <span className={`fa-solid fa-magnifying-glass ${theme === "dark" ? "text-yellow" : "text-blue"} mr-3`}></span>
-                    <input type="text" placeholder="Type here..." className={`${theme === "dark" ? "bg-[#868686] caret-yellow" : "bg-white caret-blue"} w-[6rem] md:w-[12rem] focus-visible:outline-0 text-white focus-visible::border-none`} />
+                    <input type="text" placeholder="Type here..." className={`${theme === "dark" ? "bg-[#868686] caret-yellow" : "bg-white caret-blue"} placeholder:text-${theme === "dark" ? "white" : "dark"} font-poppins w-[6rem] md:w-[12rem] focus-visible:outline-0 text-white focus-visible::border-none`} />
                 </div>
                 {/* User Icon */}
                 <Link to="/sign-in">

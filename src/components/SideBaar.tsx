@@ -22,14 +22,14 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                 <div className="lg:sticky top-2">
                     {/* Sidebar for big screens */}
                     <div className="sticky top-0">
-                        <div className={`w-[17rem] h-[100vh] xl:h-[100vh] overflow-auto no-scrollbar hidden sidebar ${theme === "dark" ? "bg-dark" : "bg-custom-gradient-two"} rounded-xl lg:flex flex-col justify-between sticky top-0`}>
+                        <div className={`w-[17.5rem] h-[100vh] xl:h-[97.8vh] overflow-auto no-scrollbar hidden sidebar ${theme === "dark" ? "bg-dark" : "bg-custom-gradient-two"} rounded-xl lg:flex flex-col justify-between sticky top-0`}>
                             <div>
                                 <img src={logo} alt="" className="mx-auto mt-3" />
                                 <p className="text-center text-white uppercase">We hate to be late</p>
                                 <div className="custom-border w-[87%] mx-auto flex mt-3">
                                     <div className="w-1/2 left-border"></div>
                                     <div className="w-1/2 right-border"></div></div>
-                                <div className="px-2">
+                                <div className="px-4">
                                     <div>
                                         <ul className="mt-7">
                                             <li onMouseEnter={() => setHoverTab(0)}
@@ -93,7 +93,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                 </div>
                             </div>
                             <div className="mb-6">
-                                <ul className="px-2 mb-5"><li className="text-[rgb(190,190,190)]/60 pl-3">Account Pages</li>
+                                <ul className="px-4 mb-7 xl:mb-12"><li className="text-[rgb(190,190,190)]/60 pl-3">Account Pages</li>
                                     <li onMouseEnter={() => setHoverTab(5)}
                                         onClick={() => setactiveTab(5)}
                                         onMouseLeave={() => setHoverTab(null)}

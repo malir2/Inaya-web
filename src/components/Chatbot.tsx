@@ -70,9 +70,12 @@ function Chatbot() {
                         ))}
                     </div>
                     <div className="mt-5">
-                        <div className={`w-[50%] h-[1px] ${theme === "dark" ? "bg-white" : "bg-gray-500"}`}></div>
-                        <div>
+                        <div className={`w-[100%] h-[1px] ${theme === "dark" ? "bg-white" : "bg-gray-500"}`}></div>
+                        <div className="flex items-center pr-5">
                             <input type="text" className={`w-full bg-transparent p-5 ${theme === "dark" ? "text-white caret-yellow" : "text-black caret-blue"} border-0 outline-0`} placeholder="Type message..." />
+                            <button className={`${theme === "dark" ? "bg-yellow" : "bg-blue"} rounded-lg w-[2rem] h-[2rem] flex justify-center items-center`}>
+                                <span className="fa-solid fa-paper-plane text-white"></span>
+                            </button>
                         </div>
                     </div>
                 </div>

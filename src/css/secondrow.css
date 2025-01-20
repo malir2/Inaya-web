@@ -8,7 +8,6 @@
 
 .sec-card {
   background-color: #1e1e1e;
-  border-radius: 10px;
   /* width: 15rem; */
   padding: 15px;
   color: white;
@@ -133,6 +132,13 @@
 
 .commodities-section-set {
   margin-bottom: 0;
+}
+
+.commodity-progress2 {
+  height: 3px !important;
+  background-color: #2d2e5f !important;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 767px) {

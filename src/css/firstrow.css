@@ -1,6 +1,6 @@
 /* General Layout */
 .first-row {
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #1e1e1e;
   color: #ffffff;
   border-radius: 20px;
@@ -45,7 +45,15 @@
 /* Saved Commodities Section */
 .commodities-section .commodities-item {
   font-family: "Quicksand", serif !important;
+}
+.commodities-section .commodities-item-container {
   border-bottom: 1px solid #56577a;
+}
+.commodities-section .commodities-item-container2 {
+  border-bottom: 1px solid #56577a;
+}
+.commodities-section .commodities-item-container:last-child {
+  border-bottom: none;
 }
 .commodities-section .commodities-item:hover {
   background-color: #f9a71a47;
@@ -94,6 +102,7 @@
 }
 
 .commodity-progress {
+  width: 70%;
   height: 3px !important;
   background-color: #2d2e5f !important;
   border-radius: 5px;
@@ -105,10 +114,6 @@
   font-weight: bold;
   color: white;
   margin-left: 15px;
-}
-
-.css-l16vtb-MuiLinearProgress-bar1 {
-  background-color: #e88b02 !important;
 }
 
 /* Trend Over Last Year Section */
@@ -133,7 +138,6 @@
 
 .driver-title {
   font-size: 14px;
-  font-weight: bold;
   color: #ffffff;
   margin-bottom: 5px;
 }
@@ -162,4 +166,16 @@
 
 .css-1sfzz2f {
   background-color: #e88b02 !important;
+}
+
+.progress-high .MuiLinearProgress-bar {
+  background-color: #ae0000;
+}
+
+.progress-medium .MuiLinearProgress-bar {
+  background-color: #e88b02;
+}
+
+.progress-low .MuiLinearProgress-bar {
+  background-color: #e6e939;
 }

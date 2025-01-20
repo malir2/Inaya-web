@@ -15,7 +15,7 @@ function Main() {
 
     return (
         <>
-            <div className={`flex justify-center lg:justify-between lg:gap-4 w-full ${theme === 'dark' ? "bg-light" : "blue-background-image"} h-auto py-3 px-5`}>
+            <div className={`flex justify-center lg:justify-between lg:gap-4 w-full ${theme === 'dark' ? "bg-light" : "blue-background-image"} h-auto py-3 px-3`}>
                 <SideBaar activeTab={activeTab} setactiveTab={setactiveTab} />
                 {activeTab === 0 && <div className="overflow-x-auto">
                     <Overview />

@@ -140,8 +140,8 @@ function Details() {
                                     Index</h1>
                             </div>
                             <p className="text-white mt-[3rem] md:mt-0">From all price drivers</p>
-                            <div className="absolute top-[50%] translate-y-[-50%] left-[65%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[60%]">
-                                <CircularProgress percentage={67} riskLabel="Medium High Risk" />
+                            <div className="absolute top-[50%] translate-y-[-50%] left-[65%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[63%]">
+                                <CircularProgress percentage={67} riskLabel="Medium High Risk" theme={theme} />
                             </div>
                         </div>
 
@@ -154,37 +154,35 @@ function Details() {
             </div>
             <div className="mt-3 xl:mt-7 grid grid-cols-12 sm:gap-5">
                 <div className="col-span-12 xl:col-span-8">
-                    <div className={`rounded-lg p-5 ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
-                        <h1 className="text-white font-bold text-3xl">Cost Intelligence</h1>
-                        <p className="mt-2 text-gray-400">By December 2024, gold prices likely range USD 2200-2500/oz, driven by geopolitical tensions, economic uncertainty, and strong central bank demand.
+                    <div className={`rounded-2xl pt-1 pb-3 px-5 ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
+                        <h1 className="text-white font-bold text-[1.9rem] xxl:text-[2.2rem]">Cost Intelligence</h1>
+                        <p className="mt-0 text-gray-400">By December 2024, gold prices likely range USD 2200-2500/oz, driven by geopolitical tensions, economic uncertainty, and strong central bank demand.
                             Mixed U.S. economic signals and possible interest rate cuts may enhance gold's appeal, despite challenges posed by a strong U.S. dollar.</p>
                     </div>
 
 
                     {/* Analysis Section */}
-                    <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
-                        <div className="mb-5 flex justify-between items-center">
-                            <h1 className="text-white font-bold text-3xl">Price Driver Risk Analysis</h1>
+                    <div className={`rounded-2xl px-5 pb-3 pt-1 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
+                        <div className="mb-1 flex justify-between items-center">
+                            <h1 className="text-white font-bold text-[1.9rem] xxl:text-[2.2rem]">Price Driver Risk Analysis</h1>
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => handleUpClick(scrollRef1)}
-                                    disabled={isTop1}
-                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded ${isTop1 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-up text-xl"></span>
                                 </button>
                                 <button
                                     onClick={() => handleDownClick(scrollRef1)}
-                                    disabled={isBottom1}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded ${isBottom1 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>
                             </div>
                         </div>
-                        <div ref={scrollRef1} className="overflow-auto h-[20rem] flex flex-col gap-5 scrollbar">
+                        <div ref={scrollRef1} className="overflow-auto h-[20rem] xl:min-h-[38rem] flex flex-col gap-5 scrollbar">
                             {dummyData.map((data, index) => (
-                                <div key={index} className={`rounded-lg p-3 ${theme === "dark" ? "bg-light" : "bg-blue/10"}`}>
+                                <div key={index} className={`rounded-2xl p-3 ${theme === "dark" ? "bg-light" : "bg-blue/10"}`}>
                                     <div className="flex justify-between flex-wrap items-center">
                                         <h1 className="text-white text-xl sm:text-2xl">{data.title}</h1>
                                         <div className="ml-auto shadow-black w-[50%] sm:w-[20%] xxl:w-[18%] h-[1.3rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-5 relative">
@@ -198,29 +196,26 @@ function Details() {
                     </div>
                 </div>
                 <div className="col-span-12 xl:col-span-4 mt-3 md:mt-0">
-
                     {/* Side bar slider */}
-                    <div className={`rounded-lg p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
+                    <div className={`rounded-2xl p-5 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
                         <div className="mb-0 flex justify-between items-center">
-                            <h1 className="text-white font-bold text-xl sm:text-2xl xxl:text-3xl">Risk Mitigation Actions</h1>
+                            <h1 className="text-white font-bold text-xl text-[1.7rem] xxl:text-[2.1rem]">Risk Mitigation Actions</h1>
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => handleUpClick(scrollRef2)}
-                                    // disabled={isTop2}
-                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded ${!isTop2 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-up text-xl"></span>
                                 </button>
                                 <button
                                     onClick={() => handleDownClick(scrollRef2)}
-                                    disabled={isBottom2}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded ${isBottom2 ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>
                             </div>
                         </div>
-                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xl:h-[32rem] flex flex-col scrollbar">
+                        <div ref={scrollRef2} className="overflow-auto h-[20rem] xl:min-h-[47.5rem] flex flex-col scrollbar">
                             {dummyData2.map((data, index) => (
                                 <div key={index} className="py-3 border-b-2 border-gray-600 sidebar-data-div">
                                     <div className="flex items-center">
@@ -245,16 +240,21 @@ function Details() {
 interface CircularProgressProps {
     percentage: number;
     riskLabel: string;
+    theme: string;
 }
 
 const CircularProgress: React.FC<CircularProgressProps> = ({
     percentage,
     riskLabel,
+    theme
 }) => {
+
     const radius = 16; // Radius of the circle
     const circumference = 2 * Math.PI * radius; // Circumference of the circle
     const strokeDashoffset =
         circumference - (percentage / 100) * circumference; // Anticlockwise progress
+
+
 
     return (
         <div className="relative w-auto h-auto rounded-full overflow-hidden">
@@ -294,7 +294,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
             </svg>
 
             {/* Inner Content */}
-            <div className="text-center bg-dark/70 w-[9rem] h-[9rem] xl:w-[12rem] xl:h-[12rem] xxl:w-[15rem] xxl:h-[15rem] flex items-center flex-col justify-center rounded-full">
+            <div className={`text-center ${theme === "dark" ? "bg-dark" : "bg-blue"} w-[9rem] h-[9rem] xl:w-[12rem] xl:h-[12rem] xxl:w-[15rem] xxl:h-[15rem] flex items-center flex-col justify-center rounded-full`}>
                 <div className="text-amber-500 text-lg">⚠️</div>
                 <div className="text-[1rem] xl:text-[2rem] xxl:text-[4rem] font-bold text-white font-poppins">{percentage}%</div>
                 <div className="text-[0.7rem] xl:text-sm text-gray-400">{riskLabel}</div>
