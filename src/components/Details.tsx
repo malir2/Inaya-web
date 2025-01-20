@@ -48,25 +48,33 @@ function Details() {
 
     const dummyData2 = [
         {
-            title: "Cost Intelligence",
-            description: "By December 2024, gold prices likely range USD 2200-2500/oz, driven by geopolitical tensions, economic uncertainty, and strong central bank demand. Mixed U.S. economic signals and possible interest rate cuts may enhance gold's appeal, despite challenges posed by a strong U.S. dollar."
+            title: "Implement Hedging Strategies",
+            description: "Use futures and options to hedge against gold price fluctuations and reduce exposure."
         },
         {
-            title: "Market Analysis",
-            description: "The market is expected to see significant growth in the coming months due to increased demand and favorable economic conditions."
+            title: "Diversify Investment Portfolio",
+            description: "Spread investments across various assets to mitigate risks from gold price volatility and economic uncertainties."
         },
         {
-            title: "Economic Forecast",
-            description: "Economic indicators suggest a positive outlook for the next quarter, with potential for increased investment and consumer spending."
+            title: "Employ Currency Hedging",
+            description: "Use currency derivatives to protect against US dollar fluctuations impacting gold investments."
         },
         {
-            title: "Economic Forecast",
-            description: "Economic indicators suggest a positive outlook for the next quarter, with potential for increased investment and consumer spending."
+            title: "Monitor Central Bank Actions",
+            description: "Stay informed on central bank gold purchases to adjust strategies based on market influences."
         },
         {
-            title: "Economic Forecast",
-            description: "Economic indicators suggest a positive outlook for the next quarter, with potential for increased investment and consumer spending."
-        }
+            title: "Stay Alert to Geopolitical Events",
+            description: "Regularly assess geopolitical developments to proactively manage risks affecting gold prices."
+        },
+        {
+            title: "Anticipate Interest Rate Changes",
+            description: "Adjust gold positions in response to potential US interest rate cuts influencing opportunity costs."
+        },
+        {
+            title: "Use Stop-Loss Orders",
+            description: "Set stop-loss orders to limit potential losses if gold prices fall unexpectedly."
+        },
     ];
 
     // Handle scroll up
@@ -186,7 +194,8 @@ function Details() {
                                     <div className="flex items-center">
                                         <span className="fa-solid fa-rocket text-white"></span>
                                         <div className="flex justify-between items-center">
-                                            <h1 className="text-white text-2xl ml-3 uppercase font-medium">{data.title}</h1>
+                                            <h1 className="text-white
+                                            text-lg xxl:text-2xl ml-3 uppercase font-medium">{data.title}</h1>
                                         </div>
                                     </div>
                                     <p className="mt-2 ml-5 text-gray-400">{data.description}</p>
