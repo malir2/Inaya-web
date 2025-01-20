@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 import Header from "./Header";
 import { useTheme } from "../context/ThemeChanger";
 import "../css/detail.css";
@@ -8,11 +8,7 @@ function Details() {
     // Theme context
     const { theme } = useTheme();
 
-    // State variables for scroll position
-    const [isTop1, setIsTop1] = useState(true);
-    const [isBottom1, setIsBottom1] = useState(false);
-    const [isTop2, setIsTop2] = useState(true);
-    const [isBottom2, setIsBottom2] = useState(false);
+
 
     // References for scrollable containers
     const scrollRef1 = useRef<HTMLDivElement>(null);
@@ -88,35 +84,6 @@ function Details() {
             scrollRef.current.scrollBy({ top: 200, behavior: 'smooth' });
         }
     };
-
-    // Handle scroll event
-    const handleScroll = (scrollRef: React.RefObject<HTMLDivElement>, setIsTop: React.Dispatch<React.SetStateAction<boolean>>, setIsBottom: React.Dispatch<React.SetStateAction<boolean>>) => {
-        if (scrollRef.current) {
-            const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
-            setIsTop(scrollTop === 0);
-            setIsBottom(scrollTop + clientHeight >= scrollHeight);
-        }
-    };
-
-    // Add scroll event listeners
-    useEffect(() => {
-        const scrollElement1 = scrollRef1.current;
-        const scrollElement2 = scrollRef2.current;
-        if (scrollElement1) {
-            const handleScroll1 = () => handleScroll(scrollRef1, setIsTop1, setIsBottom1);
-            scrollElement1.addEventListener('scroll', handleScroll1);
-            return () => {
-                scrollElement1.removeEventListener('scroll', handleScroll1);
-            };
-        }
-        if (scrollElement2) {
-            const handleScroll2 = () => handleScroll(scrollRef2, setIsTop2, setIsBottom2);
-            scrollElement2.addEventListener('scroll', handleScroll2);
-            return () => {
-                scrollElement2.removeEventListener('scroll', handleScroll2);
-            };
-        }
-    }, []);
 
     return (
         <div className="w-full">
