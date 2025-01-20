@@ -169,13 +169,13 @@
 }
 
 .progress-high .MuiLinearProgress-bar {
-  background-color: #ae0000;
+  background-color: #ae0000 !important;
 }
 
 .progress-medium .MuiLinearProgress-bar {
-  background-color: #e88b02;
+  background-color: #e88b02 !important;
 }
 
 .progress-low .MuiLinearProgress-bar {
-  background-color: #e6e939;
+  background-color: #e6e939 !important;
 }
