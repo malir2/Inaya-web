@@ -7,9 +7,6 @@ import TrendChart from "./DetailChart";
 function Details() {
     // Theme context
     const { theme } = useTheme();
-
-
-
     // References for scrollable containers
     const scrollRef1 = useRef<HTMLDivElement>(null);
     const scrollRef2 = useRef<HTMLDivElement>(null);
