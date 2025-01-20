@@ -80,7 +80,7 @@ const FirstRow = () => {
                                 <div><p className="text-sm">COMMODITIES</p></div>
                                 <div><p className="text-sm">INDEX</p></div>
                             </div>
-                            <div className="commodities-section max-h-[220px] xxl:max-h-[330px] overflow-auto no-scrollbar">
+                            <div className="commodities-section max-h-[220px] xxl:max-h-[250px] overflow-auto no-scrollbar">
                                 {commoditiesData.map((commodity) => (
                                     <div className={`commodities-item-container py-1`} key={commodity.name}>
                                         <div key={commodity.name} className={`${theme === "dark" ? "commodities-item" : "commodities-item-blue"} py-2 grid grid-cols-2 ${selectedCommodity.name === commodity.name ? 'selected' : ''}`} onClick={() => handleCommodityClick(commodity)}>
@@ -133,7 +133,7 @@ const FirstRow = () => {
                             <div className="mb-4">
                                 <h1 className="text-2xl text-white font-bold">Last Price Drivers</h1>
                             </div>
-                            <div className="price-drivers-list no-margin max-h-[280px] xxl:max-h-[330px] overflow-y-auto no-scrollbar">
+                            <div className="price-drivers-list no-margin max-h-[280px] xxl:max-h-[290px] overflow-y-auto no-scrollbar">
                                 {priceDrivers.map((driver, index) => (
                                     <div key={index} className="price-driver-item no-margin">
                                         <div className="flex gap-2">

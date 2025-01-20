@@ -57,7 +57,7 @@ const TrendOverLastYear = ({ chartData, selectedCommodity }: TrendOverLastYearPr
     return (
         <div className="trend-chart">
             <p className="text-gray-400 mt-3"><span className="text-[#01B574]">(+5) more</span> in 2023</p>
-            <Chart options={chartOptions} series={sortedChartSeries} type="area" height={300} />
+            <Chart options={chartOptions} series={sortedChartSeries} type="area" height={270} />
         </div>
     );
 };
