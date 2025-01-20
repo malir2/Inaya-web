@@ -12,6 +12,7 @@ function Details() {
     const scrollRef2 = useRef<HTMLDivElement>(null);
 
     // Dummy data for analysis
+
     const dummyData = [
         {
             title: "ECONOMIC UNCERTAINTY ",
