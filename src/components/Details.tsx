@@ -268,7 +268,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
             </svg>
 
             {/* Inner Content */}
-            <div className={`text-center ${theme === "dark" ? "bg-dark" : "profile-blue"} w-[9rem] h-[9rem] xl:w-[12rem] xl:h-[12rem] xxl:w-[15rem] xxl:h-[15rem] flex items-center flex-col justify-center rounded-full`}>
+            <div className={`text-center ${theme === "dark" ? "bg-dark" : "bg-[#133c72]"} w-[9rem] h-[9rem] xl:w-[12rem] xl:h-[12rem] xxl:w-[15rem] xxl:h-[15rem] flex items-center flex-col justify-center rounded-full`}>
                 <div className="text-amber-500 text-lg">⚠️</div>
                 <div className="text-[1rem] xl:text-[2rem] xxl:text-[4rem] font-bold text-white font-poppins">{percentage}%</div>
                 <div className="text-[0.7rem] xl:text-sm text-gray-400">{riskLabel}</div>
