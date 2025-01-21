@@ -25,7 +25,7 @@ const Header: React.FC<CircularProgressProps> = ({
     };
 
     return (
-        <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row sm:items-center justify-between">
+        <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row sm:items-center justify-between pt-2">
             <h4 className="text-white font-semibold ms-6 lg:ms-0 text-xl break-words">{formatPageTitle(page)}</h4>
             <div className="flex items-center justify-end gap-2 md:gap-5">
                 {/* Search Input */}

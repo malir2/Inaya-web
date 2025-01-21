@@ -73,7 +73,7 @@ const cardData = [
 function New() {
     const { theme } = useTheme();
     return (
-        <div className="w-full">
+        <div className="w-full mb-3">
             <Header page={"Global News"} />
             <div className="grid grid-cols-12 gap-3 mt-8">
                 <div className="col-span-12 md:col-span-9 order-2 md:order-1 h-[90vh] pb-5 overflow-auto no-scrollbar">
