@@ -24,14 +24,14 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                     <div className="sticky top-0">
                         <div className={`w-[17.5rem] h-[100vh] xl:h-[97.8vh] overflow-auto no-scrollbar hidden sidebar ${theme === "dark" ? "bg-dark" : "bg-custom-gradient-two"} rounded-2xl lg:flex flex-col justify-between sticky top-0`}>
                             <div>
-                                <img src={logo} alt="" className="mx-auto mt-1" />
+                                <img src={logo} alt="" className="mx-auto xxl:mt-1" />
                                 <p className="text-center text-white uppercase">We hate to be late</p>
-                                <div className="custom-border w-[87%] mx-auto flex mt-3">
+                                <div className="custom-border w-[87%] mx-auto flex mt-2 xxl:mt-3">
                                     <div className="w-1/2 left-border"></div>
                                     <div className="w-1/2 right-border"></div></div>
                                 <div className="px-4">
                                     <div>
-                                        <ul className="mt-3 xxl:mt-7">
+                                        <ul className="mt-2 xxl:mt-7">
                                             <li onMouseEnter={() => setHoverTab(0)}
                                                 onClick={() => setactiveTab(0)}
                                                 onMouseLeave={() => setHoverTab(null)}
