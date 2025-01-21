@@ -12,7 +12,7 @@ const TrendChart = () => {
             <h3 className="font-semibold text-[1.3rem] xl:text-[1.3rem] xxl:text-[2.3rem] mb-2">Trend over last year</h3>
             <div className={`flex items-end gap-4 px-5 py-4 rounded-xl ${theme === "dark" ? "bg-light" : "bg-blue/20"}`}>
                 {/* Y-axis labels */}
-                <div className="flex flex-col text-white h-20 translate-y-[-0.7rem] text-sm leading-[1.1rem]">
+                <div className="flex flex-col text-white h-20 translate-y-[-0.1rem] text-sm leading-[1rem]">
                     <span>100</span>
                     <span>80</span>
                     <span>60</span>
@@ -21,7 +21,7 @@ const TrendChart = () => {
                     <span>0</span>
                 </div>
                 {/* Bar chart */}
-                <div className="flex justify-between translate-y-[0.6rem] items-end w-full space-x-2 h-20 detail-chart">
+                <div className="flex justify-between translate-y-[0.7rem] items-end w-full space-x-2 h-20 detail-chart">
                     {data.map((value, index) => (
                         <div
                             key={index}
