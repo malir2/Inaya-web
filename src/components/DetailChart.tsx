@@ -21,7 +21,7 @@ const TrendChart = () => {
                     <span>0</span>
                 </div>
                 {/* Bar chart */}
-                <div className="flex justify-between items-end w-full space-x-2 h-20 detail-chart">
+                <div className="flex justify-between translate-y-[0.6rem] items-end w-full space-x-2 h-20 detail-chart">
                     {data.map((value, index) => (
                         <div
                             key={index}
