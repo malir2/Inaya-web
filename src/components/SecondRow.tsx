@@ -68,6 +68,7 @@ const SecondRow = () => {
         },
     ];
 
+    // Different colors for progress bar
     const getProgressColorClass = (score: number) => {
         if (score > 80) return "progress-high";
         if (score > 50) return "progress-medium";

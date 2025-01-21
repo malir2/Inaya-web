@@ -2,6 +2,7 @@ import Switch from "./ToggleButton";
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeChanger";
 
+// Interface for props
 interface CircularProgressProps {
     page: String;
 }
@@ -56,4 +57,4 @@ const Header: React.FC<CircularProgressProps> = ({
     )
 }
 
-export default Header
+export default Header;

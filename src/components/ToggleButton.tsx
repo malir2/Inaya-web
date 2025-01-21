@@ -32,6 +32,7 @@ const Switch = () => {
   );
 }
 
+// Styled component for the switch
 const StyledWrapper = styled.div`
   .theme-checkbox {
     margin-top: 0.5em;

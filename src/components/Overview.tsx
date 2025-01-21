@@ -1,12 +1,13 @@
-
 import { useTheme } from "../context/ThemeChanger";
 import FirstRow from "./FirstRow";
 import Header from "./Header";
 import SecondRow from "./SecondRow";
 
-
+// Overview Component
 export default function Overview() {
+    // Get the current theme from the ThemeChanger context
     const { theme } = useTheme();
+
     return (
         <div>
             {/* Header Section */}
