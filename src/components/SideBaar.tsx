@@ -31,7 +31,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                     <div className="w-1/2 right-border"></div></div>
                                 <div className="px-4">
                                     <div>
-                                        <ul className="mt-7">
+                                        <ul className="mt-3 xxl:mt-7">
                                             <li onMouseEnter={() => setHoverTab(0)}
                                                 onClick={() => setactiveTab(0)}
                                                 onMouseLeave={() => setHoverTab(null)}
@@ -93,7 +93,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                 </div>
                             </div>
                             <div className="mb-6">
-                                <ul className="px-4 mb-7 xl:mb-12"><li className="text-[rgb(190,190,190)]/60 pl-3">Account Pages</li>
+                                <ul className="px-4 mb-3 xxl:mb-12"><li className="text-[rgb(190,190,190)]/60 pl-3">Account Pages</li>
                                     <li onMouseEnter={() => setHoverTab(5)}
                                         onClick={() => setactiveTab(5)}
                                         onMouseLeave={() => setHoverTab(null)}
