@@ -12,6 +12,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
     // State to manage the hover tab
     const [hoverTab, setHoverTab] = useState<number | null>(null);
+    const [subcatergory, setSubcategory] = useState<boolean>(false);
 
     // Get the current theme from the ThemeChanger context
     const { theme } = useTheme();
@@ -33,7 +34,10 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                     <div>
                                         <ul className="mt-2 xxl:mt-7">
                                             <li onMouseEnter={() => setHoverTab(0)}
-                                                onClick={() => setactiveTab(0)}
+                                                onClick={() => {
+                                                    setactiveTab(0)
+                                                    setSubcategory(false)
+                                                }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl cursor-pointer sidebar-item ${hoverTab === 0 || activeTab === 0 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -43,19 +47,69 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                     <p className={`${hoverTab === 0 || activeTab === 0 ? "text-white" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem]`}>Commodities Overview</p>
                                                 </div>
                                             </li>
-                                            <li onMouseEnter={() => setHoverTab(1)}
-                                                onClick={() => setactiveTab(1)}
-                                                onMouseLeave={() => setHoverTab(null)}
-                                                className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 1 || activeTab === 1 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
+                                            <li
+                                                onClick={() => { setSubcategory(true) }}
+                                                className={`p-2 rounded-xl sidebar-item cursor-pointer ${subcatergory ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
-                                                    <div className={`icon-bg flex justify-center ${hoverTab === 1 || activeTab === 1 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
-                                                        <span className={`fa-solid fa-boxes text-[0.8rem] xxl:text-[1rem] ${hoverTab === 1 || activeTab === 1 ? "text-white" : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                    <div className={`icon-bg flex justify-center ${subcatergory ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                        <span className={`fa-solid fa-boxes text-[0.8rem] xxl:text-[1rem] ${subcatergory ? "text-white" : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
                                                     </div>
-                                                    <p className={`${hoverTab === 1 || activeTab === 1 ? "text-white" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem]`}>Commodity Details</p>
+                                                    <p className={`${subcatergory ? "text-white" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem]`}>Commodity Details</p>
                                                 </div>
                                             </li>
+                                            <li>
+                                                <ul className={`${subcatergory ? "max-h-96" : "max-h-0"} overflow-hidden transition-all ease-in-out duration-700`}>
+                                                    <li onMouseEnter={() => setHoverTab(6)}
+                                                        onClick={() => setactiveTab(6)}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 6 || activeTab === 6 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star text-[0.8rem] xxl:text-[1rem] ${hoverTab === 6 || activeTab === 6 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 6 || activeTab === 6 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem] uppercase`}>Gold</p>
+                                                        </div>
+                                                    </li>
+                                                    <li onMouseEnter={() => setHoverTab(7)}
+                                                        onClick={() => setactiveTab(7)}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 7 || activeTab === 7 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star text-[0.8rem] xxl:text-[1rem] ${hoverTab === 7 || activeTab === 7 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 7 || activeTab === 7 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem] uppercase`}>Silver</p>
+                                                        </div>
+                                                    </li>
+                                                    <li onMouseEnter={() => setHoverTab(8)}
+                                                        onClick={() => setactiveTab(8)}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 8 || activeTab === 8 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star text-[0.8rem] xxl:text-[1rem] ${hoverTab === 8 || activeTab === 8 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 8 || activeTab === 8 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem] uppercase`}>Wheat</p>
+                                                        </div>
+                                                    </li>
+                                                    <li onMouseEnter={() => setHoverTab(9)}
+                                                        onClick={() => setactiveTab(9)}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 9 || activeTab === 9 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star text-[0.8rem] xxl:text-[1rem] ${hoverTab === 9 || activeTab === 9 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 9 || activeTab === 9 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} text-[0.8rem] xxl:text-[1rem] uppercase`}>PALLADIUM</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                             <li onMouseEnter={() => setHoverTab(2)}
-                                                onClick={() => setactiveTab(2)}
+                                                onClick={() => {
+                                                    setactiveTab(2)
+                                                    setSubcategory(false)
+                                                }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 2 || activeTab === 2 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -66,7 +120,10 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                 </div>
                                             </li>
                                             <li onMouseEnter={() => setHoverTab(3)}
-                                                onClick={() => setactiveTab(3)}
+                                                onClick={() => {
+                                                    setactiveTab(3)
+                                                    setSubcategory(false)
+                                                }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 3 || activeTab === 3 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -77,7 +134,10 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                 </div>
                                             </li>
                                             <li onMouseEnter={() => setHoverTab(4)}
-                                                onClick={() => setactiveTab(4)}
+                                                onClick={() => {
+                                                    setactiveTab(4)
+                                                    setSubcategory(false)
+                                                }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 4 || activeTab === 4 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -95,7 +155,10 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                             <div className="mb-6">
                                 <ul className="px-4 mb-3 xxl:mb-12"><li className="text-[rgb(190,190,190)]/60 pl-3">Account Pages</li>
                                     <li onMouseEnter={() => setHoverTab(5)}
-                                        onClick={() => setactiveTab(5)}
+                                        onClick={() => {
+                                            setactiveTab(5)
+                                            setSubcategory(false)
+                                        }}
                                         onMouseLeave={() => setHoverTab(null)}
                                         className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 5 || activeTab === 5 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                         <div className="flex items-center gap-3">
@@ -131,7 +194,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                     <div>
                                         <ul className="mt-7">
                                             <li onMouseEnter={() => setHoverTab(0)}
-                                                onClick={() => { setactiveTab(0); setIsSidebarOpen(false); }}
+                                                onClick={() => { setactiveTab(0); setSubcategory(false); setIsSidebarOpen(false); }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl cursor-pointer sidebar-item ${hoverTab === 0 || activeTab === 0 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -141,19 +204,66 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                     <p className={`${hoverTab === 0 || activeTab === 0 ? "text-white" : "text-[rgb(190,190,190)]"}`}>Commodities Overview</p>
                                                 </div>
                                             </li>
-                                            <li onMouseEnter={() => setHoverTab(1)}
-                                                onClick={() => { setactiveTab(1); setIsSidebarOpen(false); }}
-                                                onMouseLeave={() => setHoverTab(null)}
-                                                className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 1 || activeTab === 1 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
+                                            <li
+                                                onClick={() => { setSubcategory(true) }}
+                                                className={`p-2 rounded-xl sidebar-item cursor-pointer ${subcatergory ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
-                                                    <div className={`icon-bg flex justify-center ${hoverTab === 1 || activeTab === 1 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
-                                                        <span className={`fa-solid fa-boxes ${hoverTab === 1 || activeTab === 1 ? "text-white" : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                    <div className={`icon-bg flex justify-center ${subcatergory ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                        <span className={`fa-solid fa-boxes ${subcatergory ? "text-white" : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
                                                     </div>
-                                                    <p className={`${hoverTab === 1 || activeTab === 1 ? "text-white" : "text-[rgb(190,190,190)]"}`}>Commodity Details</p>
+                                                    <p className={`${subcatergory ? "text-white" : "text-[rgb(190,190,190)]"}`}>Commodity Details</p>
                                                 </div>
                                             </li>
+                                            <li>
+                                                <ul className={`${subcatergory ? "max-h-96" : "max-h-0"} overflow-hidden transition-all ease-in-out duration-700`}>
+                                                    <li onMouseEnter={() => setHoverTab(6)}
+                                                        onClick={() => { setactiveTab(6); setIsSidebarOpen(false); }}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 6 || activeTab === 6 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star ${hoverTab === 6 || activeTab === 6 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 6 || activeTab === 6 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} uppercase`}>Gold</p>
+                                                        </div>
+                                                    </li>
+                                                    <li onMouseEnter={() => setHoverTab(7)}
+                                                        onClick={() => { setactiveTab(7); setIsSidebarOpen(false); }}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 7 || activeTab === 7 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star ${hoverTab === 7 || activeTab === 7 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 7 || activeTab === 7 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} uppercase`}>Silver</p>
+                                                        </div>
+                                                    </li>
+                                                    <li onMouseEnter={() => setHoverTab(8)}
+                                                        onClick={() => { setactiveTab(8); setIsSidebarOpen(false); }}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 8 || activeTab === 8 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star ${hoverTab === 8 || activeTab === 8 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 8 || activeTab === 8 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} uppercase`}>Wheat</p>
+                                                        </div>
+                                                    </li>
+                                                    <li onMouseEnter={() => setHoverTab(9)}
+                                                        onClick={() => { setactiveTab(9); setIsSidebarOpen(false); }}
+                                                        onMouseLeave={() => setHoverTab(null)}
+                                                        className={`p-2 rounded-xl sidebar-item cursor-pointer`}>
+                                                        <div className="grid grid-cols-2 items-center gap-3">
+                                                            <div className={`ml-auto icon-bg flex justify-center ${hoverTab === 9 || activeTab === 9 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-light" : "bg-blueLighter"} w-[2rem] h-[2rem] xxl:w-[2.5rem] xxl:h-[2.5rem] items-center rounded-xl`}>
+                                                                <span className={`fa-solid fa-star ${hoverTab === 9 || activeTab === 9 ? "text-white " : theme === "dark" ? "text-yellow" : "text-blue"} icon`}></span>
+                                                            </div>
+                                                            <p className={`${hoverTab === 9 || activeTab === 9 ? "text-white font-bold" : "text-[rgb(190,190,190)]"} uppercase`}>PALLADIUM</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                             <li onMouseEnter={() => setHoverTab(2)}
-                                                onClick={() => { setactiveTab(2); setIsSidebarOpen(false); }}
+                                                onClick={() => { setactiveTab(2); setSubcategory(false); setIsSidebarOpen(false); }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 2 || activeTab === 2 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -164,7 +274,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                 </div>
                                             </li>
                                             <li onMouseEnter={() => setHoverTab(3)}
-                                                onClick={() => { setactiveTab(3); setIsSidebarOpen(false); }}
+                                                onClick={() => { setactiveTab(3); setSubcategory(false); setIsSidebarOpen(false); }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 3 || activeTab === 3 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -175,7 +285,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                 </div>
                                             </li>
                                             <li onMouseEnter={() => setHoverTab(4)}
-                                                onClick={() => { setactiveTab(4); setIsSidebarOpen(false); }}
+                                                onClick={() => { setactiveTab(4); setSubcategory(false); setIsSidebarOpen(false); }}
                                                 onMouseLeave={() => setHoverTab(null)}
                                                 className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 4 || activeTab === 4 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                                 <div className="flex items-center gap-3">
@@ -192,7 +302,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                 <div className="mb-6">
                                     <ul className="mb-2 xxl:mb-5 px-2"><li className="text-[rgb(190,190,190)]/60 pl-3">Account Pages</li>
                                         <li onMouseEnter={() => setHoverTab(5)}
-                                            onClick={() => { setactiveTab(5); setIsSidebarOpen(false); }}
+                                            onClick={() => { setactiveTab(5); setSubcategory(false); setIsSidebarOpen(false); }}
                                             onMouseLeave={() => setHoverTab(null)}
                                             className={`p-2 rounded-xl sidebar-item cursor-pointer ${hoverTab === 5 || activeTab === 5 ? theme === "dark" ? "bg-yellow/50" : "bg-blue/50" : ""}`}>
                                             <div className="flex items-center gap-3">

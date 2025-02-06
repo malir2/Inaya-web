@@ -5,6 +5,7 @@ import { useTheme } from "../context/ThemeChanger";
 import Profile from "../components/Profile";
 import Details from "../components/Details";
 import New from "../components/New";
+import ProductOverview from "../components/ProductOverview";
 
 function Main() {
     // State to manage the active tab
@@ -20,7 +21,8 @@ function Main() {
                 {activeTab === 0 && <div className="overflow-x-auto">
                     <Overview />
                 </div>}
-                {activeTab === 1 && <Details />}
+                {activeTab === 6 && <Details />}
+                {activeTab === 2 && <ProductOverview />}
                 {activeTab === 4 && <New />}
                 {activeTab === 5 && <Profile />}
             </div>

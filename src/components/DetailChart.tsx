@@ -1,7 +1,11 @@
 import { useTheme } from "../context/ThemeChanger";
 import "../css/detail.css";
 
-const TrendChart = () => {
+interface TrendChart {
+    headingSize: number
+}
+
+const TrendChart = ({ headingSize = 2.3 }) => {
 
     const { theme } = useTheme();
 
@@ -9,7 +13,7 @@ const TrendChart = () => {
 
     return (
         <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} text-white rounded-2xl pt-2 pb-3 px-4 mt-3 md:mt-0 xl:mt-4 xxl:mt-1`}>
-            <h3 className="font-semibold text-[1.3rem] xl:text-[1.3rem] xxl:text-[2.3rem] mb-2">Trend over last year</h3>
+            <h3 className={`font-semibold text-[1.3rem] xl:text-[1.3rem] xxl:text-[${headingSize}rem] mb-2`}>Trend over last year</h3>
             <div className={`flex items-end gap-4 px-5 py-4 rounded-xl ${theme === "dark" ? "bg-light" : "bg-blue/20"}`}>
                 {/* Y-axis labels */}
                 <div className="flex flex-col text-white h-20 translate-y-[-0.1rem] text-sm leading-[1rem]">
