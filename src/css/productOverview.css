@@ -9,6 +9,17 @@
   font-size: 0.8rem;
 }
 
+.driver-section .circle-size {
+  width: 7rem;
+  height: 7rem;
+}
+.driver-section .circle-size .percentage {
+  font-size: 1.5rem;
+}
+.driver-section .circle-size .label {
+  font-size: 0.5rem;
+}
+
 @media screen and (max-width: 1539px) {
   .circular-section .circle-size {
     width: 10rem;

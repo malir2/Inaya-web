@@ -1,12 +1,10 @@
 interface CircularProgressProps2 {
     percentage: number;
-    riskLabel: string;
     theme: string;
 }
 
 const CircularProgress2: React.FC<CircularProgressProps2> = ({
     percentage,
-    riskLabel,
     theme,
 }) => {
     const radius = 16; // Radius of the circle
@@ -21,7 +19,7 @@ const CircularProgress2: React.FC<CircularProgressProps2> = ({
     } else if (percentage > 60) {
         gradientColor = "#E88B02"; // Orange
     } else {
-        gradientColor = "#CDE80203"; // Amber
+        gradientColor = "#CDE802"; // Amber
     }
 
     return (
@@ -55,8 +53,8 @@ const CircularProgress2: React.FC<CircularProgressProps2> = ({
                 {/* Defining Gradient */}
                 <defs>
                     <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#E6E939" /> {/* Amber */}
-                        <stop offset="80%" stopColor={`${gradientColor}03`} /> {/* Dynamic color */}
+                        <stop offset="0%" stopColor={`${gradientColor}`} />
+                        <stop offset="80%" stopColor={`${gradientColor}03`} />
                     </linearGradient>
                 </defs>
             </svg>
@@ -65,7 +63,9 @@ const CircularProgress2: React.FC<CircularProgressProps2> = ({
             <div className={`text-center ${theme === "dark" ? "bg-dark" : "bg-[#133c72]"} circle-size flex items-center flex-col justify-center rounded-full`}>
                 <div className="text-amber-500 text-lg">⚠️</div>
                 <div className="font-bold text-white font-poppins percentage">{percentage}%</div>
-                <div className="text-gray-400 label">{riskLabel}</div>
+                {percentage > 70 && <div className="text-gray-400 label">Low Medium Risk</div>}
+                {percentage > 60 && <div className="text-gray-400 label">Medium Risk</div>}
+                {percentage < 60 && <div className="text-gray-400 label">High Risk</div>}
             </div>
         </div>
     );

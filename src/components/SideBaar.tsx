@@ -58,7 +58,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                 </div>
                                             </li>
                                             <li>
-                                                <ul className={`${subcatergory ? "max-h-96" : "max-h-0"} overflow-hidden transition-all ease-in-out duration-700`}>
+                                                <ul className={`${subcatergory ? "max-h-96" : "max-h-0"} overflow-hidden transition-all ease-in-out duration-700 translate-x-[-2.5rem]`}>
                                                     <li onMouseEnter={() => setHoverTab(6)}
                                                         onClick={() => setactiveTab(6)}
                                                         onMouseLeave={() => setHoverTab(null)}
@@ -215,7 +215,7 @@ function SideBaar({ activeTab, setactiveTab }: SideBaarProps) {
                                                 </div>
                                             </li>
                                             <li>
-                                                <ul className={`${subcatergory ? "max-h-96" : "max-h-0"} overflow-hidden transition-all ease-in-out duration-700`}>
+                                                <ul className={`${subcatergory ? "max-h-96" : "max-h-0"} overflow-hidden transition-all ease-in-out duration-700  translate-x-[-2.5rem]`}>
                                                     <li onMouseEnter={() => setHoverTab(6)}
                                                         onClick={() => { setactiveTab(6); setIsSidebarOpen(false); }}
                                                         onMouseLeave={() => setHoverTab(null)}
