@@ -3,7 +3,7 @@ import TrendChart from "./DetailChart";
 import Header from "./Header";
 import nutella from "../assets/nutella.png";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CircularProgress2 from "./CircularProgress2";
 import "../css/productOverview.css"
 
@@ -187,6 +187,7 @@ const FirstRowSec = () => {
                                 </div>
                             </div>
                             <div className="overflow-auto scrollbar">
+                                <DriverCards />
                             </div>
                         </div>
 
@@ -196,3 +197,12 @@ const FirstRowSec = () => {
         </div >
     );
 };
+
+const DriverCards = () => {
+    const { theme } = useTheme();
+    return (
+        <div>
+            <div className={`${theme === "dark" ? "bg-dark/50" : "profile-blue"} w-[10rem] p-5`}></div>
+        </div>
+    )
+}
