@@ -10,32 +10,41 @@ import BreakDownCard from "./BreakDownCard";
 import goldImage from "../assets/Background-gold.png";
 import alluminiumImage from "../assets/Alluminium.png";
 import copperImage from "../assets/Copper.png";
+import Configuration from "./Configuration";
 
 // Overview Component
 export default function ProductOverview() {
     // Get the current theme from the ThemeChanger context
     const { theme } = useTheme();
+    const [showTab, setShowTab] = useState<boolean>(true);
 
     return (
-        <div className="w-[100%]">
-            {/* Header Section */}
-            <Header page={"Product Overview"} />
-            {/* Welcome Section */}
-            <div className="relative flex w-auto mt-3">
-                <h1 className="text-white font-bold text-[2rem]">Welcome Jhon 👋</h1>
+        <>
+            <div className={`absolute ${showTab ? "top-0" : "top-[-100%]"} transition-all duration-700 left-0 w-full h-full backdrop-blur-sm z-[999]`}>
+                <Configuration setShowTab={setShowTab} />
             </div>
-            <div className={`w-[70%] xl:w-[30%] xxl:w-[20%] h-[0.33rem] my-1 ${theme === "blue" ? "bg-custom-gradient" : "bg-[#F5A32E]"}`}></div>
-            <div className="mt-3 xl:translate-y-[-13%] xl:mt-[-40px] flex justify-center">
-                <button className={`${theme === "dark" ? "bg-[#F5A32EB0]" : "bg-[#060B28BD]"} text-white rounded-md px-3 py-2 font-medium`}>CONFIGURE NEW PRODUCT</button>
+            <div className="w-[100%]">
+                {/* Header Section */}
+                <Header page={"Product Overview"} />
+                {/* Welcome Section */}
+                <div className="relative flex w-auto mt-3">
+                    <h1 className="text-white font-bold text-[2rem]">Welcome Jhon 👋</h1>
+                </div>
+                <div className={`w-[70%] xl:w-[30%] xxl:w-[20%] h-[0.33rem] my-1 ${theme === "blue" ? "bg-custom-gradient" : "bg-[#F5A32E]"}`}></div>
+                <div className="mt-3 xl:translate-y-[-13%] xl:mt-[-40px] flex justify-center relative z-[9999]">
+                    <button onClick={() => {
+                        setShowTab(true)
+                    }} className={`${theme === "dark" ? "bg-[#F5A32EB0]" : "bg-[#060B28BD]"} text-white rounded-md px-3 py-2 font-medium`}>CONFIGURE NEW PRODUCT</button>
+                </div>
+                {/* First Row Component */}
+                <div className="mt-3 w-full">
+                    <FirstRowSec />
+                </div>
+                <div className="mt-3 w-full">
+                    <SecRowSec />
+                </div>
             </div>
-            {/* First Row Component */}
-            <div className="mt-3 w-full">
-                <FirstRowSec />
-            </div>
-            <div className="mt-3 w-full">
-                <SecRowSec />
-            </div>
-        </div>
+        </>
     )
 }
 
