@@ -1,10 +1,10 @@
-interface CircularProgressProps {
+interface CircularProgressProps2 {
     percentage: number;
     riskLabel: string;
     theme: string;
 }
 
-const CircularProgress: React.FC<CircularProgressProps> = ({
+const CircularProgress2: React.FC<CircularProgressProps2> = ({
     percentage,
     riskLabel,
     theme,
@@ -45,20 +45,20 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
                 {/* Defining Gradient */}
                 <defs>
                     <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#f59e0b" /> {/* Amber */}
-                        <stop offset="80%" stopColor="#2d2d2d" /> {/* Amber */}
+                        <stop offset="0%" stopColor="#E6E939" /> {/* Amber */}
+                        <stop offset="80%" stopColor="#CDE80203" /> {/* Amber */}
                     </linearGradient>
                 </defs>
             </svg>
 
             {/* Inner Content */}
-            <div className={`text-center ${theme === "dark" ? "bg-dark" : "bg-[#133c72]"} w-[9rem] h-[9rem] xl:w-[12rem] xl:h-[12rem] xxl:w-[15rem] xxl:h-[15rem] flex items-center flex-col justify-center rounded-full`}>
+            <div className={`text-center ${theme === "dark" ? "bg-dark" : "bg-[#133c72]"} circle-size flex items-center flex-col justify-center rounded-full`}>
                 <div className="text-amber-500 text-lg">⚠️</div>
-                <div className="text-[1rem] xl:text-[2rem] xxl:text-[4rem] font-bold text-white font-poppins">{percentage}%</div>
-                <div className="text-[0.7rem] xl:text-sm text-gray-400">{riskLabel}</div>
+                <div className="font-bold text-white font-poppins percentage">{percentage}%</div>
+                <div className="text-gray-400 label">{riskLabel}</div>
             </div>
         </div>
     );
 };
 
-export default CircularProgress;
+export default CircularProgress2;

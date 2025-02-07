@@ -1,0 +1,23 @@
+.circular-section .circle-size {
+  width: 13rem;
+  height: 13rem;
+}
+.circular-section .circle-size .percentage {
+  font-size: 2.3rem;
+}
+.circular-section .circle-size .label {
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1539px) {
+  .circular-section .circle-size {
+    width: 10rem;
+    height: 10rem;
+  }
+  .circular-section .circle-size .percentage {
+    font-size: 2rem;
+  }
+  .circular-section .circle-size .label {
+    font-size: 0.6rem;
+  }
+}

@@ -1,10 +1,11 @@
 import { useTheme } from "../context/ThemeChanger";
-import CircularProgress from "./CircularProgress";
 import TrendChart from "./DetailChart";
 import Header from "./Header";
 import nutella from "../assets/nutella.png";
 import { Grid, Card, CardContent, Typography, LinearProgress } from "@mui/material";
 import { useState } from "react";
+import CircularProgress2 from "./CircularProgress2";
+import "../css/productOverview.css"
 
 // Overview Component
 export default function ProductOverview() {
@@ -77,7 +78,7 @@ const FirstRowSec = () => {
         <div className={`${theme === "dark" ? "first-row" : "first-row-blue"} w-full`}>
             <Grid container spacing={3}>
                 {/* Saved Commodities Section */}
-                <Grid item xs={12} sm={6} lg={5} xl={3.3}>
+                <Grid item xs={12} lg={3.5} xl={3.3}>
                     <Card className="card card-styling saved-commodities no-shadow no-padding no-margin">
                         <CardContent className="no-padding no-margin">
                             <div className="flex justify-between items-center mb-0">
@@ -129,11 +130,15 @@ const FirstRowSec = () => {
 
 
                 {/* Last Price Drivers Section */}
-                <Grid item xs={12} sm={12} lg={7} xl={8.7}>
-                    <div className="mt-1 xxl:mt-5 grid grid-cols-12 sm:gap-5">
-                        <div className="col-span-12 xl:col-span-8">
-                            <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
-                                <div style={{ backgroundImage: `url(${nutella})`, backgroundSize: "cover" }} className="rounded-2xl md:w-1/2 p-3 xxl:p-5 h-[100%] flex flex-col detail-picture-section">
+                <Grid item xs={12} lg={8.5} xl={8.7}>
+                    <div className="flex justify-between items-center mb-0">
+                        <h1 className="text-2xl text-white font-bold">Focus</h1>
+                        <span className="mr-3 m-0 text-white fa-solid fa-ellipsis-vertical"></span>
+                    </div>
+                    <div className="mt-1 xxl:mt-5 grid grid-cols-12 sm:gap-7">
+                        <div className="col-span-12 xxl:col-span-8">
+                            <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5 h-full">
+                                <div style={{ backgroundImage: `url(${nutella})`, backgroundSize: "cover" }} className="rounded-2xl xl:w-1/2 p-3 xxl:p-5 h-full flex flex-col detail-picture-section">
                                     <div>
                                         <div className="inline-flex items-center gap-2 bg-white rounded-xl px-3">
                                             <p>Analysis status:</p>
@@ -143,21 +148,20 @@ const FirstRowSec = () => {
                                     </div>
                                     <p className="mt-0 text-white">Last refreshed: 5 minutes ago</p>
                                 </div>
-                                <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} w-[100%] sm:w-[90%] md:w-[40%] rounded-2xl p-3 xxl:p-5 relative flex flex-col`}>
-                                    <div className="w-1/2 sm:w-full md:w-1/2">
-                                        <h1 className="mt-0 text-white text-[1.2rem] font-medium font-poppins">Intelligence
-                                            <br />Score</h1>
+                                <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} w-[100%] sm:w-[90%] xl:w-[40%] mt-7 mb-7 md:mt-0 md:mb-0 rounded-2xl p-3 xxl:p-5 relative flex flex-col circular-section`}>
+                                    <div className="mt-2 w-[10%] md:w-[40%]">
+                                        <h1 className="mt-0 text-white text-[1.2rem] font-medium font-poppins">Intelligence Score</h1>
                                     </div>
-                                    <p className="text-white mt-3">From all <br />market drivers</p>
-                                    <div className="absolute top-[50%] translate-y-[-50%] left-[60%] min-[407px]:left-[70%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[50%]">
-                                        <CircularProgress size={15} percentage={67} riskLabel="Medium High Risk" theme={theme} />
+                                    <p className="w-[50%] text-white mt-3">From all market drivers</p>
+                                    <div className="absolute top-[50%] translate-y-[-50%] left-[55%] sm:left-[80%] md:left-[57%] xl:left-[60%] xxl:left-[53%]">
+                                        <CircularProgress2 percentage={67} riskLabel="Medium High Risk" theme={theme} />
                                     </div>
                                 </div>
 
                             </div>
 
                         </div>
-                        <div className="col-span-12 xl:col-span-4 xl:mt-0 ml-0 xl:ml-[2rem] min-[1437px]:ml-[1rem] min-[1505px]:ml-3 xxl:mt-0">
+                        <div className="col-span-12 xxl:col-span-4">
                             <TrendChart headingSize={1.3} />
                         </div>
                     </div>

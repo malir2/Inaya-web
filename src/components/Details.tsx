@@ -115,7 +115,7 @@ function Details() {
                             </div>
                             <p className="text-white mt-[3rem] md:mt-0">From all price drivers</p>
                             <div className="absolute top-[50%] translate-y-[-50%] left-[60%] min-[407px]:left-[70%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[63%]">
-                                <CircularProgress size={13} percentage={67} riskLabel="Medium High Risk" theme={theme} />
+                                <CircularProgress percentage={67} riskLabel="Medium High Risk" theme={theme} />
                             </div>
                         </div>
 
