@@ -16,7 +16,7 @@ import Configuration from "./Configuration";
 export default function ProductOverview() {
     // Get the current theme from the ThemeChanger context
     const { theme } = useTheme();
-    const [showTab, setShowTab] = useState<boolean>(true);
+    const [showTab, setShowTab] = useState<boolean>(false);
 
     return (
         <>
