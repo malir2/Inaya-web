@@ -6,6 +6,7 @@ import Profile from "../components/Profile";
 import Details from "../components/Details";
 import New from "../components/New";
 import ProductOverview from "../components/ProductOverview";
+import ProductDetail from "../components/ProductDetail";
 
 function Main() {
     // State to manage the active tab
@@ -23,6 +24,7 @@ function Main() {
                 </div>}
                 {activeTab === 6 && <Details />}
                 {activeTab === 2 && <ProductOverview />}
+                {activeTab === 3 && <ProductDetail />}
                 {activeTab === 4 && <New />}
                 {activeTab === 5 && <Profile />}
             </div>

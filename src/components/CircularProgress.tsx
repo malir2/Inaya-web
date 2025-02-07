@@ -14,6 +14,14 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
     const strokeDashoffset =
         circumference - (percentage / 100) * circumference; // Anticlockwise progress
 
+    let gradientColor;
+    if (percentage > 70) {
+        gradientColor = "#E80202"; // Red
+    } else if (percentage > 60) {
+        gradientColor = "#E88B02"; // Orange
+    } else {
+        gradientColor = "#CDE802"; // Amber
+    }
     return (
         <div className="relative w-auto h-auto rounded-full overflow-hidden">
             {/* SVG Circle */}
@@ -45,8 +53,8 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
                 {/* Defining Gradient */}
                 <defs>
                     <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#f59e0b" /> {/* Amber */}
-                        <stop offset="80%" stopColor="#2d2d2d" /> {/* Amber */}
+                        <stop offset="0%" stopColor={`${gradientColor}`} />
+                        <stop offset="80%" stopColor={`${gradientColor}03`} />
                     </linearGradient>
                 </defs>
             </svg>
