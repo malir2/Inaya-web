@@ -165,8 +165,34 @@ const FirstRowSec = () => {
                             <TrendChart headingSize={1.3} />
                         </div>
                     </div>
+
+                    <div className="mt-3 xl:mt-5 w-[100%]">
+
+
+                        {/* Analysis Section */}
+                        <div className={`rounded-2xl px-5 pb-3 pt-1 overflow-hidden ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
+                            <div className="mb-1 flex justify-between items-center">
+                                <h1 className="text-white font-bold text-[1.9rem] xxl:text-[2.2rem]">Market Drivers</h1>
+                                <div className="flex gap-2">
+                                    <button
+                                        className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
+                                    >
+                                        <span className="fa-solid fa-angle-left text-xl"></span>
+                                    </button>
+                                    <button
+                                        className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                    >
+                                        <span className="fa-solid fa-angle-right text-xl"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="overflow-auto scrollbar">
+                            </div>
+                        </div>
+
+                    </div>
                 </Grid>
             </Grid>
-        </div>
+        </div >
     );
 };
