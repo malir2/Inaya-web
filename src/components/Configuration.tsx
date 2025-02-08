@@ -25,7 +25,7 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
 
     return (
         <div className="absolute top-[13rem] sm:top-[10.2rem] xl:top-[7.5rem] left-[50%] translate-x-[-50%] lg:translate-x-0 lg:left-[40%] xl:left-[43%] flex flex-col items-end z-50">
-            <div className={`rounded-xl shadow-2xl overflow-hidden mb-[0rem] sm:mb-[-1rem] w-[22rem] sm:w-[28rem] lg:w-[35rem] ${theme === "dark" ? "bg-light" : "bg-white"} chat-screen`}>
+            <div className={`rounded-2xl shadow-2xl overflow-hidden mb-[0rem] sm:mb-[-1rem] w-[22rem] sm:w-[28rem] lg:w-[35rem] ${theme === "dark" ? "bg-light" : "bg-white"} chat-screen`}>
                 <div className={`${theme === "dark" ? "bg-yellow" : "bg-blue"} px-5 py-2 flex justify-between`}>
                     <div className="flex items-center gap-3">
                         <div>
@@ -37,7 +37,7 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
                     </div>
                 </div>
                 <div className="px-5 scrollbar">
-                    {tab !== 4 && <div className="mt-2 flex justify-between items-center">
+                    {tab !== 4 && <div className="my-3 flex justify-between items-center">
                         <p className={`${theme === "dark" ? "text-white" : "text-black"} text-lg font-medium`}>{tab === 1 && "Product Information"} {tab === 2 && "Analysis Areas of Interest"} {tab === 3 && "Product Information"}</p>
                         <div className="flex gap-1">
                             <div className={`${tab === 1 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl`}></div>
@@ -46,7 +46,7 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
                         </div>
                     </div>}
                     {/* Form 1 */}
-                    {tab === 1 && <div className="form mt-3">
+                    {tab === 1 && <div className="form">
                         <div className="flex flex-col">
                             <label htmlFor="" className={`${theme === "dark" ? "text-white" : "text-black"}`}>Insert your product</label>
                             <input type="text" placeholder="Product name" className={`px-4 py-3 mt-1 rounded-lg ${theme === "dark" ? "config-input" : "config-input-light"}`} />
@@ -57,7 +57,7 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
                         </div>
                     </div>}
                     {/* Form 2 */}
-                    {tab === 2 && <div className="form mt-3">
+                    {tab === 2 && <div className="form">
                         <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                             <div className="flex flex-col">
                                 <label htmlFor="" className={`${theme === "dark" ? "text-white" : "text-black"}`}>Geographic Areas of Supply</label>
@@ -99,7 +99,7 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
                     </div>}
 
                     {/* Form 3 */}
-                    {tab === 3 && <div className="form mt-4">
+                    {tab === 3 && <div className="form">
                         {rawMaterials.map((_, index) => (
                             <div key={index} className="flex items-center gap-6 mt-3">
                                 <div className="grid grid-cols-2 gap-8 w-[100%]">

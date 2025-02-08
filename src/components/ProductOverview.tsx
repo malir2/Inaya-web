@@ -34,7 +34,7 @@ export default function ProductOverview() {
                 <div className="mt-3 xl:translate-y-[-13%] xl:mt-[-40px] flex justify-center relative z-[9999]">
                     <button onClick={() => {
                         setShowTab(true)
-                    }} className={`${theme === "dark" ? "bg-[#F5A32EB0]" : "bg-[#060B28BD]"} text-white rounded-md px-3 py-1 font-medium`}>CONFIGURE NEW PRODUCT</button>
+                    }} className={`${theme === "dark" ? "bg-[#F5A32EB0]" : "bg-[#060B28BD]"} text-white rounded-md px-3 py-2 font-medium`}>CONFIGURE NEW PRODUCT</button>
                 </div>
                 {/* First Row Component */}
                 <div className="mt-3 w-full">
