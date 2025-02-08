@@ -80,7 +80,7 @@ function ProductDetail() {
 
     return (
         <div className="w-full">
-            <Header page={"Commodities Overview  /  Commodity Details"} />
+            <Header page={"Products Overview  /  Product Details"} />
             <div className="mt-1 xxl:mt-5 grid grid-cols-12 sm:gap-5">
                 <div className="col-span-12 xl:col-span-8">
                     <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
@@ -96,8 +96,7 @@ function ProductDetail() {
                         </div>
                         <div className={`${theme === "dark" ? "bg-dark" : "profile-blue"} w-[100%] sm:w-[90%] md:w-[40%] rounded-2xl p-3 xxl:p-5 relative flex flex-col`}>
                             <div className="w-1/2 sm:w-full md:w-1/2 mb-auto">
-                                <h1 className="mt-0 text-white text-[1.8rem] lg:text-[2rem] xxl:text-[2.4rem] font-medium font-poppins">Perception
-                                    Index</h1>
+                                <h1 className="mt-0 text-white text-[1.8rem] lg:text-[2rem] xxl:text-[2.4rem] font-medium font-poppins">Intelligence Score</h1>
                             </div>
                             <p className="text-white mt-[3rem] md:mt-0">From all price drivers</p>
                             <div className="absolute top-[50%] translate-y-[-50%] left-[60%] min-[407px]:left-[70%] sm:left-[86%] md:left-[70%] xl:left-[65%] xxl:left-[63%]">

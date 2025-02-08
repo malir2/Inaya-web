@@ -25,7 +25,7 @@ export default function ProductOverview() {
             </div>
             <div className="w-[100%]">
                 {/* Header Section */}
-                <Header page={"Product Overview"} />
+                <Header page={"Products Overview"} />
                 {/* Welcome Section */}
                 <div className="relative flex w-auto mt-3">
                     <h1 className="text-white font-bold text-[2rem]">Welcome Jhon 👋</h1>
@@ -250,7 +250,7 @@ const FirstRowSec = () => {
                     <div className="mt-3 xl:mt-4 grid grid-cols-12">
                         <div className={`rounded-2xl px-5 pb-3 pt-1 col-span-12 ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
                             <div className="mb-1 flex justify-between items-center">
-                                <h1 className="text-white font-bold text-[1.2rem] lg:text-[1.9rem]">Market Drivers</h1>
+                                <h1 className="text-white font-medium text-[1.2rem] lg:text-[1.7rem]">Market Drivers</h1>
                                 <div className="flex gap-2">
                                     <button
                                         className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
@@ -282,7 +282,7 @@ const FirstRowSec = () => {
                     <div className="grid grid-cols-12">
                         <div className={`rounded-2xl px-5 pb-3 pt-1 col-span-12 ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
                             <div className="flex justify-between items-center">
-                                <h1 className="text-white font-bold text-[1.2rem] lg:text-[1.9rem]">Product Breakdown</h1>
+                                <h1 className="text-white font-medium text-[1.2rem] lg:text-[1.7rem]">Product Breakdown</h1>
                                 <div className="flex gap-2">
                                     <button
                                         className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
