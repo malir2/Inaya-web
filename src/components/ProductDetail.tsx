@@ -234,7 +234,7 @@ function ProductDetail() {
                                         Supply Chain Dynamics</button>
                                 </div>
                             </div>
-                            <div className={`px-8 py-2 border-[5px] ${theme === "dark" ? "border-yellow/80" : "border-[rgba(0,117,255,1)]"} max-h-[318px] overflow-auto no-scrollbar`}>
+                            <div className={`px-8 py-2 border-[5px] ${theme === "dark" ? "border-yellow/80" : "border-[rgba(0,117,255,1)]"} h-[270px] overflow-auto no-scrollbar`}>
                                 {tabs === 1 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
                                     {paraSectionData.map((data, index) => (
                                         <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
