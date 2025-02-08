@@ -1,11 +1,13 @@
-import { useRef } from "react"
-import { useTheme } from "../context/ThemeChanger"
-import CircularProgress from "./CircularProgress"
-import TrendChart from "./DetailChart"
-import Header from "./Header"
-import BreakDownCard from "./BreakDownCard"
+import { useRef, useState } from "react";
+import { useTheme } from "../context/ThemeChanger";
+import CircularProgress from "./CircularProgress";
+import TrendChart from "./DetailChart";
+import Header from "./Header";
+import BreakDownCard from "./BreakDownCard";
+import ParaSection from "./ParaSection";
 
 function ProductDetail() {
+    const [tabs, setTab] = useState<number>(1);
 
     const breakDownCardData = [
         { percent: 30, product: "COCOA SOLIDS" },
@@ -18,7 +20,20 @@ function ProductDetail() {
         { percent: 50, product: "HAZELNUTS" },
     ];
 
-    const { theme } = useTheme()
+    const paraSectionData = [
+        {
+            heading: "ECONOMIC UNCERTAINTY",
+            content: "Cocoa prices are set to rise by December 2024 due to the impact of crop diseases like Black Pod and Witches' Broom, historically reducing yields by up to 30% in West Africa, the primary cocoa-producing region. Fixed pricing mechanisms in Ghana and Côte d'Ivoire exacerbate supply risks, limiting farmers' ability to respond to international market fluctuations and heightening supply shortages. While efforts like genetic analysis and disease-resistant varieties are underway, they offer no immediate relief. The ICCO's August 2024 report noted low prices from surplus inventory, but as reserves dwindle and manufacturing demand rises, December prices are expected to climb. Growers are urged to adopt better hygiene practices and fungicides to mitigate short-term risks. Combined with regulatory hurdles and increased demand, these factors point to continued upward price trends into early 2025.",
+            percent: 70,
+        },
+        {
+            heading: "POLITICAL INSTABILITY",
+            content: "Since 2016, cocoa prices have faced global depression, with a 20% drop from their 2015 peak. Political instability now threatens further disruptions, with December 2024 bringing heightened supply chain risks, exacerbated by lingering COVID-19 impacts. The Organic Cocoa Market Outlook (2024-2031) highlights growth opportunities driven by millennial demand and emerging markets, yet geopolitical tensions and trade disruptions continue to exert downward price pressures. Technological advances are improving efficiency, but fluctuating raw material prices, supply chain challenges, and inflation remain key concerns. Regulatory compliance offers mixed prospects, while geopolitical motives further complicate supply-demand dynamics. Despite projected revenue growth at a healthy CAGR, rising costs and competitive pressures suggest potential volatility and upward price trends in the near term, with cocoa prices likely increasing in the months ahead.",
+            percent: 70,
+        },
+    ];
+
+    const { theme } = useTheme();
     const scrollRef2 = useRef<HTMLDivElement>(null);
     const handleUpClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
@@ -190,9 +205,67 @@ function ProductDetail() {
                     </div>
                 </div>
             </div>
-            <div></div>
+            <div>
+                <div className="col-span-12 xl:col-span-8 h-auto ">
+                    <div className="grid grid-cols-12">
+                        <div className={`rounded-2xl px-5 pb-5 pt-3 col-span-12 ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
+                            <div>
+                                <h1 className="text-white font-bold text-[1.2rem] lg:text-[1.9rem]">Market Drivers</h1>
+                            </div>
+
+                            <div className="overflow-auto no-scrollbar">
+                                <div className="grid grid-cols-5 gap-2 mt-1 w-[70rem] lg:w-full">
+                                    <button onClick={() => {
+                                        setTab(1);
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 1 ? "bg-yellow/80" : "bg-light" : tabs === 1 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>SUPPLIERS & RAW MATERIALS</button>
+                                    <button onClick={() => {
+                                        setTab(2);
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 2 ? "bg-yellow/80" : "bg-light" : tabs === 2 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>SALES MARKET</button>
+                                    <button onClick={() => {
+                                        setTab(3);
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 3 ? "bg-yellow/80" : "bg-light" : tabs === 3 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>Regulatory & Geopolitical </button>
+                                    <button onClick={() => {
+                                        setTab(4);
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 4 ? "bg-yellow/80" : "bg-light" : tabs === 4 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>Environment & Sustainability</button>
+                                    <button onClick={() => {
+                                        setTab(5);
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 5 ? "bg-yellow/80" : "bg-light" : tabs === 5 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>External
+                                        Supply Chain Dynamics</button>
+                                </div>
+                            </div>
+                            <div className={`px-8 py-2 border-[5px] ${theme === "dark" ? "border-yellow/80" : "border-[rgba(0,117,255,1)]"} max-h-[318px] overflow-auto no-scrollbar`}>
+                                {tabs === 1 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                    {paraSectionData.map((data, index) => (
+                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                    ))}
+                                </div>}
+                                {tabs === 2 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                    {paraSectionData.map((data, index) => (
+                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                    ))}
+                                </div>}
+                                {tabs === 3 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                    {paraSectionData.map((data, index) => (
+                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                    ))}
+                                </div>}
+                                {tabs === 4 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                    {paraSectionData.map((data, index) => (
+                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                    ))}
+                                </div>}
+                                {tabs === 5 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                    {paraSectionData.map((data, index) => (
+                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                    ))}
+                                </div>}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    )
+    );
 }
 
-export default ProductDetail
+export default ProductDetail;
