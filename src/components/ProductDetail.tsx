@@ -5,6 +5,7 @@ import TrendChart from "./DetailChart";
 import Header from "./Header";
 import BreakDownCard from "./BreakDownCard";
 import ParaSection from "./ParaSection";
+import Nutella from "../assets/nutella.png";
 
 function ProductDetail() {
     const [tabs, setTab] = useState<number>(1);
@@ -99,13 +100,13 @@ function ProductDetail() {
             <div className="mt-1 xxl:mt-5 grid grid-cols-12 sm:gap-5">
                 <div className="col-span-12 xl:col-span-8">
                     <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
-                        <div className="rounded-2xl md:w-1/2 p-3 xxl:p-5 h-[100%] flex flex-col detail-picture-section">
+                        <div style={{ backgroundImage: `url(${Nutella})` }} className="rounded-2xl md:w-1/2 p-3 xxl:p-5 h-[100%] flex flex-col detail-picture-section">
                             <div className="mb-auto">
                                 <div className="inline-flex items-center gap-2 bg-white rounded-xl px-3">
                                     <p>Analysis status:</p>
                                     <div className="w-[1rem] h-[1rem] rounded-full bg-[#0FDA2A]"></div>
                                 </div>
-                                <h1 className="mt-0 text-white text-[2rem] xl:text-[3.4rem] font-medium font-poppins">GOLD</h1>
+                                <h1 className="mt-0 text-white text-[2rem] xl:text-[3.4rem] font-medium font-poppins">Nutella</h1>
                             </div>
                             <p className="mt-5 text-white">Last refreshed: 5 minutes ago</p>
                         </div>
@@ -129,7 +130,7 @@ function ProductDetail() {
             <div className="mt-3 xl:mt-7 grid grid-rows-1 grid-cols-12 gap-3 items-start lg:gap-5">
                 <div className="col-span-12 xl:col-span-8 h-auto section-1">
                     <div className={`rounded-2xl pt-1 pb-3 px-5 ${theme === "dark" ? "bg-dark" : "profile-blue"}`}>
-                        <h1 className="text-white font-bold text-[1.9rem] xxl:text-[2.2rem]">Cost Intelligence</h1>
+                        <h1 className="text-white font-bold text-[1.9rem] xxl:text-[2.2rem]">Product Intelligence</h1>
                         <p className="mt-0 text-gray-400">Cocoa and hazelnut prices are projected to rise by March 2025 due to supply issues from crop diseases and adverse weather affecting West African and Azerbaijani yields, coupled with strong global demand.
                             Palm oil faces price volatility from labor shortages and biofuel demand, while sucrose prices may stabilize as Asia's economic growth offsets declining demand elsewhere.4, gold prices likely range USD 2200-2500/oz, driven by geopolitical tensions, economic uncertainty, and strong central bank demand.
                             Mixed U.S. economic signals and possible interest rate cuts may enhance gold's appeal, despite challenges posed by a strong U.S. dollar.</p>
@@ -217,19 +218,19 @@ function ProductDetail() {
                                 <div className="grid grid-cols-5 gap-2 mt-1 w-[70rem] lg:w-full">
                                     <button onClick={() => {
                                         setTab(1);
-                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 1 ? "bg-yellow/80" : "bg-light" : tabs === 1 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>SUPPLIERS & RAW MATERIALS</button>
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 1 ? "bg-yellow/80" : "bg-light" : tabs === 1 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-md  xxl:text-xl font-medium rounded-t-xl uppercase`}>SUPPLIERS & RAW MATERIALS</button>
                                     <button onClick={() => {
                                         setTab(2);
-                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 2 ? "bg-yellow/80" : "bg-light" : tabs === 2 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>SALES MARKET</button>
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 2 ? "bg-yellow/80" : "bg-light" : tabs === 2 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-md  xxl:text-xl font-medium rounded-t-xl uppercase`}>SALES MARKET</button>
                                     <button onClick={() => {
                                         setTab(3);
-                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 3 ? "bg-yellow/80" : "bg-light" : tabs === 3 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>Regulatory & Geopolitical </button>
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 3 ? "bg-yellow/80" : "bg-light" : tabs === 3 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-md  xxl:text-xl font-medium rounded-t-xl uppercase`}>Regulatory & Geopolitical </button>
                                     <button onClick={() => {
                                         setTab(4);
-                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 4 ? "bg-yellow/80" : "bg-light" : tabs === 4 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>Environment & Sustainability</button>
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 4 ? "bg-yellow/80" : "bg-light" : tabs === 4 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-md  xxl:text-xl font-medium rounded-t-xl uppercase`}>Environment & Sustainability</button>
                                     <button onClick={() => {
                                         setTab(5);
-                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 5 ? "bg-yellow/80" : "bg-light" : tabs === 5 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-xl font-medium rounded-t-xl uppercase`}>External
+                                    }} className={`px-4 py-1 ${theme === "dark" ? tabs === 5 ? "bg-yellow/80" : "bg-light" : tabs === 5 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-md  xxl:text-xl font-medium rounded-t-xl uppercase`}>External
                                         Supply Chain Dynamics</button>
                                 </div>
                             </div>

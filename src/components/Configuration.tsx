@@ -100,7 +100,7 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
 
                     {/* Form 3 */}
                     {tab === 3 && <div className="form mt-4">
-                        {rawMaterials.map((material, index) => (
+                        {rawMaterials.map((_, index) => (
                             <div key={index} className="flex items-center gap-6 mt-3">
                                 <div className="grid grid-cols-2 gap-8 w-[100%]">
                                     <div className="flex flex-col">
