@@ -150,7 +150,7 @@ function ProductDetail() {
                                         <span className="fa-solid fa-angle-left text-xl"></span>
                                     </button>
                                     <button
-                                        className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                        className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                         onClick={() => scrollRight(productBreakdownRef)}
                                     >
                                         <span className="fa-solid fa-angle-right text-xl"></span>
@@ -183,7 +183,7 @@ function ProductDetail() {
                                 </button>
                                 <button
                                     onClick={() => handleDownClick(scrollRef2)}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                    className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>

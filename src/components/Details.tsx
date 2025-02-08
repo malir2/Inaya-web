@@ -142,13 +142,13 @@ function Details() {
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => handleUpClick(scrollRef1)}
-                                    className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
+                                    className={`${theme === "blue" ? "bg-white text-[blue]" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-up text-xl"></span>
                                 </button>
                                 <button
                                     onClick={() => handleDownClick(scrollRef1)}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                    className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>
@@ -183,7 +183,7 @@ function Details() {
                                 </button>
                                 <button
                                     onClick={() => handleDownClick(scrollRef2)}
-                                    className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                    className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                 >
                                     <span className="fa-solid fa-angle-down text-xl"></span>
                                 </button>

@@ -259,7 +259,7 @@ const FirstRowSec = () => {
                                         <span className="fa-solid fa-angle-left text-xl"></span>
                                     </button>
                                     <button
-                                        className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                        className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                         onClick={() => scrollRight(marketDriversRef)}
                                     >
                                         <span className="fa-solid fa-angle-right text-xl"></span>
@@ -280,7 +280,7 @@ const FirstRowSec = () => {
                     </div>
 
                     <div className="grid grid-cols-12">
-                        <div className={`rounded-2xl px-5 pb-3 pt-1 col-span-12 ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
+                        <div className={`rounded-2xl px-5 pb-5 pt-1 col-span-12 ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
                             <div className="flex justify-between items-center">
                                 <h1 className="text-white font-medium text-[1.2rem] lg:text-[1.7rem]">Product Breakdown</h1>
                                 <div className="flex gap-2">
@@ -291,7 +291,7 @@ const FirstRowSec = () => {
                                         <span className="fa-solid fa-angle-left text-xl"></span>
                                     </button>
                                     <button
-                                        className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                        className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                                         onClick={() => scrollRight(productBreakdownRef)}
                                     >
                                         <span className="fa-solid fa-angle-right text-xl"></span>
@@ -334,7 +334,7 @@ const SecCard: React.FC<SecCardProps> = ({ itemName, image, time, type, heading,
                         <p className="text-black">Analysis status:</p>
                         <div className="w-[1rem] h-[1rem] rounded-full bg-[#0FDA2A]"></div>
                     </div>
-                    <h1 className="mt-0 text-white text-[2rem] xl:text-[3.4rem] font-medium font-poppins">{itemName}</h1>
+                    <h1 className="mt-0 text-white text-[2rem] xl:text-[3.2rem] uppercase font-medium font-poppins leading-tight">{itemName}</h1>
                 </div>
                 <p className="text-white">Last refreshed: {time}</p>
             </div>
@@ -458,7 +458,7 @@ const SecRowSec = () => {
                             <span className="fa-solid fa-angle-left text-xl"></span>
                         </button>
                         <button
-                            className={`${theme === "blue" ? "bg-blueLight text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                            className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
                             onClick={() => scrollRight(secRowRef)}
                         >
                             <span className="fa-solid fa-angle-right text-xl"></span>
