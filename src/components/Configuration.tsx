@@ -38,7 +38,7 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
                 </div>
                 <div className="px-5 scrollbar">
                     {tab !== 4 && <div className="my-3 flex justify-between items-center">
-                        <p className={`${theme === "dark" ? "text-white" : "text-black"} text-lg font-medium`}>{tab === 1 && "Product Information"} {tab === 2 && "Analysis Areas of Interest"} {tab === 3 && "Product Information"}</p>
+                        <p className={`${theme === "dark" ? "text-white" : "text-black"} text-lg font-semibold`}>{tab === 1 && "Product Information"} {tab === 2 && "Analysis Areas of Interest"} {tab === 3 && "Product Information"}</p>
                         <div className="flex gap-1">
                             <div className={`${tab === 1 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl`}></div>
                             <div className={`${tab === 2 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl`}></div>
