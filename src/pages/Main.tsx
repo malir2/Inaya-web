@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Overview from "../components/Overview";
 import SideBaar from "../components/SideBaar";
 import { useTheme } from "../context/ThemeChanger";
@@ -14,6 +14,10 @@ function Main() {
 
     // Get the current theme from the ThemeChanger context
     const { theme } = useTheme();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [activeTab, setactiveTab]);
 
     return (
         <>
