@@ -17,7 +17,7 @@ const ParaSection: React.FC<ParaSectionProps> = ({ heading, content, percent }) 
                     </div>
                 </div>
             </div>
-            <p className='text-white/70 text-[0.8rem] md:text-[0.9rem] xxl:text-[1rem]'>{content}</p>
+            <p className='text-white/70 text-[0.8rem] md:text-[0.9rem] xxl:text-[1rem] text-justify'>{content}</p>
         </div>
     );
 };
