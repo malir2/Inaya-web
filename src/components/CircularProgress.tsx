@@ -1,12 +1,10 @@
 interface CircularProgressProps {
     percentage: number;
-    riskLabel: string;
     theme: string;
 }
 
 const CircularProgress: React.FC<CircularProgressProps> = ({
     percentage,
-    riskLabel,
     theme,
 }) => {
     const radius = 16; // Radius of the circle
@@ -63,8 +61,13 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
             <div className={`text-center ${theme === "dark" ? "bg-dark" : "bg-[#133c72]"} w-[9rem] h-[9rem] xl:w-[12rem] xl:h-[12rem] xxl:w-[15rem] xxl:h-[15rem] flex items-center flex-col justify-center rounded-full`}>
                 <div className="text-amber-500 text-lg">⚠️</div>
                 <div className="text-[1rem] xl:text-[2rem] xxl:text-[4rem] font-bold text-white font-poppins">{percentage}%</div>
-                <div className="text-[0.7rem] xl:text-sm text-gray-400">{riskLabel}</div>
-            </div>
+                {percentage > 70 ? (
+                    <div className="text-gray-400 label">Low Medium Risk</div>
+                ) : percentage > 60 ? (
+                    <div className="text-gray-400 label">Medium Risk</div>
+                ) : (
+                    <div className="text-gray-400 label">High Risk</div>
+                )}            </div>
         </div>
     );
 };

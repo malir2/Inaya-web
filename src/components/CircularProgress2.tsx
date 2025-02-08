@@ -13,13 +13,16 @@ const CircularProgress2: React.FC<CircularProgressProps2> = ({
         circumference - (percentage / 100) * circumference; // Anticlockwise progress
 
     // Determine gradient color based on percentage
-    let gradientColor;
+    let gradientColorStart, gradientColorEnd;
     if (percentage > 70) {
-        gradientColor = "#E80202"; // Red
+        gradientColorStart = "#E80202"; // Red
+        gradientColorEnd = "#E8020203"; // Red with transparency
     } else if (percentage > 60) {
-        gradientColor = "#E88B02"; // Orange
+        gradientColorStart = "#E88B02"; // Orange
+        gradientColorEnd = "#E88B0203"; // Orange with transparency
     } else {
-        gradientColor = "#CDE802"; // Amber
+        gradientColorStart = "#CDE802"; // Amber
+        gradientColorEnd = "#CDE80203"; // Amber with transparency
     }
 
     return (
@@ -45,16 +48,16 @@ const CircularProgress2: React.FC<CircularProgressProps2> = ({
                     r={radius}
                     strokeWidth="2.5"
                     fill="transparent"
-                    stroke="url(#gradient)" // Applying gradient
+                    stroke={`url(#gradient-${percentage})`} // Applying gradient
                     strokeDasharray={circumference}
                     strokeDashoffset={strokeDashoffset}
                     strokeLinecap="round"
                 />
                 {/* Defining Gradient */}
                 <defs>
-                    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor={`${gradientColor}`} />
-                        <stop offset="80%" stopColor={`${gradientColor}03`} />
+                    <linearGradient id={`gradient-${percentage}`} x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stopColor={gradientColorStart} />
+                        <stop offset="80%" stopColor={gradientColorEnd} />
                     </linearGradient>
                 </defs>
             </svg>
@@ -63,9 +66,13 @@ const CircularProgress2: React.FC<CircularProgressProps2> = ({
             <div className={`text-center ${theme === "dark" ? "bg-dark" : "bg-[#133c72]"} circle-size flex items-center flex-col justify-center rounded-full`}>
                 <div className="text-amber-500 text-lg">⚠️</div>
                 <div className="font-bold text-white font-poppins percentage">{percentage}%</div>
-                {percentage > 70 && <div className="text-gray-400 label">Low Medium Risk</div>}
-                {percentage > 60 && <div className="text-gray-400 label">Medium Risk</div>}
-                {percentage < 60 && <div className="text-gray-400 label">High Risk</div>}
+                {percentage > 70 ? (
+                    <div className="text-gray-400 label">Low Medium Risk</div>
+                ) : percentage > 60 ? (
+                    <div className="text-gray-400 label">Medium Risk</div>
+                ) : (
+                    <div className="text-gray-400 label">High Risk</div>
+                )}
             </div>
         </div>
     );
