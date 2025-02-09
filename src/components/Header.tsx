@@ -27,7 +27,7 @@ const Header: React.FC<CircularProgressProps> = ({
 
     return (
         <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row sm:items-center justify-between pt-2">
-            <h4 className="text-white font-semibold ms-6 lg:ms-0 text-xl break-words">{formatPageTitle(page)}</h4>
+            <h4 className="text-white font-semibold mt-1 lg:mt-0 ml-10 lg:ml-0 text-xl break-words">{formatPageTitle(page)}</h4>
             <div className="flex items-center justify-end gap-2 md:gap-5">
                 {/* Search Input */}
                 <div className={`${theme === "dark" ? "bg-[#868686]" : "bg-white"} px-2 py-1 rounded-xl flex`}>

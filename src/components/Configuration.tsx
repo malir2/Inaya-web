@@ -40,9 +40,15 @@ const Configuration: React.FC<ConfigurationProps> = ({ setShowTab }) => {
                     {tab !== 4 && <div className="my-3 flex justify-between items-center">
                         <p className={`${theme === "dark" ? "text-white" : "text-black"} text-lg font-semibold`}>{tab === 1 && "Product Information"} {tab === 2 && "Analysis Areas of Interest"} {tab === 3 && "Product Information"}</p>
                         <div className="flex gap-1">
-                            <div className={`${tab === 1 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl`}></div>
-                            <div className={`${tab === 2 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl`}></div>
-                            <div className={`${tab === 3 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl`}></div>
+                            <div onClick={() => {
+                                setTab(1)
+                            }} className={`${tab === 1 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl cursor-pointer`}></div>
+                            <div onClick={() => {
+                                setTab(2)
+                            }} className={`${tab === 2 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl cursor-pointer`}></div>
+                            <div onClick={() => {
+                                setTab(3)
+                            }} className={`${tab === 3 ? theme === "dark" ? "bg-yellow" : "bg-blue" : theme === "dark" ? "bg-white" : "bg-[#E0E0E0]"} w-[2rem] h-[1rem] rounded-2xl cursor-pointer`}></div>
                         </div>
                     </div>}
                     {/* Form 1 */}
