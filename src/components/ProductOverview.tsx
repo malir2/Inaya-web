@@ -218,7 +218,7 @@ const FirstRowSec = () => {
                     </div>
                     <div className="mt-1 xxl:mt-5 grid grid-cols-12 sm:gap-7">
                         <div className="col-span-12 xxl:col-span-8">
-                            <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
+                            <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5 h-full">
                                 <div style={{ backgroundImage: `url(${nutella})`, backgroundSize: "cover" }} className="rounded-2xl xl:w-1/2 p-3 xxl:p-5 h-full flex flex-col detail-picture-section">
                                     <div>
                                         <div className="inline-flex items-center gap-2 bg-white rounded-xl px-3">
