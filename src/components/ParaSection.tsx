@@ -9,7 +9,7 @@ interface ParaSectionProps {
 const ParaSection: React.FC<ParaSectionProps> = ({ heading, content, percent }) => {
     return (
         <div>
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col gap-3 mb-3 sm:mb-0 sm:flex-row justify-between sm:items-center">
                 <h1 className="sm:text-[1.2rem] text-white lg:text-[1.3rem] xxl:text-[1.8rem]">{heading}</h1>
                 <div className="flex justify-end items-center">
                     <div className="ml-auto shadow-black w-[7.5rem] h-[1rem] bg-gradient-to-r from-[#00A35E] via-[#E6E939] to-[#FF0000] rounded-2xl mr-0 xxl:mr-5 relative">

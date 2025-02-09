@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeChanger";
 import CircularProgress from "./CircularProgress";
 import TrendChart from "./DetailChart";
@@ -36,6 +36,7 @@ function ProductDetail() {
 
     const { theme } = useTheme();
     const scrollRef2 = useRef<HTMLDivElement>(null);
+    const scrollRef3 = useRef<HTMLDivElement>(null);
     const handleUpClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ top: -200, behavior: 'smooth' });
@@ -46,6 +47,20 @@ function ProductDetail() {
     const handleDownClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ top: 200, behavior: 'smooth' });
+        }
+    };
+
+
+    const handleUpClick2 = (scrollRef3: React.RefObject<HTMLDivElement>) => {
+        if (scrollRef3.current) {
+            scrollRef3.current.scrollBy({ top: -200, behavior: 'smooth' });
+        }
+    };
+
+    // Handle scroll down
+    const handleDownClick2 = (scrollRef3: React.RefObject<HTMLDivElement>) => {
+        if (scrollRef3.current) {
+            scrollRef3.current.scrollBy({ top: 200, behavior: 'smooth' });
         }
     };
 
@@ -93,6 +108,19 @@ function ProductDetail() {
     };
 
     const productBreakdownRef = useRef<HTMLDivElement>(null);
+    const marketDriversRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (marketDriversRef.current) {
+            const activeTabElement = marketDriversRef.current.querySelector(`button:nth-child(${tabs})`);
+            if (activeTabElement) {
+                activeTabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+        if (scrollRef3.current) {
+            scrollRef3.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [tabs]);
 
     return (
         <div className="w-full">
@@ -210,12 +238,26 @@ function ProductDetail() {
                 <div className="col-span-12 xl:col-span-8 h-auto ">
                     <div className="grid grid-cols-12">
                         <div className={`rounded-2xl px-5 pb-5 pt-3 col-span-12 ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
-                            <div>
+                            <div className="flex justify-between items-center">
                                 <h1 className="text-white font-bold text-[1.2rem] lg:text-[1.9rem]">Market Drivers</h1>
+                                <div className="flex gap-2">
+                                    <button
+                                        className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
+                                        onClick={() => setTab(tabs === 1 ? 5 : tabs - 1)}
+                                    >
+                                        <span className="fa-solid fa-angle-left text-xl"></span>
+                                    </button>
+                                    <button
+                                        className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                        onClick={() => setTab(tabs === 5 ? 1 : tabs + 1)}
+                                    >
+                                        <span className="fa-solid fa-angle-right text-xl"></span>
+                                    </button>
+                                </div>
                             </div>
 
                             <div className="overflow-auto no-scrollbar">
-                                <div className="grid grid-cols-5 gap-2 mt-1 w-[70rem] lg:w-full">
+                                <div ref={marketDriversRef} className="grid grid-cols-5 gap-2 mt-1 w-[70rem] lg:w-full">
                                     <button onClick={() => {
                                         setTab(1);
                                     }} className={`px-4 py-1 ${theme === "dark" ? tabs === 1 ? "bg-yellow/80" : "bg-light" : tabs === 1 ? "bg-[rgba(0,117,255,1)]" : "bg-custom-gradient-blue"} text-white text-sm lg:text-md  xxl:text-xl font-medium rounded-t-xl uppercase`}>SUPPLIERS & RAW MATERIALS</button>
@@ -234,32 +276,50 @@ function ProductDetail() {
                                         Supply Chain Dynamics</button>
                                 </div>
                             </div>
-                            <div className={`px-8 py-2 border-[5px] ${theme === "dark" ? "border-yellow/80" : "border-[rgba(0,117,255,1)]"} h-[270px] overflow-auto no-scrollbar`}>
-                                {tabs === 1 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
-                                    {paraSectionData.map((data, index) => (
-                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
-                                    ))}
-                                </div>}
-                                {tabs === 2 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
-                                    {paraSectionData.map((data, index) => (
-                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
-                                    ))}
-                                </div>}
-                                {tabs === 3 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
-                                    {paraSectionData.map((data, index) => (
-                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
-                                    ))}
-                                </div>}
-                                {tabs === 4 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
-                                    {paraSectionData.map((data, index) => (
-                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
-                                    ))}
-                                </div>}
-                                {tabs === 5 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
-                                    {paraSectionData.map((data, index) => (
-                                        <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
-                                    ))}
-                                </div>}
+                            <div ref={scrollRef3} className={`px-8 pr-2 py-2 border-[5px] ${theme === "dark" ? "border-yellow/80" : "border-[rgba(0,117,255,1)]"} h-[270px] overflow-x-hidden overflow-y-auto no-scrollbar flex items-start justify-between gap-6`}>
+                                <div>
+                                    {tabs === 1 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[2rem]">
+                                        {paraSectionData.map((data, index) => (
+                                            <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                        ))}
+                                    </div>}
+                                    {tabs === 2 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                        {paraSectionData.map((data, index) => (
+                                            <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                        ))}
+                                    </div>}
+                                    {tabs === 3 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                        {paraSectionData.map((data, index) => (
+                                            <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                        ))}
+                                    </div>}
+                                    {tabs === 4 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                        {paraSectionData.map((data, index) => (
+                                            <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                        ))}
+                                    </div>}
+                                    {tabs === 5 && <div className="grid lg:grid-cols-2 gap-5 lg:gap-[5rem]">
+                                        {paraSectionData.map((data, index) => (
+                                            <ParaSection key={index} heading={data.heading} content={data.content} percent={data.percent} />
+                                        ))}
+                                    </div>}
+                                </div>
+                                <div className="sticky top-2 ">
+                                    <div className="flex flex-col md:flex-row gap-2"><button
+                                        onClick={() => handleUpClick2(scrollRef3)}
+                                        className={`${theme === "blue" ? "bg-white text-blue" : "bg-yellow text-light"} px-2 py-1 rounded-lg`}
+                                    >
+                                        <span className="fa-solid fa-angle-up text-xl"></span>
+                                    </button>
+                                        <button
+                                            onClick={() => handleDownClick2(scrollRef3)}
+                                            className={`${theme === "blue" ? "bg-[#516A8D] text-white" : "bg-yellow text-light"} px-2 py-1 border-white rounded-lg`}
+                                        >
+                                            <span className="fa-solid fa-angle-down text-xl"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
