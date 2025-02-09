@@ -27,7 +27,7 @@ export default function ProductOverview() {
                 {/* Header Section */}
                 <Header page={"Products Overview"} />
                 {/* Welcome Section */}
-                <div className="relative flex w-auto mt-3">
+                <div className="relative flex w-auto mt-2">
                     <h1 className="text-white font-bold text-[2rem]">Welcome Jhon 👋</h1>
                 </div>
                 <div className={`w-[70%] xl:w-[30%] xxl:w-[20%] h-[0.33rem] my-1 ${theme === "blue" ? "bg-custom-gradient" : "bg-[#F5A32E]"}`}></div>
@@ -40,7 +40,7 @@ export default function ProductOverview() {
                 <div className="mt-3 w-full">
                     <FirstRowSec />
                 </div>
-                <div className="mt-3 w-full">
+                <div className="mt-0 w-full">
                     <SecRowSec />
                 </div>
             </div>
@@ -98,7 +98,7 @@ const DriverCardsComponent = ({ percentage, name }: DriverCards) => {
             <div className={`${theme === "dark" ? "bg-[#181818BD]" : "bg-[#060B28BD]"} w-[12rem] h-[5rem] flex items-center px-5 rounded-2xl`}>
                 <p className="uppercase text-white font-semibold">{name}</p>
             </div>
-            <div className="relative w-[7rem] h-[7rem] translate-x-[-1rem]">
+            <div className="relative w-[6rem] h-[6rem] translate-x-[-1rem]">
                 <div className="absolute">
                     <CircularProgress2 percentage={percentage} theme={theme} />
                 </div>
@@ -173,7 +173,7 @@ const FirstRowSec = () => {
                                 <div><p className="text-sm">COMMODITIES</p></div>
                                 <div><p className="text-sm">INTELLIGENCE SCORE</p></div>
                             </div>
-                            <div className="commodities-section max-h-[220px] xl:max-h-[670px] xxl:max-h-[470px] overflow-auto no-scrollbar">
+                            <div className="commodities-section max-h-[220px] xl:max-h-[600px] xxl:max-h-[400px] overflow-auto no-scrollbar">
                                 {commoditiesData.map((commodity) => (
                                     <div className={`commodities-item-container py-1`} key={commodity.name}>
                                         <div key={commodity.name} className={`${theme === "dark" ? "commodities-item" : "commodities-item-blue"} gap-5 sm:gap-0 py-2 grid grid-cols-2 ${selectedCommodity.name === commodity.name ? 'selected' : ''}`} onClick={() => handleCommodityClick(commodity)}>
@@ -218,7 +218,7 @@ const FirstRowSec = () => {
                     </div>
                     <div className="mt-1 xxl:mt-5 grid grid-cols-12 sm:gap-7">
                         <div className="col-span-12 xxl:col-span-8">
-                            <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5 h-full">
+                            <div className="mt-3 xxl:mt-0 w-full flex flex-col md:flex-row gap-3 xxl:gap-5">
                                 <div style={{ backgroundImage: `url(${nutella})`, backgroundSize: "cover" }} className="rounded-2xl xl:w-1/2 p-3 xxl:p-5 h-full flex flex-col detail-picture-section">
                                     <div>
                                         <div className="inline-flex items-center gap-2 bg-white rounded-xl px-3">
@@ -234,7 +234,7 @@ const FirstRowSec = () => {
                                         <h1 className="mt-0 text-white text-[1.2rem] font-medium font-poppins">Intelligence Score</h1>
                                     </div>
                                     <p className="w-[50%] text-white mt-3">From all market drivers</p>
-                                    <div className="absolute top-[50%] translate-y-[-50%] left-[55%] sm:left-[80%] md:left-[57%] xl:left-[50%] xxl:left-[53%]">
+                                    <div className="absolute top-[50%] translate-y-[-50%] left-[55%] sm:left-[80%] md:left-[57%] xl:left-[50%] xxl:left-[60%]">
                                         <CircularProgress2 percentage={67} theme={theme} />
                                     </div>
                                 </div>
@@ -242,12 +242,12 @@ const FirstRowSec = () => {
                             </div>
 
                         </div>
-                        <div className="col-span-12 xxl:col-span-4">
+                        <div className="col-span-12 xxl:col-span-4 product-overview">
                             <TrendChart headingSize={1.3} />
                         </div>
                     </div>
 
-                    <div className="mt-3 xl:mt-4 grid grid-cols-12">
+                    <div className="mt-3 xl:mt-1 grid grid-cols-12">
                         <div className={`rounded-2xl px-5 pb-3 pt-1 col-span-12 ${theme === "dark" ? "bg-dark" : "profile-blue"} mt-3`}>
                             <div className="mb-1 flex justify-between items-center">
                                 <h1 className="text-white font-medium text-[1.2rem] lg:text-[1.7rem]">Market Drivers</h1>
@@ -298,7 +298,7 @@ const FirstRowSec = () => {
                                     </button>
                                 </div>
                             </div>
-                            <div ref={productBreakdownRef} className="flex items-center overflow-auto mt-3 gap-5 scrollbar">
+                            <div ref={productBreakdownRef} className="flex items-center overflow-auto mt-2 gap-5 scrollbar">
                                 {breakDownCardData.map((card) => (
                                     <BreakDownCard
                                         key={card.product}
@@ -328,7 +328,7 @@ const SecCard: React.FC<SecCardProps> = ({ itemName, image, time, type, heading,
     const { theme } = useTheme();
     return (
         <div className="min-w-[15rem] lg:min-w-[26rem]">
-            <div style={{ backgroundImage: `url(${image})` }} className="rounded-3xl p-3 xxl:p-5 flex flex-col detail-picture-section">
+            <div style={{ backgroundImage: `url(${image})` }} className="rounded-3xl p-3 xxl:p-3 flex flex-col detail-picture-section">
                 <div>
                     <div className="inline-flex items-center gap-2 bg-white rounded-xl px-3">
                         <p className="text-black">Analysis status:</p>
