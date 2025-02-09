@@ -10,6 +10,7 @@ import Nutella from "../assets/nutella.png";
 function ProductDetail() {
     const [tabs, setTab] = useState<number>(1);
 
+    // Data for BreakDownCard components
     const breakDownCardData = [
         { percent: 30, product: "COCOA SOLIDS" },
         { percent: 50, product: "HAZELNUTS" },
@@ -21,6 +22,7 @@ function ProductDetail() {
         { percent: 50, product: "HAZELNUTS" },
     ];
 
+    // Data for ParaSection components
     const paraSectionData = [
         {
             heading: "ECONOMIC UNCERTAINTY",
@@ -37,6 +39,8 @@ function ProductDetail() {
     const { theme } = useTheme();
     const scrollRef2 = useRef<HTMLDivElement>(null);
     const scrollRef3 = useRef<HTMLDivElement>(null);
+
+    // Handle scroll up
     const handleUpClick = (scrollRef: React.RefObject<HTMLDivElement>) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ top: -200, behavior: 'smooth' });
@@ -51,19 +55,21 @@ function ProductDetail() {
     };
 
 
+    // Handle scroll up for the second section
     const handleUpClick2 = (scrollRef3: React.RefObject<HTMLDivElement>) => {
         if (scrollRef3.current) {
             scrollRef3.current.scrollBy({ top: -200, behavior: 'smooth' });
         }
     };
 
-    // Handle scroll down
+    // Handle scroll down for the second section
     const handleDownClick2 = (scrollRef3: React.RefObject<HTMLDivElement>) => {
         if (scrollRef3.current) {
             scrollRef3.current.scrollBy({ top: 200, behavior: 'smooth' });
         }
     };
 
+    // Dummy data for recommendations
     const dummyData2 = [
         {
             title: "Implement Hedging Strategies",
@@ -95,12 +101,14 @@ function ProductDetail() {
         },
     ];
 
+    // Handle horizontal scroll left
     const scrollLeft = (ref: React.RefObject<HTMLDivElement>) => {
         if (ref.current) {
             ref.current.scrollBy({ left: -200, behavior: "smooth" });
         }
     };
 
+    // Handle horizontal scroll right
     const scrollRight = (ref: React.RefObject<HTMLDivElement>) => {
         if (ref.current) {
             ref.current.scrollBy({ left: 200, behavior: "smooth" });
@@ -110,6 +118,7 @@ function ProductDetail() {
     const productBreakdownRef = useRef<HTMLDivElement>(null);
     const marketDriversRef = useRef<HTMLDivElement>(null);
 
+    // Scroll to the active tab and reset scroll position on tab change
     useEffect(() => {
         if (marketDriversRef.current) {
             const activeTabElement = marketDriversRef.current.querySelector(`button:nth-child(${tabs})`);
